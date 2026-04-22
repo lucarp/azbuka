@@ -139,6 +139,17 @@ const TTS = {
     if (this.voice && lang.startsWith('ru')) u.voice = this.voice;
     speechSynthesis.speak(u);
   },
+  speakSequence(texts, { lang = 'ru-RU', rate = 0.92 } = {}) {
+    if (!('speechSynthesis' in window)) return;
+    try { speechSynthesis.cancel(); } catch {}
+    for (const text of texts.filter(Boolean)) {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      u.rate = rate;
+      if (this.voice && lang.startsWith('ru')) u.voice = this.voice;
+      speechSynthesis.speak(u);
+    }
+  },
   hasRussian() { return !!this.voice; }
 };
 
@@ -395,8 +406,13 @@ function renderDashboard() {
 }
 
 function quickPlay(card) {
-  const text = russianAudioText(card);
-  if (text) TTS.speak(text);
+  if (card.type === 'letter') {
+    const texts = [letterGlyph(card), card.example?.ru].filter(Boolean);
+    if (texts.length) TTS.speakSequence(texts);
+  } else {
+    const text = russianAudioText(card);
+    if (text) TTS.speak(text);
+  }
 }
 
 /* ---------- Study ---------- */
@@ -456,8 +472,7 @@ function renderSessionCard() {
     if (e.target.closest('.btn-audio')) return;
     if (!flashcard.classList.contains('flipped')) {
       flashcard.classList.add('flipped');
-      const ruText = russianAudioText(card);
-      if (ruText) playCardAudio(card, ruText);
+      playCardAudio(card);
     }
   });
 
@@ -492,9 +507,12 @@ function intervalHint(p, q) {
   return `${Math.round(days / 365)} anos`;
 }
 
+function letterGlyph(card) {
+  // "А а" → "А" (uppercase form). Russian TTS reads a single letter as its name.
+  return (card.front?.text || '').trim().split(/\s+/)[0] || '';
+}
 function russianAudioText(card) {
-  // For letter cards, play the example word — it carries the sound in context.
-  if (card.type === 'letter' && card.example?.ru) return card.example.ru;
+  // For non-letter cards or as a phrase fallback.
   if (card.back?.language === 'ru') return card.back.text;
   if (card.front?.language === 'ru') return card.front.text;
   return null;
@@ -542,12 +560,28 @@ function renderBack(card) {
 
   // Audio buttons
   const row = el('div', { class: 'back-audio-row' });
-  const ruText = russianAudioText(card);
-  if (ruText) {
-    row.appendChild(el('button', {
-      class: 'btn-audio',
-      onclick: (ev) => { ev.stopPropagation(); TTS.speak(ruText); }
-    }, '♪ Ouvir'));
+  if (isLetter) {
+    const letter = letterGlyph(card);
+    if (letter) {
+      row.appendChild(el('button', {
+        class: 'btn-audio',
+        onclick: (ev) => { ev.stopPropagation(); TTS.speak(letter, { rate: 0.85 }); }
+      }, '♪ Letra'));
+    }
+    if (card.example?.ru) {
+      row.appendChild(el('button', {
+        class: 'btn-audio',
+        onclick: (ev) => { ev.stopPropagation(); TTS.speak(card.example.ru); }
+      }, '♪ Palavra'));
+    }
+  } else {
+    const ruText = russianAudioText(card);
+    if (ruText) {
+      row.appendChild(el('button', {
+        class: 'btn-audio',
+        onclick: (ev) => { ev.stopPropagation(); TTS.speak(ruText); }
+      }, '♪ Ouvir'));
+    }
   }
   DB.get('audio', card.id).then(rec => {
     if (rec?.blob) {
@@ -561,13 +595,22 @@ function renderBack(card) {
   return face;
 }
 
-function playCardAudio(card, ruText) {
-  // Honor preferred voice
+function playCardAudio(card) {
+  // Letters: play letter name, pause briefly, then the example word (queued via speakSequence).
+  // Phrases: play the Russian side.
+  const isLetter = card.type === 'letter';
+  const texts = isLetter
+    ? [letterGlyph(card), card.example?.ru]
+    : [russianAudioText(card)];
+  if (!texts.some(Boolean)) return;
+
   DB.get('audio', card.id).then(rec => {
     if (rec?.blob && state.settings.preferredVoice === 'recorded') {
       playBlob(rec.blob);
+    } else if (isLetter) {
+      TTS.speakSequence(texts);
     } else {
-      TTS.speak(ruText);
+      TTS.speak(texts[0]);
     }
   });
 }
