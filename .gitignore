@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.vscode/
+.idea/
+*.swp
+*.swo
+__pycache__/
+*.pyc
+.env
+.env.local
+dist/
+.cache/
+.playwright-mcp/

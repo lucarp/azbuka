@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
+  <meta name="theme-color" content="#1a1440" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Азбука"/>
+  <meta name="description" content="Learn Cyrillic and everyday Russian — private, offline, personal."/>
+  <title>Азбука — Your Cyrillic Companion</title>
+  <link rel="manifest" href="manifest.webmanifest"/>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" href="icons/icon-192.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-theme="auto">
+  <div id="app" class="app" aria-live="polite">
+    <!-- Splash / loader -->
+    <div id="splash" class="splash">
+      <div class="splash-logo" aria-hidden="true">Я</div>
+      <div class="splash-title">Азбука</div>
+      <div class="splash-sub">loading your deck…</div>
+    </div>
+
+    <!-- Top bar -->
+    <header class="topbar" id="topbar" hidden>
+      <div class="topbar-spacer" aria-hidden="true"></div>
+      <div class="topbar-title" id="topbar-title">Азбука</div>
+      <button class="icon-btn" id="btn-settings" aria-label="Settings">⚙</button>
+    </header>
+
+    <!-- Views -->
+    <main id="main" class="main" hidden>
+      <section id="view-dashboard" class="view" aria-label="Dashboard"></section>
+      <section id="view-study" class="view" aria-label="Study session" hidden></section>
+      <section id="view-add" class="view" aria-label="Add card" hidden></section>
+      <section id="view-browse" class="view" aria-label="Browse cards" hidden></section>
+      <section id="view-settings" class="view" aria-label="Settings" hidden></section>
+    </main>
+
+    <!-- Bottom nav -->
+    <nav class="tabbar" id="tabbar" hidden>
+      <button class="tab" data-tab="dashboard" aria-label="Home">
+        <span class="tab-ico">◎</span><span class="tab-label">Home</span>
+      </button>
+      <button class="tab" data-tab="browse" aria-label="Browse">
+        <span class="tab-ico">☰</span><span class="tab-label">Cards</span>
+      </button>
+      <button class="tab tab-primary" data-tab="add" aria-label="Add">
+        <span class="tab-ico">+</span>
+      </button>
+      <button class="tab" data-tab="study" aria-label="Study">
+        <span class="tab-ico">★</span><span class="tab-label">Study</span>
+      </button>
+      <button class="tab" data-tab="settings" aria-label="Settings">
+        <span class="tab-ico">⚙</span><span class="tab-label">Settings</span>
+      </button>
+    </nav>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </div>
+
+  <!-- Hidden file input used by import -->
+  <input type="file" id="file-import" accept="application/json" hidden/>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
