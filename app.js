@@ -62,8 +62,10 @@ const DB = {
 
 /* ---------- Settings ---------- */
 const DEFAULTS = {
-  newCardsPerDay: 8,
+  newCardsPerDay: 8,           // applies to LETTER cards
   reviewCap: 40,
+  phraseCadenceDays: 3,        // introduce 1 new phrase every N days
+  lastNewPhraseDate: null,     // yyyy-mm-dd of most recent new-phrase introduction
   theme: 'auto',
   preferredVoice: 'recorded',
   starterVersion: 0,
@@ -223,42 +225,74 @@ function categoryLabel(c) {
   return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', custom: 'pessoal' }[c] || c;
 }
 
+function daysSince(dateStr) {
+  if (!dateStr) return Infinity;
+  const last = new Date(`${dateStr}T00:00:00`);
+  const today = new Date(`${todayStr()}T00:00:00`);
+  return Math.floor((today - last) / 86400000);
+}
+function canIntroduceNewPhraseToday() {
+  const cadence = state.settings.phraseCadenceDays || 3;
+  return daysSince(state.settings.lastNewPhraseDate) >= cadence;
+}
+
 function countsForToday() {
   const now = Date.now();
-  let due = 0, fresh = 0, learning = 0, mastered = 0;
+  let dueLetters = 0, freshLetters = 0;
+  let duePhrases = 0, freshPhrases = 0;
+  let mastered = 0;
   for (const c of state.cards) {
     const p = state.progress[c.id];
-    if (!p || p.repetitions === 0) fresh++;
-    else {
-      if (p.dueDate <= now) due++;
-      if (p.interval >= 14) mastered++;
-      else learning++;
+    const isNew = !p || p.repetitions === 0;
+    const isDue = p && p.repetitions > 0 && p.dueDate <= now;
+    if (c.type === 'letter') {
+      if (isNew) freshLetters++;
+      else if (isDue) dueLetters++;
+    } else {
+      if (isNew) freshPhrases++;
+      else if (isDue) duePhrases++;
     }
+    if (p && p.interval >= 14) mastered++;
   }
+  const newLettersToday = Math.min(freshLetters, state.settings.newCardsPerDay);
+  const dueLettersToday = Math.min(dueLetters, state.settings.reviewCap);
+  const newPhraseToday = canIntroduceNewPhraseToday() ? Math.min(freshPhrases, 1) : 0;
+  const duePhrasesToday = Math.min(duePhrases, state.settings.reviewCap);
+  const sessionSize = newLettersToday + dueLettersToday + newPhraseToday + duePhrasesToday;
   return {
-    due,
-    newAvail: fresh,
-    newForToday: Math.min(fresh, state.settings.newCardsPerDay),
-    dueForToday: Math.min(due, state.settings.reviewCap),
-    sessionSize: Math.min(due, state.settings.reviewCap) + Math.min(fresh, state.settings.newCardsPerDay),
+    dueLetters, freshLetters, duePhrases, freshPhrases,
+    newLettersToday, dueLettersToday, newPhraseToday, duePhrasesToday,
+    sessionSize,
     total: state.cards.length,
-    mastered,
-    learning
+    mastered
   };
 }
 
 function planSession() {
   const now = Date.now();
-  const due = state.cards
+  const letters = state.cards.filter(c => c.type === 'letter');
+  const phrases = state.cards.filter(c => c.type !== 'letter');
+
+  const dueLetters = letters
     .filter(c => { const p = state.progress[c.id]; return p && p.repetitions > 0 && p.dueDate <= now; })
-    .sort((a, b) => (state.progress[a.id].dueDate) - (state.progress[b.id].dueDate))
+    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
     .slice(0, state.settings.reviewCap);
 
-  const fresh = state.cards
+  const duePhrases = phrases
+    .filter(c => { const p = state.progress[c.id]; return p && p.repetitions > 0 && p.dueDate <= now; })
+    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
+    .slice(0, state.settings.reviewCap);
+
+  const freshLetters = letters
     .filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; })
     .slice(0, state.settings.newCardsPerDay);
 
-  return [...due, ...fresh];
+  const freshPhrase = canIntroduceNewPhraseToday()
+    ? phrases.filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; }).slice(0, 1)
+    : [];
+
+  // Review first (builds confidence), then new material. Letters prioritised.
+  return [...dueLetters, ...duePhrases, ...freshLetters, ...freshPhrase];
 }
 
 function isMastered(p) { return p && p.interval >= 14; }
@@ -288,13 +322,23 @@ function renderDashboard() {
   root.innerHTML = '';
   const counts = countsForToday();
 
+  const bits = [];
+  if (counts.newLettersToday) bits.push(`${counts.newLettersToday} letra${counts.newLettersToday > 1 ? 's' : ''} nova${counts.newLettersToday > 1 ? 's' : ''}`);
+  if (counts.dueLettersToday) bits.push(`${counts.dueLettersToday} revisão${counts.dueLettersToday > 1 ? 'ões' : ''}`);
+  if (counts.duePhrasesToday) bits.push(`${counts.duePhrasesToday} frase${counts.duePhrasesToday > 1 ? 's' : ''} (revisão)`);
+  if (counts.newPhraseToday) bits.push('1 frase nova');
+  const phraseWaitDays = (state.settings.phraseCadenceDays || 3) - daysSince(state.settings.lastNewPhraseDate);
+  const phraseNote = counts.newPhraseToday === 0 && counts.freshPhrases > 0 && phraseWaitDays > 0
+    ? `Próxima frase nova em ${phraseWaitDays} dia${phraseWaitDays > 1 ? 's' : ''}.`
+    : null;
+
   const hero = el('div', { class: 'hero' },
     el('div', { class: 'hero-label' }, 'Hoje'),
     el('div', { class: 'hero-count' }, String(counts.sessionSize)),
     el('div', { class: 'hero-sub' },
       counts.sessionSize === 0
-        ? 'Nenhuma carta pendente. Adicione novas ou volte mais tarde.'
-        : `${counts.dueForToday} para revisar · ${counts.newForToday} novas`
+        ? (phraseNote || 'Nenhuma carta pendente. Volte mais tarde.')
+        : bits.join(' · ')
     ),
     el('button', {
       class: 'hero-cta',
@@ -303,6 +347,9 @@ function renderDashboard() {
     }, counts.sessionSize === 0 ? 'Tudo em dia ✓' : 'Estudar agora')
   );
   root.appendChild(hero);
+  if (counts.sessionSize > 0 && phraseNote) {
+    root.appendChild(el('div', { class: 'muted small center', style: 'margin-top:-6px; margin-bottom:14px;' }, phraseNote));
+  }
 
   const stats = el('div', { class: 'stats-row' },
     el('div', { class: 'stat' },
@@ -348,7 +395,7 @@ function renderDashboard() {
 }
 
 function quickPlay(card) {
-  const text = card.back?.language === 'ru' ? card.back.text : (card.front?.language === 'ru' ? card.front.text : '');
+  const text = russianAudioText(card);
   if (text) TTS.speak(text);
 }
 
@@ -409,8 +456,7 @@ function renderSessionCard() {
     if (e.target.closest('.btn-audio')) return;
     if (!flashcard.classList.contains('flipped')) {
       flashcard.classList.add('flipped');
-      // Auto-speak the Russian side on reveal
-      const ruText = card.back?.language === 'ru' ? card.back.text : card.front?.language === 'ru' ? card.front.text : '';
+      const ruText = russianAudioText(card);
       if (ruText) playCardAudio(card, ruText);
     }
   });
@@ -446,37 +492,63 @@ function intervalHint(p, q) {
   return `${Math.round(days / 365)} anos`;
 }
 
+function russianAudioText(card) {
+  // For letter cards, play the example word — it carries the sound in context.
+  if (card.type === 'letter' && card.example?.ru) return card.example.ru;
+  if (card.back?.language === 'ru') return card.back.text;
+  if (card.front?.language === 'ru') return card.front.text;
+  return null;
+}
+
 function renderFront(card) {
   const face = el('div', { class: 'face face-front' });
   const isLetter = card.type === 'letter';
-  face.appendChild(el('div', {
-    class: `front-text ${isLetter ? 'letter' : 'phrase'}`,
-    dir: card.front.language === 'ru' ? 'ltr' : 'ltr'
-  }, card.front.text));
+  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, card.front.text));
+  if (isLetter && card.example?.ru) {
+    face.appendChild(el('div', { class: 'front-example' }, card.example.ru));
+  }
   return face;
 }
 
 function renderBack(card) {
   const face = el('div', { class: 'face face-back' });
   const isLetter = card.type === 'letter';
+
+  // Main label (letter name or phrase translation)
   face.appendChild(el('div', { class: `back-main ${isLetter ? 'letter' : ''}` }, card.back.text));
-  if (card.back.transliteration) {
-    face.appendChild(el('div', { class: 'back-translit' }, card.back.transliteration));
-  }
-  if (card.back.note) {
-    face.appendChild(el('div', { class: 'back-note' }, card.back.note));
+
+  // Pronunciation note (letters) or transliteration (phrases)
+  if (isLetter) {
+    if (card.back.note) face.appendChild(el('div', { class: 'back-note' }, card.back.note));
+    if (card.example) {
+      const block = el('div', { class: 'back-example' },
+        el('span', { class: 'back-example-ru' }, card.example.ru),
+        el('span', { class: 'back-example-sep' }, '—'),
+        el('span', { class: 'back-example-pt' }, card.example.pt)
+      );
+      face.appendChild(block);
+      if (card.example.translit) {
+        face.appendChild(el('div', { class: 'back-example-translit' }, card.example.translit));
+      }
+    }
+  } else {
+    if (card.back.transliteration) {
+      face.appendChild(el('div', { class: 'back-translit' }, card.back.transliteration));
+    }
+    if (card.back.note) {
+      face.appendChild(el('div', { class: 'back-note' }, card.back.note));
+    }
   }
 
   // Audio buttons
   const row = el('div', { class: 'back-audio-row' });
-  const ruText = card.back?.language === 'ru' ? card.back.text : card.front?.language === 'ru' ? card.front.text : null;
+  const ruText = russianAudioText(card);
   if (ruText) {
     row.appendChild(el('button', {
       class: 'btn-audio',
       onclick: (ev) => { ev.stopPropagation(); TTS.speak(ruText); }
-    }, '♪ TTS'));
+    }, '♪ Ouvir'));
   }
-  // Check if recording exists
   DB.get('audio', card.id).then(rec => {
     if (rec?.blob) {
       row.appendChild(el('button', {
@@ -521,9 +593,13 @@ async function onRate(quality) {
     return;
   }
   const prev = state.progress[card.id] || newProgress(card.id);
+  const wasFirstSightOfPhrase = card.type !== 'letter' && prev.repetitions === 0;
   const next = sm2(prev, quality);
   state.progress[card.id] = next;
   await DB.put('progress', next);
+  if (wasFirstSightOfPhrase) {
+    await setSetting('lastNewPhraseDate', todayStr());
+  }
 
   if (quality === RATE.AGAIN) {
     s.stats.again++;
@@ -875,20 +951,37 @@ function renderSettings() {
 
   const card = el('div', { class: 'card' },
     el('h2', {}, 'Sessão'),
-    // New cards per day
+    // New letters per day
     el('div', { class: 'setting-row' },
       el('div', {},
-        el('div', { class: 'setting-label' }, 'Novas por dia'),
-        el('div', { class: 'setting-hint' }, 'Quantas cartas inéditas a cada dia')
+        el('div', { class: 'setting-label' }, 'Letras novas por dia'),
+        el('div', { class: 'setting-hint' }, 'Quantas letras inéditas a cada dia')
       ),
       el('div', { class: 'row' },
         el('input', {
-          type: 'range', class: 'slider', min: '0', max: '30', step: '1',
+          type: 'range', class: 'slider', min: '0', max: '15', step: '1',
           value: String(state.settings.newCardsPerDay),
           oninput: (e) => { $('#v-new').textContent = e.target.value; },
           onchange: async (e) => { await setSetting('newCardsPerDay', Number(e.target.value)); }
         }),
         el('div', { id: 'v-new', class: 'small muted' }, String(state.settings.newCardsPerDay))
+      )
+    ),
+    // Phrase cadence
+    el('div', { class: 'setting-row' },
+      el('div', {},
+        el('div', { class: 'setting-label' }, 'Frase nova a cada'),
+        el('div', { class: 'setting-hint' }, '1 frase inédita neste intervalo; revisões continuam normais')
+      ),
+      el('div', { class: 'row' },
+        el('input', {
+          type: 'range', class: 'slider', min: '1', max: '14', step: '1',
+          value: String(state.settings.phraseCadenceDays),
+          oninput: (e) => { $('#v-cad').textContent = e.target.value + ' dia' + (e.target.value === '1' ? '' : 's'); },
+          onchange: async (e) => { await setSetting('phraseCadenceDays', Number(e.target.value)); }
+        }),
+        el('div', { id: 'v-cad', class: 'small muted' },
+          `${state.settings.phraseCadenceDays} dia${state.settings.phraseCadenceDays === 1 ? '' : 's'}`)
       )
     ),
     // Review cap
@@ -1073,16 +1166,29 @@ async function boot(skipStarter = false) {
   state.settings = await loadSettings();
   applyTheme();
 
-  if (!skipStarter && !state.settings.starterVersion) {
+  if (!skipStarter) {
     try {
       const res = await fetch('starter-cards.json', { cache: 'no-cache' });
       const json = await res.json();
-      const cards = json.cards.map(c => ({ ...c, createdBy: 'seed', createdAt: Date.now() }));
-      await DB.bulkPut('cards', cards);
-      await setSetting('starterVersion', json.version || 1);
+      const remoteVersion = json.version || 1;
+      const localVersion = state.settings.starterVersion || 0;
+      if (remoteVersion > localVersion) {
+        // Upsert (bulkPut, not clear) — preserves custom cards and existing progress.
+        const existing = await DB.getAll('cards');
+        const existingIds = new Set(existing.map(c => c.id));
+        const now = Date.now();
+        const upsert = json.cards.map(c => ({
+          ...c,
+          createdBy: 'seed',
+          createdAt: existingIds.has(c.id) ? (existing.find(x => x.id === c.id)?.createdAt || now) : now
+        }));
+        await DB.bulkPut('cards', upsert);
+        await setSetting('starterVersion', remoteVersion);
+        if (localVersion > 0) toast(`Deck atualizado para v${remoteVersion}.`);
+      }
     } catch (err) {
       console.error('Failed to load starter deck', err);
-      toast('Abra o app com um servidor local (file:// não funciona).');
+      if (!state.settings.starterVersion) toast('Abra o app com um servidor local (file:// não funciona).');
     }
   }
 

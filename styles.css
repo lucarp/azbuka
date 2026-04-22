@@ -312,8 +312,15 @@ p { margin: 0 0 12px; color: var(--ink-2); }
   line-height: 1.15;
   word-wrap: break-word;
 }
-.front-text.letter { font-size: 130px; letter-spacing: -6px; }
+.front-text.letter { font-size: 110px; letter-spacing: -4px; line-height: 1; }
 .front-text.phrase { font-size: 30px; }
+.front-example {
+  margin-top: 16px;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--ink-2);
+  letter-spacing: .01em;
+}
 .back-main {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -330,6 +337,23 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 .back-note {
   font-size: 13px; color: var(--ink-3);
   max-width: 34ch; margin: 0 auto 14px;
+}
+.back-example {
+  display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap;
+  gap: 8px; margin: 4px auto 6px; max-width: 30ch;
+}
+.back-example-ru {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.back-example-sep { color: var(--ink-3); font-size: 20px; }
+.back-example-pt { font-size: 17px; color: var(--ink); font-weight: 500; }
+.back-example-translit {
+  font-size: 13px; font-style: italic; color: var(--ink-3);
+  margin-bottom: 10px;
 }
 .back-audio-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
 .btn-audio {
@@ -534,8 +558,10 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 
 /* Landscape tablets — give the flashcard more room */
 @media (min-width: 640px) {
-  .front-text.letter { font-size: 180px; }
-  .flashcard { min-height: 380px; }
+  .front-text.letter { font-size: 150px; }
+  .front-example { font-size: 36px; }
+  .back-example-ru { font-size: 36px; }
+  .flashcard { min-height: 400px; }
 }
 
 /* Prefer reduced motion */
