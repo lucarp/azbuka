@@ -329,7 +329,24 @@ p { margin: 0 0 12px; color: var(--ink-2); }
   margin-bottom: 10px;
   word-wrap: break-word;
 }
-.back-main.letter { font-size: 40px; }
+.back-letter-header {
+  display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap;
+  gap: 14px; margin-bottom: 10px; line-height: 1;
+}
+.back-cyrillic {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 60px;
+  color: var(--ink);
+  letter-spacing: -2px;
+}
+.back-arrow { color: var(--ink-3); font-size: 22px; font-weight: 400; }
+.back-sound {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 36px;
+  color: var(--accent);
+}
 .back-translit {
   font-size: 16px; color: var(--ink-2); font-style: italic;
   margin-bottom: 10px;
@@ -560,6 +577,8 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 @media (min-width: 640px) {
   .front-text.letter { font-size: 150px; }
   .front-example { font-size: 36px; }
+  .back-cyrillic { font-size: 80px; }
+  .back-sound { font-size: 44px; }
   .back-example-ru { font-size: 36px; }
   .flashcard { min-height: 400px; }
 }

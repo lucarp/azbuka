@@ -407,7 +407,7 @@ function renderDashboard() {
 
 function quickPlay(card) {
   if (card.type === 'letter') {
-    const texts = [letterGlyph(card), card.example?.ru].filter(Boolean);
+    const texts = [letterSpoken(card), card.example?.ru].filter(Boolean);
     if (texts.length) TTS.speakSequence(texts);
   } else {
     const text = russianAudioText(card);
@@ -508,11 +508,26 @@ function intervalHint(p, q) {
 }
 
 function letterGlyph(card) {
-  // "А а" → "А" (uppercase form). Russian TTS reads a single letter as its name.
+  // "А а" → "А" (uppercase form, for visual display).
   return (card.front?.text || '').trim().split(/\s+/)[0] || '';
 }
+// Russian phonetic name for each letter (how Russians read a letter aloud).
+// Using the raw glyph makes iOS TTS announce the case ("заглавная А ..."),
+// so we feed the phonetic name instead.
+const LETTER_NAMES = {
+  'А':'а', 'Б':'бэ', 'В':'вэ', 'Г':'гэ', 'Д':'дэ',
+  'Е':'е', 'Ё':'ё', 'Ж':'жэ', 'З':'зэ', 'И':'и',
+  'Й':'и краткое', 'К':'ка', 'Л':'эль', 'М':'эм', 'Н':'эн',
+  'О':'о', 'П':'пэ', 'Р':'эр', 'С':'эс', 'Т':'тэ',
+  'У':'у', 'Ф':'эф', 'Х':'ха', 'Ц':'цэ', 'Ч':'че',
+  'Ш':'ша', 'Щ':'ща', 'Ъ':'твёрдый знак', 'Ы':'ы',
+  'Ь':'мягкий знак', 'Э':'э', 'Ю':'ю', 'Я':'я'
+};
+function letterSpoken(card) {
+  const g = letterGlyph(card);
+  return LETTER_NAMES[g] || g;
+}
 function russianAudioText(card) {
-  // For non-letter cards or as a phrase fallback.
   if (card.back?.language === 'ru') return card.back.text;
   if (card.front?.language === 'ru') return card.front.text;
   return null;
@@ -532,8 +547,16 @@ function renderBack(card) {
   const face = el('div', { class: 'face face-back' });
   const isLetter = card.type === 'letter';
 
-  // Main label (letter name or phrase translation)
-  face.appendChild(el('div', { class: `back-main ${isLetter ? 'letter' : ''}` }, card.back.text));
+  // Header: letter keeps the Cyrillic glyph visible and shows its sound next to it.
+  if (isLetter) {
+    face.appendChild(el('div', { class: 'back-letter-header' },
+      el('span', { class: 'back-cyrillic' }, card.front.text),
+      el('span', { class: 'back-arrow' }, '→'),
+      el('span', { class: 'back-sound' }, card.back.text)
+    ));
+  } else {
+    face.appendChild(el('div', { class: 'back-main' }, card.back.text));
+  }
 
   // Pronunciation note (letters) or transliteration (phrases)
   if (isLetter) {
@@ -561,11 +584,11 @@ function renderBack(card) {
   // Audio buttons
   const row = el('div', { class: 'back-audio-row' });
   if (isLetter) {
-    const letter = letterGlyph(card);
-    if (letter) {
+    const letterName = letterSpoken(card);
+    if (letterName) {
       row.appendChild(el('button', {
         class: 'btn-audio',
-        onclick: (ev) => { ev.stopPropagation(); TTS.speak(letter, { rate: 0.85 }); }
+        onclick: (ev) => { ev.stopPropagation(); TTS.speak(letterName, { rate: 0.85 }); }
       }, '♪ Letra'));
     }
     if (card.example?.ru) {
@@ -596,11 +619,11 @@ function renderBack(card) {
 }
 
 function playCardAudio(card) {
-  // Letters: play letter name, pause briefly, then the example word (queued via speakSequence).
+  // Letters: play the letter's Russian name, then the example word.
   // Phrases: play the Russian side.
   const isLetter = card.type === 'letter';
   const texts = isLetter
-    ? [letterGlyph(card), card.example?.ru]
+    ? [letterSpoken(card), card.example?.ru]
     : [russianAudioText(card)];
   if (!texts.some(Boolean)) return;
 
