@@ -68,11 +68,19 @@ const DEFAULTS = {
   lastNewPhraseDate: null,     // yyyy-mm-dd of most recent new-phrase introduction
   theme: 'auto',
   preferredVoice: 'recorded',
+  alphabetView: 'grouped',     // 'grouped' | 'sequential'
   starterVersion: 0,
   lastSessionDate: null,
   streak: 0,
   backupReminder: Date.now()
 };
+
+// Pedagogical grouping — same-as-Latin, false friends, new shapes.
+const LETTER_GROUPS = [
+  { id: 'same',  label: 'Iguais ao latim',  hint: 'mesma forma, mesmo som',       letters: ['А','Е','К','М','О','Т'] },
+  { id: 'false', label: 'Falsos amigos',    hint: 'parecem latinas, soam outra coisa', letters: ['В','Н','Р','С','У','Х'] },
+  { id: 'new',   label: 'Formas novas',     hint: 'só no cirílico',               letters: ['Б','Г','Д','Ё','Ж','З','И','Й','Л','П','Ф','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'] }
+];
 
 async function loadSettings() {
   const s = { ...DEFAULTS };
@@ -381,20 +389,25 @@ function renderDashboard() {
   // Alphabet heatmap
   const letters = state.cards.filter(c => c.type === 'letter' && c.category === 'alphabet');
   if (letters.length) {
-    root.appendChild(el('h3', { class: 'mt-2' }, 'Alfabeto cirílico'));
-    const grid = el('div', { class: 'alpha-grid' });
-    for (const card of letters) {
-      const p = state.progress[card.id];
-      const cls = p && isMastered(p) ? 'alpha-cell mastered'
-                 : p && p.repetitions > 0 ? 'alpha-cell learning'
-                 : 'alpha-cell';
-      const label = card.front.text.trim().split(/\s+/)[0]; // uppercase
-      grid.appendChild(el('button', {
-        class: cls,
-        onclick: () => quickPlay(card)
-      }, label));
+    const header = el('div', { class: 'alpha-header mt-2' },
+      el('h3', { style: 'margin: 0;' }, 'Alfabeto cirílico'),
+      el('div', { class: 'seg seg-sm' },
+        el('button', {
+          class: state.settings.alphabetView === 'grouped' ? 'active' : '',
+          onclick: async () => { await setSetting('alphabetView', 'grouped'); renderDashboard(); }
+        }, 'Agrupado'),
+        el('button', {
+          class: state.settings.alphabetView === 'sequential' ? 'active' : '',
+          onclick: async () => { await setSetting('alphabetView', 'sequential'); renderDashboard(); }
+        }, 'Sequencial')
+      )
+    );
+    root.appendChild(header);
+    if (state.settings.alphabetView === 'grouped') {
+      renderAlphabetGrouped(root, letters);
+    } else {
+      renderAlphabetSequential(root, letters);
     }
-    root.appendChild(grid);
   }
 
   // Quick tips
@@ -412,6 +425,40 @@ function quickPlay(card) {
   } else {
     const text = russianAudioText(card);
     if (text) TTS.speak(text);
+  }
+}
+
+function alphaCell(card) {
+  const p = state.progress[card.id];
+  const cls = p && isMastered(p) ? 'alpha-cell mastered'
+            : p && p.repetitions > 0 ? 'alpha-cell learning'
+            : 'alpha-cell';
+  const glyph = letterGlyph(card);
+  return el('button', { class: cls, onclick: () => quickPlay(card) }, glyph);
+}
+
+function renderAlphabetSequential(root, letters) {
+  const grid = el('div', { class: 'alpha-grid' });
+  for (const card of letters) grid.appendChild(alphaCell(card));
+  root.appendChild(grid);
+}
+
+function renderAlphabetGrouped(root, letters) {
+  const byGlyph = new Map(letters.map(c => [letterGlyph(c), c]));
+  for (const group of LETTER_GROUPS) {
+    const section = el('div', { class: 'alpha-group' },
+      el('div', { class: 'alpha-group-head' },
+        el('span', { class: 'alpha-group-label' }, group.label),
+        el('span', { class: 'alpha-group-hint' }, group.hint)
+      )
+    );
+    const grid = el('div', { class: 'alpha-grid' });
+    for (const glyph of group.letters) {
+      const card = byGlyph.get(glyph);
+      if (card) grid.appendChild(alphaCell(card));
+    }
+    section.appendChild(grid);
+    root.appendChild(section);
   }
 }
 
