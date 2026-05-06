@@ -241,7 +241,7 @@ function uid(prefix = 'U') {
 
 /* ---------- Planning / stats ---------- */
 function categoryLabel(c) {
-  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', custom: 'pessoal' }[c] || c;
+  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', numbers: 'números', vocab: 'vocabulário', countries: 'países', custom: 'pessoal' }[c] || c;
 }
 
 function daysSince(dateStr) {
@@ -814,7 +814,7 @@ function renderAdd() {
     el('div', { class: 'form-group' },
       el('label', {}, 'Categoria'),
       el('div', { class: 'chip-row' },
-        ...['romantic', 'family', 'survival', 'alphabet', 'custom'].map(cat =>
+        ...['romantic', 'family', 'survival', 'alphabet', 'numbers', 'vocab', 'countries', 'custom'].map(cat =>
           el('button', {
             class: `chip ${category === cat ? 'active' : ''}`,
             dataset: { cat },
@@ -1000,7 +1000,7 @@ function renderBrowse() {
       oninput: (e) => { browseState.query = e.target.value; renderBrowseList(); }
     }),
     el('div', { class: 'chip-row mt-1' },
-      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'custom', 'due'].map(f =>
+      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'numbers', 'vocab', 'countries', 'custom', 'due'].map(f =>
         el('button', {
           class: `chip ${browseState.filter === f ? 'active' : ''}`,
           onclick: () => { browseState.filter = f; renderBrowse(); }
