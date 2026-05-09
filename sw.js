@@ -1,5 +1,5 @@
 /* Азбука service worker — stale-while-revalidate for the app shell. */
-const VERSION = 'v1.8.0';
+const VERSION = 'v1.9.0';
 const CACHE = `azbuka-${VERSION}`;
 
 const SHELL = [

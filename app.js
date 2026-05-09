@@ -269,10 +269,22 @@ function isDue(p, now) {
   // including "De novo"-ed cards once their 10-min timer elapses.
   return !!p && (p.lastReviewed || 0) > 0 && (p.dueDate || 0) <= now;
 }
-function newCardsRemainingToday() {
+function cardsSeenTodayCount() {
+  // Distinct cards whose last rate event happened today. Derived from progress so
+  // "ahead of midnight" rolls over automatically, no settings counter to drift.
+  const today = todayStr();
+  let n = 0;
+  for (const id in state.progress) {
+    const ts = state.progress[id]?.lastReviewed;
+    if (ts && todayStr(new Date(ts)) === today) n++;
+  }
+  return n;
+}
+function dailyBudgetRemaining() {
+  // newCardsPerDay is a daily TOTAL session cap (reviews + new combined). Once
+  // you've rated N distinct cards today, the dashboard reads "Tudo em dia ✓".
   const cap = state.settings.newCardsPerDay || 0;
-  if (state.settings.newSeenDate !== todayStr()) return cap;
-  return Math.max(0, cap - (state.settings.newSeenCount || 0));
+  return Math.max(0, cap - cardsSeenTodayCount());
 }
 
 function countsForToday() {
@@ -291,12 +303,14 @@ function countsForToday() {
     }
     if (p && p.interval >= 14) mastered++;
   }
-  const budget = newCardsRemainingToday();
-  const newLettersToday = Math.min(freshLetters, budget);
-  const newPhrasesToday = Math.min(freshPhrases, Math.max(0, budget - newLettersToday));
-  const dueLettersToday = Math.min(dueLetters, state.settings.reviewCap);
-  const duePhrasesToday = Math.min(duePhrases, state.settings.reviewCap);
-  const sessionSize = newLettersToday + dueLettersToday + newPhrasesToday + duePhrasesToday;
+  // Distribute the daily budget: reviews first (memory pressure), then new material.
+  let remaining = dailyBudgetRemaining();
+  const reviewCap = state.settings.reviewCap;
+  const dueLettersToday = Math.min(dueLetters, reviewCap, remaining); remaining -= dueLettersToday;
+  const duePhrasesToday = Math.min(duePhrases, reviewCap, remaining); remaining -= duePhrasesToday;
+  const newLettersToday = Math.min(freshLetters, remaining); remaining -= newLettersToday;
+  const newPhrasesToday = Math.min(freshPhrases, remaining); remaining -= newPhrasesToday;
+  const sessionSize = dueLettersToday + duePhrasesToday + newLettersToday + newPhrasesToday;
   return {
     dueLetters, freshLetters, duePhrases, freshPhrases,
     newLettersToday, dueLettersToday, newPhrasesToday, duePhrasesToday,
@@ -311,28 +325,29 @@ function planSession() {
   const letters = state.cards.filter(c => c.type === 'letter');
   const phrases = state.cards.filter(c => c.type !== 'letter');
 
-  const dueLetters = letters
+  const dueLettersAll = letters
     .filter(c => isDue(state.progress[c.id], now))
-    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
-    .slice(0, state.settings.reviewCap);
-
-  const duePhrases = phrases
+    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate);
+  const duePhrasesAll = phrases
     .filter(c => isDue(state.progress[c.id], now))
-    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
-    .slice(0, state.settings.reviewCap);
+    .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate);
+  const freshLettersAll = letters.filter(c => isFresh(state.progress[c.id]));
+  const freshPhrasesAll = phrases.filter(c => isFresh(state.progress[c.id]));
 
-  const budget = newCardsRemainingToday();
-  const freshLetters = letters
-    .filter(c => isFresh(state.progress[c.id]))
-    .slice(0, budget);
-
-  const phraseBudget = Math.max(0, budget - freshLetters.length);
-  const freshPhrases = phrases
-    .filter(c => isFresh(state.progress[c.id]))
-    .slice(0, phraseBudget);
+  let remaining = dailyBudgetRemaining();
+  const reviewCap = state.settings.reviewCap;
+  const takeDueLetters = Math.min(dueLettersAll.length, reviewCap, remaining); remaining -= takeDueLetters;
+  const takeDuePhrases = Math.min(duePhrasesAll.length, reviewCap, remaining); remaining -= takeDuePhrases;
+  const takeFreshLetters = Math.min(freshLettersAll.length, remaining); remaining -= takeFreshLetters;
+  const takeFreshPhrases = Math.min(freshPhrasesAll.length, remaining); remaining -= takeFreshPhrases;
 
   // Review first (builds confidence), then new material. Letters prioritised.
-  return [...dueLetters, ...duePhrases, ...freshLetters, ...freshPhrases];
+  return [
+    ...dueLettersAll.slice(0, takeDueLetters),
+    ...duePhrasesAll.slice(0, takeDuePhrases),
+    ...freshLettersAll.slice(0, takeFreshLetters),
+    ...freshPhrasesAll.slice(0, takeFreshPhrases)
+  ];
 }
 
 function isMastered(p) { return p && p.interval >= 14; }
@@ -576,7 +591,7 @@ function renderDashboard() {
 
   const bits = [];
   if (counts.newLettersToday) bits.push(`${counts.newLettersToday} letra${counts.newLettersToday > 1 ? 's' : ''} nova${counts.newLettersToday > 1 ? 's' : ''}`);
-  if (counts.dueLettersToday) bits.push(`${counts.dueLettersToday} revisão${counts.dueLettersToday > 1 ? 'ões' : ''}`);
+  if (counts.dueLettersToday) bits.push(`${counts.dueLettersToday} ${counts.dueLettersToday > 1 ? 'revisões' : 'revisão'}`);
   if (counts.duePhrasesToday) bits.push(`${counts.duePhrasesToday} frase${counts.duePhrasesToday > 1 ? 's' : ''} (revisão)`);
   if (counts.newPhrasesToday) bits.push(`${counts.newPhrasesToday} frase${counts.newPhrasesToday > 1 ? 's' : ''} nova${counts.newPhrasesToday > 1 ? 's' : ''}`);
 
@@ -947,16 +962,9 @@ async function onRate(quality) {
     return;
   }
   const prev = state.progress[card.id] || newProgress(card.id);
-  const wasFirstSight = (prev.lastReviewed || 0) === 0;
   const next = sm2(prev, quality);
   state.progress[card.id] = next;
   await DB.put('progress', next);
-  if (wasFirstSight) {
-    const today = todayStr();
-    const sameDay = state.settings.newSeenDate === today;
-    await setSetting('newSeenDate', today);
-    await setSetting('newSeenCount', (sameDay ? (state.settings.newSeenCount || 0) : 0) + 1);
-  }
 
   if (quality === RATE.AGAIN) {
     s.stats.again++;
@@ -1311,8 +1319,8 @@ function renderSettings() {
     // New cards per day (letters + phrases combined)
     el('div', { class: 'setting-row' },
       el('div', {},
-        el('div', { class: 'setting-label' }, 'Cartas novas por dia'),
-        el('div', { class: 'setting-hint' }, 'Letras + frases combinadas. Letras têm prioridade; o resto vira frases.')
+        el('div', { class: 'setting-label' }, 'Cartas por dia'),
+        el('div', { class: 'setting-hint' }, 'Total diário (revisões + novas). Quando bater esse número, a casa marca "Tudo em dia ✓".')
       ),
       el('div', { class: 'row' },
         el('input', {
