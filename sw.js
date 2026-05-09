@@ -1,5 +1,5 @@
 /* Азбука service worker — stale-while-revalidate for the app shell. */
-const VERSION = 'v1.6.0';
+const VERSION = 'v1.7.0';
 const CACHE = `azbuka-${VERSION}`;
 
 const SHELL = [
@@ -40,6 +40,23 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+
+  // Daily reading JSON: network-first so weekly drops land on first reopen.
+  if (url.pathname.includes('/paragraphs/')) {
+    event.respondWith((async () => {
+      try {
+        const fresh = await fetch(req);
+        if (fresh && fresh.ok) {
+          const cache = await caches.open(CACHE);
+          cache.put(req, fresh.clone());
+        }
+        return fresh;
+      } catch {
+        return (await caches.match(req)) || new Response('offline', { status: 503 });
+      }
+    })());
+    return;
+  }
 
   // HTML: network-first so updates land promptly
   if (req.mode === 'navigate' || req.destination === 'document') {

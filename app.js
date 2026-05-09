@@ -199,7 +199,10 @@ const state = {
   progress: {},           // { cardId: Progress }
   session: null,          // { queue, index, stats: { again, good, easy } }
   currentTab: 'dashboard',
-  playingAudioEl: null
+  playingAudioEl: null,
+  reading: null,          // { index, week, current, archive } — see loadReading()
+  readingViewing: null,   // currently-viewed reading day (null = today)
+  readingShowPt: false    // toggle: PT translation visible on reader view
 };
 
 /* ---------- DOM helpers ---------- */
@@ -317,10 +320,135 @@ function planSession() {
 
 function isMastered(p) { return p && p.interval >= 14; }
 
+/* ---------- Daily reading ---------- */
+function isoWeekId(d = new Date()) {
+  const u = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = u.getUTCDay() || 7;
+  u.setUTCDate(u.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(u.getUTCFullYear(), 0, 1));
+  const week = Math.ceil(((u - yearStart) / 86400000 + 1) / 7);
+  return `${u.getUTCFullYear()}-W${String(week).padStart(2, '0')}`;
+}
+
+async function loadReading() {
+  try {
+    const idxRes = await fetch('paragraphs/index.json', { cache: 'no-cache' });
+    if (!idxRes.ok) return;
+    const index = await idxRes.json();
+    const today = todayStr();
+    const wantWeek = isoWeekId();
+    // Pick the requested ISO week if available; otherwise the most recent one we have.
+    const weekEntry = index.weeks.find(w => w.id === wantWeek)
+      || [...index.weeks].sort((a, b) => (a.startDate < b.startDate ? 1 : -1))[0];
+    if (!weekEntry) return;
+    const weekRes = await fetch(`paragraphs/${weekEntry.file}`, { cache: 'no-cache' });
+    if (!weekRes.ok) return;
+    const week = await weekRes.json();
+    // Today's entry, else the most recent past entry from this week.
+    const sortedDays = [...week.days].sort((a, b) => (a.date < b.date ? -1 : 1));
+    const todayEntry = sortedDays.find(d => d.date === today)
+      || [...sortedDays].reverse().find(d => d.date <= today)
+      || sortedDays[0];
+    state.reading = { index, week, current: todayEntry };
+  } catch (err) {
+    console.warn('Failed to load reading', err);
+  }
+}
+
+function renderReadingTile() {
+  if (!state.reading?.current) return null;
+  const day = state.reading.current;
+  const kindLabel = day.kind === 'story' ? 'História' : 'Notícia';
+  return el('button', {
+    class: 'reading-tile',
+    onclick: () => { state.readingViewing = null; state.readingShowPt = false; showView('reading'); }
+  },
+    el('div', { class: 'reading-tile-label' }, `Leitura · ${kindLabel}`),
+    el('div', { class: 'reading-tile-title' }, day.title),
+    el('div', { class: 'reading-tile-hint' }, `Tocar para ler — ${day.ru.split(/[.!?]+/).filter(Boolean).length} frases · ${(day.notes || []).length} palavras`)
+  );
+}
+
+function renderReading() {
+  const root = $('#view-reading');
+  root.innerHTML = '';
+  if (!state.reading?.week) {
+    root.appendChild(el('div', { class: 'empty' }, 'Nenhuma leitura disponível.'));
+    return;
+  }
+  const week = state.reading.week;
+  const day = state.readingViewing
+    ? week.days.find(d => d.date === state.readingViewing) || state.reading.current
+    : state.reading.current;
+
+  const wrap = el('div', { class: 'reader-wrap' });
+
+  const kindLabel = day.kind === 'story' ? 'História' : 'Notícia';
+  wrap.appendChild(el('div', { class: 'reader-meta' }, `${kindLabel} · ${day.date}`));
+  wrap.appendChild(el('h2', { class: 'reader-title' }, day.title));
+  wrap.appendChild(el('div', { class: 'reader-paragraph' }, day.ru));
+  if (day.transliteration) {
+    wrap.appendChild(el('div', { class: 'reader-translit' }, day.transliteration));
+  }
+
+  const actions = el('div', { class: 'reader-actions' },
+    el('button', {
+      class: 'btn btn-ghost flex-grow',
+      onclick: () => { state.readingShowPt = !state.readingShowPt; renderReading(); }
+    }, state.readingShowPt ? 'Ocultar tradução' : 'Ver tradução'),
+    el('button', {
+      class: 'btn btn-ghost',
+      onclick: () => TTS.speak(day.ru, { rate: 0.85 })
+    }, '♪ Ouvir')
+  );
+  wrap.appendChild(actions);
+
+  if (state.readingShowPt) {
+    wrap.appendChild(el('div', { class: 'reader-translation' }, day.pt));
+  }
+
+  if (day.notes?.length) {
+    const gloss = el('div', { class: 'reader-glossary' }, el('h3', {}, 'Glossário'));
+    for (const n of day.notes) {
+      gloss.appendChild(el('div', { class: 'gloss-item' },
+        el('div', { class: 'gloss-row' },
+          el('span', { class: 'gloss-ru' }, n.ru),
+          el('span', { class: 'gloss-arrow' }, '→'),
+          el('span', { class: 'gloss-pt' }, n.pt)
+        ),
+        n.note ? el('div', { class: 'gloss-note' }, n.note) : null
+      ));
+    }
+    wrap.appendChild(gloss);
+  }
+
+  // Other days from this week (auto-archive)
+  const otherDays = [...week.days]
+    .filter(d => d.date !== day.date)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+  if (otherDays.length) {
+    const archive = el('div', { class: 'reader-archive' },
+      el('h3', { class: 'reader-glossary', style: 'margin: 0 0 10px;' }, 'Outros dias desta semana')
+    );
+    for (const d of otherDays) {
+      archive.appendChild(el('button', {
+        class: 'archive-item',
+        onclick: () => { state.readingViewing = d.date; state.readingShowPt = false; renderReading(); window.scrollTo(0, 0); }
+      },
+        el('div', { class: 'archive-item-date' }, `${d.date} · ${d.kind === 'story' ? 'História' : 'Notícia'}`),
+        el('div', { class: 'archive-item-title' }, d.title)
+      ));
+    }
+    wrap.appendChild(archive);
+  }
+
+  root.appendChild(wrap);
+}
+
 /* ---------- Router ---------- */
 function showView(name) {
   state.currentTab = name;
-  const titles = { dashboard: 'Азбука', study: 'Estudo', add: 'Nova carta', browse: 'Cartas', settings: 'Ajustes' };
+  const titles = { dashboard: 'Азбука', study: 'Estudo', add: 'Nova carta', browse: 'Cartas', reading: 'Leitura', settings: 'Ajustes' };
   $('#topbar-title').textContent = titles[name] || 'Азбука';
   for (const v of $$('.view')) v.hidden = v.id !== `view-${name}`;
   for (const t of $$('.tab')) t.classList.toggle('active', t.dataset.tab === name);
@@ -330,6 +458,7 @@ function showView(name) {
     study: renderStudyHome,
     add: renderAdd,
     browse: renderBrowse,
+    reading: renderReading,
     settings: renderSettings
   };
   renderers[name]?.();
@@ -363,6 +492,9 @@ function renderDashboard() {
     }, counts.sessionSize === 0 ? 'Tudo em dia ✓' : 'Estudar agora')
   );
   root.appendChild(hero);
+
+  const readingTile = renderReadingTile();
+  if (readingTile) root.appendChild(readingTile);
 
   const stats = el('div', { class: 'stats-row' },
     el('div', { class: 'stat' },
@@ -1317,6 +1449,8 @@ async function boot(skipStarter = false) {
   state.cards = await DB.getAll('cards');
   const progressArr = await DB.getAll('progress');
   state.progress = Object.fromEntries(progressArr.map(p => [p.cardId, p]));
+
+  await loadReading();
 
   TTS.init();
 
