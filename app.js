@@ -68,6 +68,8 @@ const DEFAULTS = {
   lastNewPhraseDate: null,
   phraseDirection: 'ru-to-pt', // 'ru-to-pt' shows Cyrillic on the front; 'pt-to-ru' is the legacy direction
   schedulingV2: false,         // marks completion of the unified-budget migration
+  newSeenDate: null,           // yyyy-mm-dd of last new-card-intro tracking
+  newSeenCount: 0,             // how many fresh cards were first-seen on newSeenDate
   theme: 'auto',
   preferredVoice: 'recorded',
   alphabetView: 'grouped',     // 'grouped' | 'sequential'
@@ -200,8 +202,8 @@ const state = {
   session: null,          // { queue, index, stats: { again, good, easy } }
   currentTab: 'dashboard',
   playingAudioEl: null,
-  reading: null,          // { index, week, current, archive } — see loadReading()
-  readingViewing: null,   // currently-viewed reading day (null = today)
+  reading: null,          // { index, weeks: {weekId: week}, currentWeekId, todayDate }
+  readingViewing: null,   // { weekId, date } — currently-displayed reading
   readingShowPt: false    // toggle: PT translation visible on reader view
 };
 
@@ -256,6 +258,23 @@ function daysSince(dateStr) {
   return Math.floor((today - last) / 86400000);
 }
 
+function isFresh(p) {
+  // "Fresh" = never been studied. A card rated "De novo" stays at repetitions=0
+  // but has lastReviewed > 0; treat that as in-flight, not fresh.
+  if (!p) return true;
+  return p.repetitions === 0 && (p.lastReviewed || 0) === 0;
+}
+function isDue(p, now) {
+  // Anything with a tick on the clock and a past due date is up for review,
+  // including "De novo"-ed cards once their 10-min timer elapses.
+  return !!p && (p.lastReviewed || 0) > 0 && (p.dueDate || 0) <= now;
+}
+function newCardsRemainingToday() {
+  const cap = state.settings.newCardsPerDay || 0;
+  if (state.settings.newSeenDate !== todayStr()) return cap;
+  return Math.max(0, cap - (state.settings.newSeenCount || 0));
+}
+
 function countsForToday() {
   const now = Date.now();
   let dueLetters = 0, freshLetters = 0;
@@ -263,20 +282,18 @@ function countsForToday() {
   let mastered = 0;
   for (const c of state.cards) {
     const p = state.progress[c.id];
-    const isNew = !p || p.repetitions === 0;
-    const isDue = p && p.repetitions > 0 && p.dueDate <= now;
     if (c.type === 'letter') {
-      if (isNew) freshLetters++;
-      else if (isDue) dueLetters++;
+      if (isFresh(p)) freshLetters++;
+      else if (isDue(p, now)) dueLetters++;
     } else {
-      if (isNew) freshPhrases++;
-      else if (isDue) duePhrases++;
+      if (isFresh(p)) freshPhrases++;
+      else if (isDue(p, now)) duePhrases++;
     }
     if (p && p.interval >= 14) mastered++;
   }
-  const newCap = state.settings.newCardsPerDay || 0;
-  const newLettersToday = Math.min(freshLetters, newCap);
-  const newPhrasesToday = Math.min(freshPhrases, Math.max(0, newCap - newLettersToday));
+  const budget = newCardsRemainingToday();
+  const newLettersToday = Math.min(freshLetters, budget);
+  const newPhrasesToday = Math.min(freshPhrases, Math.max(0, budget - newLettersToday));
   const dueLettersToday = Math.min(dueLetters, state.settings.reviewCap);
   const duePhrasesToday = Math.min(duePhrases, state.settings.reviewCap);
   const sessionSize = newLettersToday + dueLettersToday + newPhrasesToday + duePhrasesToday;
@@ -295,23 +312,23 @@ function planSession() {
   const phrases = state.cards.filter(c => c.type !== 'letter');
 
   const dueLetters = letters
-    .filter(c => { const p = state.progress[c.id]; return p && p.repetitions > 0 && p.dueDate <= now; })
+    .filter(c => isDue(state.progress[c.id], now))
     .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
     .slice(0, state.settings.reviewCap);
 
   const duePhrases = phrases
-    .filter(c => { const p = state.progress[c.id]; return p && p.repetitions > 0 && p.dueDate <= now; })
+    .filter(c => isDue(state.progress[c.id], now))
     .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
     .slice(0, state.settings.reviewCap);
 
-  const newCap = state.settings.newCardsPerDay || 0;
+  const budget = newCardsRemainingToday();
   const freshLetters = letters
-    .filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; })
-    .slice(0, newCap);
+    .filter(c => isFresh(state.progress[c.id]))
+    .slice(0, budget);
 
-  const phraseBudget = Math.max(0, newCap - freshLetters.length);
+  const phraseBudget = Math.max(0, budget - freshLetters.length);
   const freshPhrases = phrases
-    .filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; })
+    .filter(c => isFresh(state.progress[c.id]))
     .slice(0, phraseBudget);
 
   // Review first (builds confidence), then new material. Letters prioritised.
@@ -330,6 +347,12 @@ function isoWeekId(d = new Date()) {
   return `${u.getUTCFullYear()}-W${String(week).padStart(2, '0')}`;
 }
 
+async function fetchWeekFile(file) {
+  const res = await fetch(`paragraphs/${file}`, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
 async function loadReading() {
   try {
     const idxRes = await fetch('paragraphs/index.json', { cache: 'no-cache' });
@@ -337,54 +360,109 @@ async function loadReading() {
     const index = await idxRes.json();
     const today = todayStr();
     const wantWeek = isoWeekId();
-    // Pick the requested ISO week if available; otherwise the most recent one we have.
+    // Pick the requested ISO week if available; otherwise the most recent we have.
     const weekEntry = index.weeks.find(w => w.id === wantWeek)
       || [...index.weeks].sort((a, b) => (a.startDate < b.startDate ? 1 : -1))[0];
     if (!weekEntry) return;
-    const weekRes = await fetch(`paragraphs/${weekEntry.file}`, { cache: 'no-cache' });
-    if (!weekRes.ok) return;
-    const week = await weekRes.json();
-    // Today's entry, else the most recent past entry from this week.
+    const week = await fetchWeekFile(weekEntry.file);
     const sortedDays = [...week.days].sort((a, b) => (a.date < b.date ? -1 : 1));
     const todayEntry = sortedDays.find(d => d.date === today)
       || [...sortedDays].reverse().find(d => d.date <= today)
       || sortedDays[0];
-    state.reading = { index, week, current: todayEntry };
+    state.reading = {
+      index,
+      weeks: { [week.week]: week },
+      currentWeekId: week.week,
+      todayDate: todayEntry?.date || null
+    };
   } catch (err) {
     console.warn('Failed to load reading', err);
   }
 }
 
+function readingTodayEntry() {
+  const r = state.reading;
+  if (!r) return null;
+  const week = r.weeks[r.currentWeekId];
+  return week?.days.find(d => d.date === r.todayDate) || null;
+}
+
+function readingViewingDay() {
+  const r = state.reading;
+  const v = state.readingViewing;
+  if (!r || !v) return null;
+  const week = r.weeks[v.weekId];
+  return week?.days.find(d => d.date === v.date) || null;
+}
+
+async function openReadingWeek(weekId) {
+  const r = state.reading;
+  if (!r) return;
+  if (!r.weeks[weekId]) {
+    const entry = r.index.weeks.find(w => w.id === weekId);
+    if (!entry) return;
+    try {
+      r.weeks[weekId] = await fetchWeekFile(entry.file);
+    } catch (err) {
+      toast('Não foi possível carregar a leitura.');
+      console.warn(err);
+      return;
+    }
+  }
+  const days = [...r.weeks[weekId].days].sort((a, b) => (a.date < b.date ? -1 : 1));
+  const today = todayStr();
+  const startDay = days.find(d => d.date === today)
+    || [...days].reverse().find(d => d.date <= today)
+    || days[days.length - 1];
+  state.readingViewing = { weekId, date: startDay.date };
+  state.readingShowPt = false;
+  renderReading();
+  window.scrollTo(0, 0);
+}
+
 function renderReadingTile() {
-  if (!state.reading?.current) return null;
-  const day = state.reading.current;
-  const kindLabel = day.kind === 'story' ? 'História' : 'Notícia';
+  const today = readingTodayEntry();
+  if (!today) return null;
+  const kindLabel = today.kind === 'story' ? 'História' : 'Notícia';
   return el('button', {
     class: 'reading-tile',
-    onclick: () => { state.readingViewing = null; state.readingShowPt = false; showView('reading'); }
+    onclick: () => {
+      state.readingViewing = { weekId: state.reading.currentWeekId, date: state.reading.todayDate };
+      state.readingShowPt = false;
+      showView('reading');
+    }
   },
     el('div', { class: 'reading-tile-label' }, `Leitura · ${kindLabel}`),
-    el('div', { class: 'reading-tile-title' }, day.title),
-    el('div', { class: 'reading-tile-hint' }, `Tocar para ler — ${day.ru.split(/[.!?]+/).filter(Boolean).length} frases · ${(day.notes || []).length} palavras`)
+    el('div', { class: 'reading-tile-title' }, today.title),
+    el('div', { class: 'reading-tile-hint' }, `Tocar para ler — ${today.ru.split(/[.!?]+/).filter(Boolean).length} frases · ${(today.notes || []).length} palavras`)
   );
 }
 
 function renderReading() {
   const root = $('#view-reading');
   root.innerHTML = '';
-  if (!state.reading?.week) {
+  if (!state.reading) {
     root.appendChild(el('div', { class: 'empty' }, 'Nenhuma leitura disponível.'));
     return;
   }
-  const week = state.reading.week;
-  const day = state.readingViewing
-    ? week.days.find(d => d.date === state.readingViewing) || state.reading.current
-    : state.reading.current;
+  // Default the viewing pointer to today if none set (e.g. landed via Settings → archive).
+  if (!state.readingViewing) {
+    state.readingViewing = { weekId: state.reading.currentWeekId, date: state.reading.todayDate };
+  }
+  const day = readingViewingDay();
+  if (!day) {
+    root.appendChild(el('div', { class: 'empty' }, 'Leitura não encontrada.'));
+    return;
+  }
+  const week = state.reading.weeks[state.readingViewing.weekId];
 
   const wrap = el('div', { class: 'reader-wrap' });
 
   const kindLabel = day.kind === 'story' ? 'História' : 'Notícia';
-  wrap.appendChild(el('div', { class: 'reader-meta' }, `${kindLabel} · ${day.date}`));
+  const onPastWeek = state.readingViewing.weekId !== state.reading.currentWeekId;
+  wrap.appendChild(el('div', { class: 'reader-meta' },
+    `${kindLabel} · ${day.date}` + (onPastWeek ? ` · ${week.week}` : '')
+  ));
   wrap.appendChild(el('h2', { class: 'reader-title' }, day.title));
   wrap.appendChild(el('div', { class: 'reader-paragraph' }, day.ru));
   if (day.transliteration) {
@@ -422,24 +500,49 @@ function renderReading() {
     wrap.appendChild(gloss);
   }
 
-  // Other days from this week (auto-archive)
+  // Other days within the same week
   const otherDays = [...week.days]
     .filter(d => d.date !== day.date)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   if (otherDays.length) {
-    const archive = el('div', { class: 'reader-archive' },
+    const sameWeek = el('div', { class: 'reader-archive' },
       el('h3', { class: 'reader-glossary', style: 'margin: 0 0 10px;' }, 'Outros dias desta semana')
     );
     for (const d of otherDays) {
-      archive.appendChild(el('button', {
+      sameWeek.appendChild(el('button', {
         class: 'archive-item',
-        onclick: () => { state.readingViewing = d.date; state.readingShowPt = false; renderReading(); window.scrollTo(0, 0); }
+        onclick: () => {
+          state.readingViewing = { weekId: week.week, date: d.date };
+          state.readingShowPt = false;
+          renderReading();
+          window.scrollTo(0, 0);
+        }
       },
         el('div', { class: 'archive-item-date' }, `${d.date} · ${d.kind === 'story' ? 'História' : 'Notícia'}`),
         el('div', { class: 'archive-item-title' }, d.title)
       ));
     }
-    wrap.appendChild(archive);
+    wrap.appendChild(sameWeek);
+  }
+
+  // Past weeks (auto-archive of older bundles)
+  const otherWeeks = state.reading.index.weeks
+    .filter(w => w.id !== week.week)
+    .sort((a, b) => (a.startDate < b.startDate ? 1 : -1));
+  if (otherWeeks.length) {
+    const past = el('div', { class: 'reader-archive' },
+      el('h3', { class: 'reader-glossary', style: 'margin: 0 0 10px;' }, 'Semanas anteriores')
+    );
+    for (const w of otherWeeks) {
+      past.appendChild(el('button', {
+        class: 'archive-item',
+        onclick: () => openReadingWeek(w.id)
+      },
+        el('div', { class: 'archive-item-date' }, `${w.id} · ${w.startDate} → ${w.endDate}`),
+        el('div', { class: 'archive-item-title' }, 'Abrir semana')
+      ));
+    }
+    wrap.appendChild(past);
   }
 
   root.appendChild(wrap);
@@ -646,6 +749,9 @@ function renderSessionCard() {
     if (!flashcard.classList.contains('flipped')) {
       flashcard.classList.add('flipped');
       playCardAudio(card);
+    } else {
+      // Allow flipping back to peek at the front again.
+      flashcard.classList.remove('flipped');
     }
   });
 
@@ -841,9 +947,16 @@ async function onRate(quality) {
     return;
   }
   const prev = state.progress[card.id] || newProgress(card.id);
+  const wasFirstSight = (prev.lastReviewed || 0) === 0;
   const next = sm2(prev, quality);
   state.progress[card.id] = next;
   await DB.put('progress', next);
+  if (wasFirstSight) {
+    const today = todayStr();
+    const sameDay = state.settings.newSeenDate === today;
+    await setSetting('newSeenDate', today);
+    await setSetting('newSeenCount', (sameDay ? (state.settings.newSeenCount || 0) : 0) + 1);
+  }
 
   if (quality === RATE.AGAIN) {
     s.stats.again++;
