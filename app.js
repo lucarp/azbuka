@@ -62,10 +62,12 @@ const DB = {
 
 /* ---------- Settings ---------- */
 const DEFAULTS = {
-  newCardsPerDay: 8,           // applies to LETTER cards
+  newCardsPerDay: 20,          // total new cards per day (letters first, phrases fill the rest)
   reviewCap: 40,
-  phraseCadenceDays: 3,        // introduce 1 new phrase every N days
-  lastNewPhraseDate: null,     // yyyy-mm-dd of most recent new-phrase introduction
+  phraseCadenceDays: 1,        // legacy field — kept for backup-import compatibility, no longer used
+  lastNewPhraseDate: null,
+  phraseDirection: 'ru-to-pt', // 'ru-to-pt' shows Cyrillic on the front; 'pt-to-ru' is the legacy direction
+  schedulingV2: false,         // marks completion of the unified-budget migration
   theme: 'auto',
   preferredVoice: 'recorded',
   alphabetView: 'grouped',     // 'grouped' | 'sequential'
@@ -250,10 +252,6 @@ function daysSince(dateStr) {
   const today = new Date(`${todayStr()}T00:00:00`);
   return Math.floor((today - last) / 86400000);
 }
-function canIntroduceNewPhraseToday() {
-  const cadence = state.settings.phraseCadenceDays || 3;
-  return daysSince(state.settings.lastNewPhraseDate) >= cadence;
-}
 
 function countsForToday() {
   const now = Date.now();
@@ -273,14 +271,15 @@ function countsForToday() {
     }
     if (p && p.interval >= 14) mastered++;
   }
-  const newLettersToday = Math.min(freshLetters, state.settings.newCardsPerDay);
+  const newCap = state.settings.newCardsPerDay || 0;
+  const newLettersToday = Math.min(freshLetters, newCap);
+  const newPhrasesToday = Math.min(freshPhrases, Math.max(0, newCap - newLettersToday));
   const dueLettersToday = Math.min(dueLetters, state.settings.reviewCap);
-  const newPhraseToday = canIntroduceNewPhraseToday() ? Math.min(freshPhrases, 1) : 0;
   const duePhrasesToday = Math.min(duePhrases, state.settings.reviewCap);
-  const sessionSize = newLettersToday + dueLettersToday + newPhraseToday + duePhrasesToday;
+  const sessionSize = newLettersToday + dueLettersToday + newPhrasesToday + duePhrasesToday;
   return {
     dueLetters, freshLetters, duePhrases, freshPhrases,
-    newLettersToday, dueLettersToday, newPhraseToday, duePhrasesToday,
+    newLettersToday, dueLettersToday, newPhrasesToday, duePhrasesToday,
     sessionSize,
     total: state.cards.length,
     mastered
@@ -302,16 +301,18 @@ function planSession() {
     .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate)
     .slice(0, state.settings.reviewCap);
 
+  const newCap = state.settings.newCardsPerDay || 0;
   const freshLetters = letters
     .filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; })
-    .slice(0, state.settings.newCardsPerDay);
+    .slice(0, newCap);
 
-  const freshPhrase = canIntroduceNewPhraseToday()
-    ? phrases.filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; }).slice(0, 1)
-    : [];
+  const phraseBudget = Math.max(0, newCap - freshLetters.length);
+  const freshPhrases = phrases
+    .filter(c => { const p = state.progress[c.id]; return !p || p.repetitions === 0; })
+    .slice(0, phraseBudget);
 
   // Review first (builds confidence), then new material. Letters prioritised.
-  return [...dueLetters, ...duePhrases, ...freshLetters, ...freshPhrase];
+  return [...dueLetters, ...duePhrases, ...freshLetters, ...freshPhrases];
 }
 
 function isMastered(p) { return p && p.interval >= 14; }
@@ -345,18 +346,14 @@ function renderDashboard() {
   if (counts.newLettersToday) bits.push(`${counts.newLettersToday} letra${counts.newLettersToday > 1 ? 's' : ''} nova${counts.newLettersToday > 1 ? 's' : ''}`);
   if (counts.dueLettersToday) bits.push(`${counts.dueLettersToday} revisão${counts.dueLettersToday > 1 ? 'ões' : ''}`);
   if (counts.duePhrasesToday) bits.push(`${counts.duePhrasesToday} frase${counts.duePhrasesToday > 1 ? 's' : ''} (revisão)`);
-  if (counts.newPhraseToday) bits.push('1 frase nova');
-  const phraseWaitDays = (state.settings.phraseCadenceDays || 3) - daysSince(state.settings.lastNewPhraseDate);
-  const phraseNote = counts.newPhraseToday === 0 && counts.freshPhrases > 0 && phraseWaitDays > 0
-    ? `Próxima frase nova em ${phraseWaitDays} dia${phraseWaitDays > 1 ? 's' : ''}.`
-    : null;
+  if (counts.newPhrasesToday) bits.push(`${counts.newPhrasesToday} frase${counts.newPhrasesToday > 1 ? 's' : ''} nova${counts.newPhrasesToday > 1 ? 's' : ''}`);
 
   const hero = el('div', { class: 'hero' },
     el('div', { class: 'hero-label' }, 'Hoje'),
     el('div', { class: 'hero-count' }, String(counts.sessionSize)),
     el('div', { class: 'hero-sub' },
       counts.sessionSize === 0
-        ? (phraseNote || 'Nenhuma carta pendente. Volte mais tarde.')
+        ? 'Nenhuma carta pendente. Volte mais tarde.'
         : bits.join(' · ')
     ),
     el('button', {
@@ -366,9 +363,6 @@ function renderDashboard() {
     }, counts.sessionSize === 0 ? 'Tudo em dia ✓' : 'Estudar agora')
   );
   root.appendChild(hero);
-  if (counts.sessionSize > 0 && phraseNote) {
-    root.appendChild(el('div', { class: 'muted small center', style: 'margin-top:-6px; margin-bottom:14px;' }, phraseNote));
-  }
 
   const stats = el('div', { class: 'stats-row' },
     el('div', { class: 'stat' },
@@ -580,10 +574,15 @@ function russianAudioText(card) {
   return null;
 }
 
+function isCyrillicFirst(card) {
+  return card.type !== 'letter' && state.settings.phraseDirection === 'ru-to-pt';
+}
+
 function renderFront(card) {
   const face = el('div', { class: 'face face-front' });
   const isLetter = card.type === 'letter';
-  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, card.front.text));
+  const frontText = isCyrillicFirst(card) ? card.back.text : card.front.text;
+  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, frontText));
   if (isLetter && card.example?.ru) {
     face.appendChild(el('div', { class: 'front-example' }, card.example.ru));
   }
@@ -593,6 +592,7 @@ function renderFront(card) {
 function renderBack(card) {
   const face = el('div', { class: 'face face-back' });
   const isLetter = card.type === 'letter';
+  const cyrillicFirst = isCyrillicFirst(card);
 
   // Header: letter keeps the Cyrillic glyph visible and shows its sound next to it.
   if (isLetter) {
@@ -601,6 +601,9 @@ function renderBack(card) {
       el('span', { class: 'back-arrow' }, '→'),
       el('span', { class: 'back-sound' }, card.back.text)
     ));
+  } else if (cyrillicFirst) {
+    // Cyrillic on the front → reveal Portuguese translation here.
+    face.appendChild(el('div', { class: 'back-main' }, card.front.text));
   } else {
     face.appendChild(el('div', { class: 'back-main' }, card.back.text));
   }
@@ -706,13 +709,9 @@ async function onRate(quality) {
     return;
   }
   const prev = state.progress[card.id] || newProgress(card.id);
-  const wasFirstSightOfPhrase = card.type !== 'letter' && prev.repetitions === 0;
   const next = sm2(prev, quality);
   state.progress[card.id] = next;
   await DB.put('progress', next);
-  if (wasFirstSightOfPhrase) {
-    await setSetting('lastNewPhraseDate', todayStr());
-  }
 
   if (quality === RATE.AGAIN) {
     s.stats.again++;
@@ -1064,15 +1063,15 @@ function renderSettings() {
 
   const card = el('div', { class: 'card' },
     el('h2', {}, 'Sessão'),
-    // New letters per day
+    // New cards per day (letters + phrases combined)
     el('div', { class: 'setting-row' },
       el('div', {},
-        el('div', { class: 'setting-label' }, 'Letras novas por dia'),
-        el('div', { class: 'setting-hint' }, 'Quantas letras inéditas a cada dia')
+        el('div', { class: 'setting-label' }, 'Cartas novas por dia'),
+        el('div', { class: 'setting-hint' }, 'Letras + frases combinadas. Letras têm prioridade; o resto vira frases.')
       ),
       el('div', { class: 'row' },
         el('input', {
-          type: 'range', class: 'slider', min: '0', max: '15', step: '1',
+          type: 'range', class: 'slider', min: '0', max: '40', step: '1',
           value: String(state.settings.newCardsPerDay),
           oninput: (e) => { $('#v-new').textContent = e.target.value; },
           onchange: async (e) => { await setSetting('newCardsPerDay', Number(e.target.value)); }
@@ -1080,21 +1079,21 @@ function renderSettings() {
         el('div', { id: 'v-new', class: 'small muted' }, String(state.settings.newCardsPerDay))
       )
     ),
-    // Phrase cadence
+    // Phrase direction (which side shows on the front)
     el('div', { class: 'setting-row' },
       el('div', {},
-        el('div', { class: 'setting-label' }, 'Frase nova a cada'),
-        el('div', { class: 'setting-hint' }, '1 frase inédita neste intervalo; revisões continuam normais')
+        el('div', { class: 'setting-label' }, 'Direção das frases'),
+        el('div', { class: 'setting-hint' }, 'Em qual idioma você vê a frente — e qual idioma adivinha.')
       ),
-      el('div', { class: 'row' },
-        el('input', {
-          type: 'range', class: 'slider', min: '1', max: '14', step: '1',
-          value: String(state.settings.phraseCadenceDays),
-          oninput: (e) => { $('#v-cad').textContent = e.target.value + ' dia' + (e.target.value === '1' ? '' : 's'); },
-          onchange: async (e) => { await setSetting('phraseCadenceDays', Number(e.target.value)); }
-        }),
-        el('div', { id: 'v-cad', class: 'small muted' },
-          `${state.settings.phraseCadenceDays} dia${state.settings.phraseCadenceDays === 1 ? '' : 's'}`)
+      el('div', { class: 'seg' },
+        el('button', {
+          class: state.settings.phraseDirection === 'ru-to-pt' ? 'active' : '',
+          onclick: async () => { await setSetting('phraseDirection', 'ru-to-pt'); renderSettings(); }
+        }, 'Cirílico → PT'),
+        el('button', {
+          class: state.settings.phraseDirection === 'pt-to-ru' ? 'active' : '',
+          onclick: async () => { await setSetting('phraseDirection', 'pt-to-ru'); renderSettings(); }
+        }, 'PT → Cirílico')
       )
     ),
     // Review cap
@@ -1278,6 +1277,16 @@ async function resetProgress() {
 async function boot(skipStarter = false) {
   state.settings = await loadSettings();
   applyTheme();
+
+  // One-shot migration: legacy scheduling capped phrases at 1 per N days. The unified-budget
+  // scheduler treats `newCardsPerDay` as a combined letters+phrases budget, so legacy users on
+  // the old 8-letters-only default need a bump to actually see the new decks.
+  if (!state.settings.schedulingV2) {
+    if ((state.settings.newCardsPerDay || 0) <= 8) {
+      await setSetting('newCardsPerDay', 20);
+    }
+    await setSetting('schedulingV2', true);
+  }
 
   if (!skipStarter) {
     try {
