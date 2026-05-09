@@ -1,0 +1,141 @@
+{
+  "format": "azbuka-paragraphs-week",
+  "version": 1,
+  "week": "2026-W19",
+  "startDate": "2026-05-04",
+  "endDate": "2026-05-10",
+  "generatedAt": "2026-05-09T09:30:00Z",
+  "coreVocab": [
+    { "ru": "город", "pt": "cidade", "note": "masculino. Plural: города (pl. tônica final)." },
+    { "ru": "большой", "pt": "grande", "note": "Adjetivo. Fem.: большая, neut.: большое." },
+    { "ru": "маленький", "pt": "pequeno", "note": "Adjetivo. Fem.: маленькая, neut.: маленькое." },
+    { "ru": "люди", "pt": "pessoas", "note": "Sempre plural. Sing. человек." },
+    { "ru": "идёт", "pt": "vai (a pé)", "note": "Verbo идти, 3ª pessoa singular. Pl.: идут." },
+    { "ru": "работает", "pt": "trabalha", "note": "Verbo работать, 3ª pessoa singular." },
+    { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular." },
+    { "ru": "смотрит", "pt": "olha / assiste", "note": "Verbo смотреть, 3ª pessoa singular. Pl.: смотрят." }
+  ],
+  "days": [
+    {
+      "date": "2026-05-04",
+      "kind": "news",
+      "title": "Бразилия играет в Москве",
+      "ru": "Бразильская команда играет в Москве. Сегодня большой матч. Болельщики смотрят и кричат. Бразилия выигрывает 2:1.",
+      "pt": "O time brasileiro joga em Moscou. Hoje é um grande jogo. Os torcedores assistem e gritam. O Brasil vence por 2 a 1.",
+      "transliteration": "Brazíl'skaia kománda igráiet v Moskvié. Sievódnia bol'chói match. Bolél'shchiki smótriat i krichát. Brazília vyígryvaiet dva-odín.",
+      "notes": [
+        { "ru": "команда", "pt": "time / equipe", "note": "Feminino." },
+        { "ru": "играет", "pt": "joga", "note": "Verbo играть, 3ª pessoa singular." },
+        { "ru": "в Москве", "pt": "em Moscou", "note": "Locativo de Москва (termina em -е)." },
+        { "ru": "матч", "pt": "partida / jogo", "note": "Masculino. Estrangeirismo, indeclinável no plural informal." },
+        { "ru": "болельщики", "pt": "torcedores", "note": "Plural. Sing.: болельщик (m)." },
+        { "ru": "смотрят", "pt": "assistem", "note": "Verbo смотреть, 3ª pessoa plural." },
+        { "ru": "кричат", "pt": "gritam", "note": "Verbo кричать, 3ª pessoa plural." },
+        { "ru": "выигрывает", "pt": "vence", "note": "Verbo выигрывать, 3ª pessoa singular." }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "kind": "news",
+      "title": "Учёные находят новую рыбу",
+      "ru": "Учёные находят новую рыбу. Рыба маленькая и красивая. Она живёт в океане. Учёные изучают её.",
+      "pt": "Cientistas encontram um peixe novo. O peixe é pequeno e bonito. Ele vive no oceano. Os cientistas o estudam.",
+      "transliteration": "Uchónye nakhódiat nóvuiu rýbu. Rýba málen'kaia i krasívaia. Aná jiviót v okiéanie. Uchónye izucháiut iéio.",
+      "notes": [
+        { "ru": "учёные", "pt": "cientistas", "note": "Plural. Substantivo adjetival: declina como adjetivo." },
+        { "ru": "находят", "pt": "encontram", "note": "Verbo находить, 3ª pessoa plural." },
+        { "ru": "новую", "pt": "novo (acusativo fem.)", "note": "Fem. acusativo singular de новый — concorda com рыбу." },
+        { "ru": "рыба", "pt": "peixe", "note": "Feminino. Acusativo: рыбу." },
+        { "ru": "в океане", "pt": "no oceano", "note": "Locativo de океан (m). Termina em -е." },
+        { "ru": "изучают", "pt": "estudam", "note": "Verbo изучать, 3ª pessoa plural." },
+        { "ru": "её", "pt": "a (pronome ac.)", "note": "Pronome acusativo de она — refere-se à рыба." }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "kind": "news",
+      "title": "Новый музей в Лондоне",
+      "ru": "В Лондоне открыли новый музей. В музее много картин. Туристы идут смотреть. Музей очень большой.",
+      "pt": "Em Londres abriram um novo museu. No museu há muitos quadros. Os turistas vão ver. O museu é muito grande.",
+      "transliteration": "V Lóndonie otkrýli nóvy muziéi. V muziéie mnógo kartín. Turísty idút smotriét'. Muziéi óchen' bol'chói.",
+      "notes": [
+        { "ru": "в Лондоне", "pt": "em Londres", "note": "Locativo (após в). Лондон é masculino." },
+        { "ru": "открыли", "pt": "abriram", "note": "Verbo открыть, passado plural (uso impessoal — 'abriram-se')." },
+        { "ru": "музей", "pt": "museu", "note": "Masculino. Locativo: в музее." },
+        { "ru": "много картин", "pt": "muitos quadros", "note": "Após много, o substantivo vai para o genitivo plural." },
+        { "ru": "идут", "pt": "vão (a pé)", "note": "Verbo идти, 3ª pessoa plural." },
+        { "ru": "смотреть", "pt": "ver / assistir", "note": "Infinitivo. Combina com идти como propósito de ir." }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "kind": "news",
+      "title": "Новая ракета летит в космос",
+      "ru": "Новая ракета летит в космос. Ракета очень большая. Она летит к Луне. Учёные работают и смотрят.",
+      "pt": "Um novo foguete voa para o espaço. O foguete é muito grande. Ele voa para a Lua. Os cientistas trabalham e observam.",
+      "transliteration": "Nóvaia rakiéta letít v kósmos. Rakiéta óchen' bol'cháia. Aná letít k Luniée. Uchónye rabótaiut i smótriat.",
+      "notes": [
+        { "ru": "ракета", "pt": "foguete", "note": "Feminino. Aqui no nominativo singular." },
+        { "ru": "летит", "pt": "voa", "note": "Verbo лететь, 3ª pessoa singular. Movimento em uma direção." },
+        { "ru": "космос", "pt": "espaço (cósmico)", "note": "Masculino. В космос = 'para o espaço' (acusativo após в)." },
+        { "ru": "Луна", "pt": "Lua", "note": "Feminino. К Луне = 'para a Lua' (dativo após к)." },
+        { "ru": "учёные", "pt": "cientistas", "note": "Plural. Singular: учёный (substantivo adjetival)." },
+        { "ru": "работают", "pt": "trabalham", "note": "3ª pessoa plural de работать." }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "kind": "news",
+      "title": "Дождь в Париже",
+      "ru": "Сегодня в Париже дождь. Люди идут с зонтами. Город красивый и большой. Туристы фотографируют здания.",
+      "pt": "Hoje em Paris chove. As pessoas caminham com guarda-chuvas. A cidade é bonita e grande. Os turistas fotografam os prédios.",
+      "transliteration": "Sievódnia v Parije dojd'. Liúdi idút s zóntami. Górod krasívy i bol'chói. Turísty fotografíruiut zdánia.",
+      "notes": [
+        { "ru": "дождь", "pt": "chuva", "note": "Masculino. Em russo se diz literalmente 'em Paris [há] chuva'." },
+        { "ru": "Париж", "pt": "Paris", "note": "В Париже = 'em Paris' (locativo, termina em -е)." },
+        { "ru": "зонт", "pt": "guarda-chuva", "note": "Masculino. С зонтами = 'com guarda-chuvas' (instrumental plural)." },
+        { "ru": "красивый", "pt": "bonito", "note": "Adjetivo. Fem.: красивая. Aqui concorda com город (m)." },
+        { "ru": "фотографируют", "pt": "fotografam", "note": "3ª pessoa plural de фотографировать (verbo de origem estrangeira)." },
+        { "ru": "здания", "pt": "prédios", "note": "Plural neutro. Sing.: здание." }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "kind": "story",
+      "title": "Колобок",
+      "ru": "Колобок — это маленький хлеб. Он живёт у бабушки и дедушки. Однажды Колобок убегает в лес. Там он встречает зайца.",
+      "pt": "Kolobok é um pequeno pão. Ele mora com a vovó e o vovô. Um dia, Kolobok foge para a floresta. Lá ele encontra uma lebre.",
+      "transliteration": "Kolobók — éta málen'ki khlieb. On jiviót u bábuchki i diéduchki. Adnájdy Kolobók ubiegáiet v lies. Tam on vstrieчáiet záitsa.",
+      "notes": [
+        { "ru": "Колобок", "pt": "Kolobok", "note": "Personagem clássico do folclore russo — um pãozinho redondo que ganha vida." },
+        { "ru": "хлеб", "pt": "pão", "note": "Masculino. Substantivo incontável (em russo, vai para singular)." },
+        { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular." },
+        { "ru": "у бабушки", "pt": "na casa da vovó", "note": "У + genitivo expressa 'na casa de' / 'com'. Бабушки é genitivo de бабушка." },
+        { "ru": "однажды", "pt": "uma vez / certo dia", "note": "Advérbio que abre histórias — equivalente ao 'era uma vez'." },
+        { "ru": "убегает", "pt": "foge", "note": "Verbo убегать, 3ª pessoa singular. Movimento de afastamento." },
+        { "ru": "лес", "pt": "floresta / mata", "note": "Masculino. В лес = 'para a floresta' (acusativo após в com movimento)." },
+        { "ru": "встречает", "pt": "encontra", "note": "Verbo встречать, 3ª pessoa singular. Pede acusativo direto." },
+        { "ru": "зайца", "pt": "lebre / coelho", "note": "Acusativo de заяц (masc. animado — acusativo = genitivo)." }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "kind": "story",
+      "title": "Репка",
+      "ru": "В саду растёт большая репка. Дед хочет её вытянуть. Бабушка и внучка помогают. Репка всё ещё в земле.",
+      "pt": "Na horta cresce um grande nabo. O vovô quer arrancá-lo. A vovó e a netinha ajudam. O nabo ainda está na terra.",
+      "transliteration": "V sadú rastiót bol'cháia riépka. Died khóchet iéio vytianút'. Bábuchka i vnúchka pamagáiut. Riépka vsió ieshchió v ziémlie.",
+      "notes": [
+        { "ru": "Репка", "pt": "Nabo (conto)", "note": "Conto folclórico russo onde toda a família puxa o nabo gigante. Forma diminutiva carinhosa de репа." },
+        { "ru": "в саду", "pt": "no jardim / na horta", "note": "Locativo irregular: сад → в саду (com tônica final)." },
+        { "ru": "растёт", "pt": "cresce", "note": "Verbo расти, 3ª pessoa singular." },
+        { "ru": "дед", "pt": "vovô", "note": "Masculino. Forma curta de дедушка." },
+        { "ru": "хочет", "pt": "quer", "note": "Verbo хотеть, 3ª pessoa singular (irregular)." },
+        { "ru": "вытянуть", "pt": "arrancar / puxar", "note": "Infinitivo. Verbo prefixado de тянуть." },
+        { "ru": "помогают", "pt": "ajudam", "note": "Verbo помогать, 3ª pessoa plural. Pede dativo." },
+        { "ru": "всё ещё", "pt": "ainda", "note": "Locução adverbial — literalmente 'tudo ainda'." },
+        { "ru": "в земле", "pt": "na terra", "note": "Locativo de земля (f)." }
+      ]
+    }
+  ]
+}

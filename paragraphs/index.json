@@ -1,0 +1,7 @@
+{
+  "format": "azbuka-paragraphs-index",
+  "version": 1,
+  "weeks": [
+    { "id": "2026-W19", "startDate": "2026-05-04", "endDate": "2026-05-10", "file": "2026-W19.json" }
+  ]
+}
