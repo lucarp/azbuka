@@ -1,0 +1,146 @@
+{
+  "format": "azbuka-paragraphs-week",
+  "version": 1,
+  "week": "2026-W21",
+  "startDate": "2026-05-18",
+  "endDate": "2026-05-24",
+  "generatedAt": "2026-05-11T10:00:00Z",
+  "coreVocab": [
+    { "ru": "город", "pt": "cidade", "note": "Masculino. Plural: города." },
+    { "ru": "большой", "pt": "grande", "note": "Adjetivo. Fem.: большая; neutro: большое." },
+    { "ru": "люди", "pt": "pessoas", "note": "Sempre plural. Singular: человек." },
+    { "ru": "идёт", "pt": "vai (a pé)", "note": "Verbo идти, 3ª pessoa singular. Plural: идут." },
+    { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular. Plural: живут." },
+    { "ru": "смотрит", "pt": "olha / assiste", "note": "Verbo смотреть, 3ª pessoa singular. Plural: смотрят." },
+    { "ru": "лес", "pt": "floresta / mata", "note": "Masculino. Locativo irregular: в лесу." },
+    { "ru": "дом", "pt": "casa", "note": "Masculino. Locativo: в доме; acusativo: в дом (com movimento)." },
+    { "ru": "красивый", "pt": "bonito / belo", "note": "Adjetivo. Fem.: красивая; concorda com o gênero do substantivo." },
+    { "ru": "находит", "pt": "encontra / acha", "note": "Verbo находить, 3ª pessoa singular. Plural: находят." }
+  ],
+  "days": [
+    {
+      "date": "2026-05-18",
+      "kind": "news",
+      "title": "Финал в Осло",
+      "ru": "Осло — большой город в Норвегии. Там две команды играют в футбол. Стадион красивый и полный. Люди смотрят матч и кричат.",
+      "pt": "Oslo é uma grande cidade na Noruega. Dois times jogam futebol lá. O estádio é bonito e lotado. As pessoas assistem ao jogo e gritam.",
+      "transliteration": "Óslo — bol'chói górod v Norvégii. Tam dvié komándy igráiut v futból. Stadión krasívyi i pólny. Liúdi smótriat match i krichát.",
+      "notes": [
+        { "ru": "город", "pt": "cidade", "note": "Masculino. Nominativo singular." },
+        { "ru": "в Норвегии", "pt": "na Noruega", "note": "Locativo de Норвегия (f). В + locativo indica localização." },
+        { "ru": "команды", "pt": "times / equipes", "note": "Plural de команда (f). Após две, usa-se genitivo singular: две команды." },
+        { "ru": "играют", "pt": "jogam", "note": "Verbo играть, 3ª pessoa plural." },
+        { "ru": "в футбол", "pt": "futebol (como esporte)", "note": "Jogar um esporte em russo: играть + в + acusativo do esporte." },
+        { "ru": "полный", "pt": "cheio / lotado", "note": "Adjetivo. Aqui concorda com стадион (m)." },
+        { "ru": "смотрят", "pt": "assistem / olham", "note": "Verbo смотреть, 3ª pessoa plural." },
+        { "ru": "кричат", "pt": "gritam", "note": "Verbo кричать, 3ª pessoa plural." }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "kind": "story",
+      "title": "Теремок",
+      "ru": "В лесу стоит маленький домик. Сначала приходит мышка. Она живёт в домике. Потом приходят заяц и лягушка.",
+      "pt": "Na floresta fica uma casinha. Primeiro chega um camundongo. Ele mora na casinha. Depois chegam uma lebre e uma rã.",
+      "transliteration": "V liesú stoít málen'ki dómik. Snachála prikhodít mýshka. Aná jiviót v dómike. Potóm prikhódiat záiats i liagúshka.",
+      "notes": [
+        { "ru": "Теремок", "pt": "A Casinha", "note": "Conto folclórico russo em que animais chegam um a um para morar numa casinha na floresta." },
+        { "ru": "в лесу", "pt": "na floresta", "note": "Locativo irregular de лес (m): в лесу (terminação -у, tônica)." },
+        { "ru": "стоит", "pt": "fica / está (em pé)", "note": "Verbo стоять, 3ª pessoa singular. Indica posição de objetos e construções." },
+        { "ru": "домик", "pt": "casinha", "note": "Diminutivo de дом (m). O sufixo -ик transmite tamanho pequeno e carinho." },
+        { "ru": "сначала", "pt": "primeiro / no começo", "note": "Advérbio de ordem temporal." },
+        { "ru": "мышка", "pt": "camundongo / ratinho", "note": "Diminutivo de мышь (f). Forma carinhosa usada em contos infantis." },
+        { "ru": "в домике", "pt": "na casinha", "note": "Locativo de домик (m). В + locativo = localização." },
+        { "ru": "лягушка", "pt": "rã / sapo", "note": "Feminino. Personagem clássico de contos folclóricos russos." }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "kind": "news",
+      "title": "Учёные находят новые планеты",
+      "ru": "Учёные находят сто новых планет. Эти планеты очень далеко. Учёные смотрят в большой телескоп. Это большое открытие.",
+      "pt": "Os cientistas encontram cem planetas novos. Esses planetas são muito distantes. Os cientistas observam por um grande telescópio. É uma grande descoberta.",
+      "transliteration": "Uchónye nakhódiat sto nóvykh planét. Éti planéty óchen' dalikó. Uchónye smótriat v bol'chói teleskóp. Éto bol'choié otkrýtie.",
+      "notes": [
+        { "ru": "учёные", "pt": "cientistas", "note": "Plural de учёный. Substantivo adjetival: declina como adjetivo." },
+        { "ru": "находят", "pt": "encontram / descobrem", "note": "Verbo находить, 3ª pessoa plural." },
+        { "ru": "сто новых планет", "pt": "cem planetas novos", "note": "Após сто, o substantivo vai para o genitivo plural: планет, новых." },
+        { "ru": "далеко", "pt": "longe / distante", "note": "Advérbio de lugar. Invariável." },
+        { "ru": "телескоп", "pt": "telescópio", "note": "Masculino. В телескоп = 'pelo telescópio' (acusativo após в com direção)." },
+        { "ru": "открытие", "pt": "descoberta", "note": "Neutro. Sufixo -ие indica resultado de ação." },
+        { "ru": "большое", "pt": "grande (neutro)", "note": "Forma neutra de большой; concorda com открытие (n)." }
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "kind": "story",
+      "title": "Маша и Медведь",
+      "ru": "Маша идёт в лес и теряется. В лесу она находит большой дом. В доме живёт медведь. Маша смотрит на дом и боится.",
+      "pt": "Masha vai para a floresta e se perde. Na floresta ela encontra uma casa grande. Na casa mora um urso. Masha olha para a casa e fica com medo.",
+      "transliteration": "Másha idiót v lies i tieriáietsia. V liesú aná nakhódit bol'chói dom. V domé jiviót medvied'. Másha smótrit na dom i boítsia.",
+      "notes": [
+        { "ru": "Маша и Медведь", "pt": "Masha e o Urso", "note": "Série animada russa popular, baseada em conto folclórico. Masha é uma menina curiosa que se perde na floresta." },
+        { "ru": "идёт в лес", "pt": "vai para a floresta", "note": "В + acusativo (лес) com verbo de movimento. Compare: в лесу = locativo, sem movimento." },
+        { "ru": "теряется", "pt": "se perde", "note": "Verbo теряться, 3ª pessoa singular. Sufixo -ся indica reflexividade." },
+        { "ru": "находит", "pt": "encontra / acha", "note": "Verbo находить, 3ª pessoa singular. Pede acusativo direto." },
+        { "ru": "в доме", "pt": "na casa", "note": "Locativo de дом (m). Termina em -е." },
+        { "ru": "медведь", "pt": "urso", "note": "Masculino. Animado: acusativo singular = genitivo → медведя." },
+        { "ru": "боится", "pt": "fica com medo / teme", "note": "Verbo бояться, 3ª pessoa singular. Reflexivo. Pede genitivo do objeto temido." }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "kind": "news",
+      "title": "Фестиваль в Нидерландах",
+      "ru": "В Нидерландах идёт большой фестиваль. Люди смотрят танцы и музыку. Артисты приезжают из разных стран. Город красивый и весёлый.",
+      "pt": "Nos Países Baixos acontece um grande festival. As pessoas assistem a danças e música. Artistas chegam de países diferentes. A cidade é bonita e alegre.",
+      "transliteration": "V Nidierliándakh idiót bol'chói fiestivál'. Liúdi smótriat tántsy i múzyku. Artísty priyiezjáiut iz ráznych stran. Górod krasívyi i viesiólyi.",
+      "notes": [
+        { "ru": "в Нидерландах", "pt": "nos Países Baixos", "note": "Locativo plural de Нидерланды. В + locativo plural = localização." },
+        { "ru": "идёт", "pt": "acontece / está em curso", "note": "Verbo идти também expressa que um evento está ocorrendo. Uso idiomático." },
+        { "ru": "фестиваль", "pt": "festival", "note": "Masculino. Estrangeirismo com terminação -ль (consoante suave)." },
+        { "ru": "танцы", "pt": "danças", "note": "Plural de танец (m). O -ец desaparece no plural: танец → танцы." },
+        { "ru": "музыку", "pt": "música", "note": "Acusativo de музыка (f). Verbo смотреть pede acusativo direto." },
+        { "ru": "из разных стран", "pt": "de países diferentes", "note": "Из + genitivo plural. Страна (f) → стран (gen. pl.); разных = gen. pl. de разный." },
+        { "ru": "весёлый", "pt": "alegre / animado", "note": "Adjetivo. Aqui concorda com город (m). Fem.: весёлая." }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "kind": "story",
+      "title": "Утро на даче",
+      "ru": "Бабушка живёт на даче летом. Утром она идёт в сад. Сад большой и красивый. Там растут яблони и цветы.",
+      "pt": "A vovó mora na dacha no verão. De manhã ela vai ao jardim. O jardim é grande e bonito. Lá crescem macieiras e flores.",
+      "transliteration": "Bábuchka jiviót na dáchie létom. Útrom aná idiót v sad. Sad bol'chói i krasívyi. Tam rastút yábloni i tsviety.",
+      "notes": [
+        { "ru": "дача", "pt": "dacha", "note": "Casa de campo russa, usada sobretudo no verão. Feminino. На даче = locativo." },
+        { "ru": "летом", "pt": "no verão", "note": "Instrumental de лето (n) usado como advérbio temporal. Série: весной / летом / осенью / зимой." },
+        { "ru": "утром", "pt": "de manhã", "note": "Instrumental de утро (n) como advérbio. Série: утром / днём / вечером / ночью." },
+        { "ru": "в сад", "pt": "para o jardim", "note": "Acusativo de сад (m) após в com movimento: в сад = 'para o jardim'." },
+        { "ru": "растут", "pt": "crescem", "note": "Verbo расти, 3ª pessoa plural." },
+        { "ru": "яблони", "pt": "macieiras", "note": "Plural de яблоня (f). Singular: яблоня." },
+        { "ru": "цветы", "pt": "flores", "note": "Plural de цветок (m). Plural irregular: цветок → цветы." },
+        { "ru": "бабушка", "pt": "vovó / avó", "note": "Feminino. Forma carinhosa e familiar de avó." }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "kind": "news",
+      "title": "Бобры возвращаются в Англию",
+      "ru": "В Англии бобры живут снова в реке. Это большое событие для природы. Люди идут смотреть на животных. Бобры строят дом в воде.",
+      "pt": "Na Inglaterra, castores voltam a viver no rio. É um grande evento para a natureza. As pessoas vão ver os animais. Os castores constroem uma casa na água.",
+      "transliteration": "V Ánglii bóbry jiviút snóva v rekié. Éto bol'choié sobýtie dlia priródy. Liúdi idút smotriét' na jivotnykh. Bóbry stróiat dom v vodié.",
+      "notes": [
+        { "ru": "бобры", "pt": "castores", "note": "Plural de бобёр (m). Singular: бобёр." },
+        { "ru": "в Англии", "pt": "na Inglaterra", "note": "Locativo de Англия (f). Substantivos em -ия formam locativo em -ии." },
+        { "ru": "снова", "pt": "de novo / novamente", "note": "Advérbio. Invariável." },
+        { "ru": "в реке", "pt": "no rio", "note": "Locativo de река (f). Termina em -е." },
+        { "ru": "событие", "pt": "evento / acontecimento", "note": "Neutro. Sufixo -ие, como открытие." },
+        { "ru": "для природы", "pt": "para a natureza", "note": "Для + genitivo indica beneficiário. Природа (f) → природы." },
+        { "ru": "животных", "pt": "animais", "note": "Acusativo plural de животное (n, animado). Para animados, acusativo = genitivo: животных." },
+        { "ru": "строят", "pt": "constroem", "note": "Verbo строить, 3ª pessoa plural." },
+        { "ru": "в воде", "pt": "na água", "note": "Locativo de вода (f). Termina em -е." }
+      ]
+    }
+  ]
+}
