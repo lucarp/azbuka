@@ -592,6 +592,15 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 .small { font-size: 12px; }
 .hidden { display: none !important; }
 
+/* ---------- Word emphasis (markdown **bold**) ---------- */
+.em-focus {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
 /* ---------- Daily reading ---------- */
 .reading-tile {
   display: block; width: 100%; text-align: left; cursor: pointer;

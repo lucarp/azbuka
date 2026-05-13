@@ -68,8 +68,10 @@ const DEFAULTS = {
   lastNewPhraseDate: null,
   phraseDirection: 'ru-to-pt', // 'ru-to-pt' shows Cyrillic on the front; 'pt-to-ru' is the legacy direction
   schedulingV2: false,         // marks completion of the unified-budget migration
-  newSeenDate: null,           // yyyy-mm-dd of last new-card-intro tracking
-  newSeenCount: 0,             // how many fresh cards were first-seen on newSeenDate
+  newSeenDate: null,           // legacy
+  newSeenCount: 0,             // legacy
+  newIntroDate: null,          // yyyy-mm-dd of last new-card-intro tracking
+  newIntroCount: 0,            // how many fresh cards have been first-seen today
   theme: 'auto',
   preferredVoice: 'recorded',
   alphabetView: 'grouped',     // 'grouped' | 'sequential'
@@ -248,7 +250,7 @@ function uid(prefix = 'U') {
 
 /* ---------- Planning / stats ---------- */
 function categoryLabel(c) {
-  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', numbers: 'números', vocab: 'vocabulário', countries: 'países', custom: 'pessoal' }[c] || c;
+  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', numbers: 'números', vocab: 'vocabulário', countries: 'países', verbs: 'verbos', custom: 'pessoal' }[c] || c;
 }
 
 function daysSince(dateStr) {
@@ -269,22 +271,16 @@ function isDue(p, now) {
   // including "De novo"-ed cards once their 10-min timer elapses.
   return !!p && (p.lastReviewed || 0) > 0 && (p.dueDate || 0) <= now;
 }
-function cardsSeenTodayCount() {
-  // Distinct cards whose last rate event happened today. Derived from progress so
-  // "ahead of midnight" rolls over automatically, no settings counter to drift.
-  const today = todayStr();
-  let n = 0;
-  for (const id in state.progress) {
-    const ts = state.progress[id]?.lastReviewed;
-    if (ts && todayStr(new Date(ts)) === today) n++;
-  }
-  return n;
+function priorityOf(c) {
+  // Lower number = surfaces sooner. Default for legacy cards: 5.
+  return Number.isFinite(c?.priority) ? c.priority : 5;
 }
-function dailyBudgetRemaining() {
-  // newCardsPerDay is a daily TOTAL session cap (reviews + new combined). Once
-  // you've rated N distinct cards today, the dashboard reads "Tudo em dia ✓".
+
+function newIntrosRemainingToday() {
+  // Cap on FIRST-SIGHT card introductions today (reviews aren't capped here).
   const cap = state.settings.newCardsPerDay || 0;
-  return Math.max(0, cap - cardsSeenTodayCount());
+  if (state.settings.newIntroDate !== todayStr()) return cap;
+  return Math.max(0, cap - (state.settings.newIntroCount || 0));
 }
 
 function countsForToday() {
@@ -303,17 +299,18 @@ function countsForToday() {
     }
     if (p && p.interval >= 14) mastered++;
   }
-  // Distribute the daily budget: reviews first (memory pressure), then new material.
-  let remaining = dailyBudgetRemaining();
-  const reviewCap = state.settings.reviewCap;
-  const dueLettersToday = Math.min(dueLetters, reviewCap, remaining); remaining -= dueLettersToday;
-  const duePhrasesToday = Math.min(duePhrases, reviewCap, remaining); remaining -= duePhrasesToday;
-  const newLettersToday = Math.min(freshLetters, remaining); remaining -= newLettersToday;
-  const newPhrasesToday = Math.min(freshPhrases, remaining); remaining -= newPhrasesToday;
+  // New-card intros are capped per day; reviews flow on top (capped per session).
+  const newBudget = newIntrosRemainingToday();
+  const newLettersToday = Math.min(freshLetters, newBudget);
+  const newPhrasesToday = Math.min(freshPhrases, Math.max(0, newBudget - newLettersToday));
+  const dueLettersToday = Math.min(dueLetters, state.settings.reviewCap);
+  const duePhrasesToday = Math.min(duePhrases, state.settings.reviewCap);
   const sessionSize = dueLettersToday + duePhrasesToday + newLettersToday + newPhrasesToday;
   return {
     dueLetters, freshLetters, duePhrases, freshPhrases,
     newLettersToday, dueLettersToday, newPhrasesToday, duePhrasesToday,
+    newBudget,
+    newDailyCap: state.settings.newCardsPerDay || 0,
     sessionSize,
     total: state.cards.length,
     mastered
@@ -331,23 +328,22 @@ function planSession() {
   const duePhrasesAll = phrases
     .filter(c => isDue(state.progress[c.id], now))
     .sort((a, b) => state.progress[a.id].dueDate - state.progress[b.id].dueDate);
-  const freshLettersAll = letters.filter(c => isFresh(state.progress[c.id]));
-  const freshPhrasesAll = phrases.filter(c => isFresh(state.progress[c.id]));
 
-  let remaining = dailyBudgetRemaining();
+  // Fresh cards sort by priority first, then by id — so high-priority decks
+  // (e.g. numbers, this-week's vocab) surface before lower-priority ones.
+  const priSort = (a, b) => priorityOf(a) - priorityOf(b) || (a.id < b.id ? -1 : 1);
+  const freshLettersAll = letters.filter(c => isFresh(state.progress[c.id])).sort(priSort);
+  const freshPhrasesAll = phrases.filter(c => isFresh(state.progress[c.id])).sort(priSort);
+
+  const newBudget = newIntrosRemainingToday();
   const reviewCap = state.settings.reviewCap;
-  const takeDueLetters = Math.min(dueLettersAll.length, reviewCap, remaining); remaining -= takeDueLetters;
-  const takeDuePhrases = Math.min(duePhrasesAll.length, reviewCap, remaining); remaining -= takeDuePhrases;
-  const takeFreshLetters = Math.min(freshLettersAll.length, remaining); remaining -= takeFreshLetters;
-  const takeFreshPhrases = Math.min(freshPhrasesAll.length, remaining); remaining -= takeFreshPhrases;
+  const dueLetters = dueLettersAll.slice(0, reviewCap);
+  const duePhrases = duePhrasesAll.slice(0, reviewCap);
+  const freshLetters = freshLettersAll.slice(0, newBudget);
+  const freshPhrases = freshPhrasesAll.slice(0, Math.max(0, newBudget - freshLetters.length));
 
-  // Review first (builds confidence), then new material. Letters prioritised.
-  return [
-    ...dueLettersAll.slice(0, takeDueLetters),
-    ...duePhrasesAll.slice(0, takeDuePhrases),
-    ...freshLettersAll.slice(0, takeFreshLetters),
-    ...freshPhrasesAll.slice(0, takeFreshPhrases)
-  ];
+  // Reviews first (memory pressure), then new material.
+  return [...dueLetters, ...duePhrases, ...freshLetters, ...freshPhrases];
 }
 
 function isMastered(p) { return p && p.interval >= 14; }
@@ -590,10 +586,14 @@ function renderDashboard() {
   const counts = countsForToday();
 
   const bits = [];
-  if (counts.newLettersToday) bits.push(`${counts.newLettersToday} letra${counts.newLettersToday > 1 ? 's' : ''} nova${counts.newLettersToday > 1 ? 's' : ''}`);
-  if (counts.dueLettersToday) bits.push(`${counts.dueLettersToday} ${counts.dueLettersToday > 1 ? 'revisões' : 'revisão'}`);
-  if (counts.duePhrasesToday) bits.push(`${counts.duePhrasesToday} frase${counts.duePhrasesToday > 1 ? 's' : ''} (revisão)`);
-  if (counts.newPhrasesToday) bits.push(`${counts.newPhrasesToday} frase${counts.newPhrasesToday > 1 ? 's' : ''} nova${counts.newPhrasesToday > 1 ? 's' : ''}`);
+  const newTotal = counts.newLettersToday + counts.newPhrasesToday;
+  const dueTotal = counts.dueLettersToday + counts.duePhrasesToday;
+  if (newTotal) {
+    bits.push(`${newTotal}/${counts.newDailyCap} ${newTotal > 1 ? 'novas' : 'nova'}`);
+  }
+  if (dueTotal) {
+    bits.push(`${dueTotal} ${dueTotal > 1 ? 'revisões' : 'revisão'}`);
+  }
 
   const hero = el('div', { class: 'hero' },
     el('div', { class: 'hero-label' }, 'Hoje'),
@@ -821,9 +821,10 @@ function letterSpoken(card) {
   const g = letterGlyph(card);
   return LETTER_NAMES[g] || g;
 }
+function stripMarkup(text) { return text ? text.replace(/\*\*/g, '') : text; }
 function russianAudioText(card) {
-  if (card.back?.language === 'ru') return card.back.text;
-  if (card.front?.language === 'ru') return card.front.text;
+  if (card.back?.language === 'ru') return stripMarkup(card.back.text);
+  if (card.front?.language === 'ru') return stripMarkup(card.front.text);
   return null;
 }
 
@@ -831,11 +832,27 @@ function isCyrillicFirst(card) {
   return card.type !== 'letter' && state.settings.phraseDirection === 'ru-to-pt';
 }
 
+function nodesFromMarkup(text) {
+  // Tiny **bold** parser — used to emphasise the target word/phrase in
+  // example-sentence cards and reader paragraphs. Plain text otherwise.
+  if (!text || !text.includes('**')) return [document.createTextNode(text || '')];
+  const re = /\*\*([^*\n]+)\*\*/g;
+  const out = [];
+  let last = 0; let m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) out.push(document.createTextNode(text.slice(last, m.index)));
+    out.push(el('strong', { class: 'em-focus' }, m[1]));
+    last = re.lastIndex;
+  }
+  if (last < text.length) out.push(document.createTextNode(text.slice(last)));
+  return out;
+}
+
 function renderFront(card) {
   const face = el('div', { class: 'face face-front' });
   const isLetter = card.type === 'letter';
   const frontText = isCyrillicFirst(card) ? card.back.text : card.front.text;
-  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, frontText));
+  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, ...nodesFromMarkup(frontText)));
   if (isLetter && card.example?.ru) {
     face.appendChild(el('div', { class: 'front-example' }, card.example.ru));
   }
@@ -856,9 +873,9 @@ function renderBack(card) {
     ));
   } else if (cyrillicFirst) {
     // Cyrillic on the front → reveal Portuguese translation here.
-    face.appendChild(el('div', { class: 'back-main' }, card.front.text));
+    face.appendChild(el('div', { class: 'back-main' }, ...nodesFromMarkup(card.front.text)));
   } else {
-    face.appendChild(el('div', { class: 'back-main' }, card.back.text));
+    face.appendChild(el('div', { class: 'back-main' }, ...nodesFromMarkup(card.back.text)));
   }
 
   // Pronunciation note (letters) or transliteration (phrases)
@@ -962,9 +979,16 @@ async function onRate(quality) {
     return;
   }
   const prev = state.progress[card.id] || newProgress(card.id);
+  const wasFirstSight = (prev.lastReviewed || 0) === 0;
   const next = sm2(prev, quality);
   state.progress[card.id] = next;
   await DB.put('progress', next);
+  if (wasFirstSight) {
+    const today = todayStr();
+    const sameDay = state.settings.newIntroDate === today;
+    await setSetting('newIntroDate', today);
+    await setSetting('newIntroCount', (sameDay ? (state.settings.newIntroCount || 0) : 0) + 1);
+  }
 
   if (quality === RATE.AGAIN) {
     s.stats.again++;
@@ -1066,7 +1090,7 @@ function renderAdd() {
     el('div', { class: 'form-group' },
       el('label', {}, 'Categoria'),
       el('div', { class: 'chip-row' },
-        ...['romantic', 'family', 'survival', 'alphabet', 'numbers', 'vocab', 'countries', 'custom'].map(cat =>
+        ...['romantic', 'family', 'survival', 'alphabet', 'numbers', 'vocab', 'countries', 'verbs', 'custom'].map(cat =>
           el('button', {
             class: `chip ${category === cat ? 'active' : ''}`,
             dataset: { cat },
@@ -1252,7 +1276,7 @@ function renderBrowse() {
       oninput: (e) => { browseState.query = e.target.value; renderBrowseList(); }
     }),
     el('div', { class: 'chip-row mt-1' },
-      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'numbers', 'vocab', 'countries', 'custom', 'due'].map(f =>
+      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'numbers', 'vocab', 'countries', 'verbs', 'custom', 'due'].map(f =>
         el('button', {
           class: `chip ${browseState.filter === f ? 'active' : ''}`,
           onclick: () => { browseState.filter = f; renderBrowse(); }
@@ -1319,8 +1343,8 @@ function renderSettings() {
     // New cards per day (letters + phrases combined)
     el('div', { class: 'setting-row' },
       el('div', {},
-        el('div', { class: 'setting-label' }, 'Cartas por dia'),
-        el('div', { class: 'setting-hint' }, 'Total diário (revisões + novas). Quando bater esse número, a casa marca "Tudo em dia ✓".')
+        el('div', { class: 'setting-label' }, 'Cartas novas por dia'),
+        el('div', { class: 'setting-hint' }, 'Quantas cartas inéditas você quer ver por dia. Revisões aparecem por cima, no ritmo do SRS.')
       ),
       el('div', { class: 'row' },
         el('input', {
