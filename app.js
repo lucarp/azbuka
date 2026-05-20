@@ -710,7 +710,10 @@ function renderAlphabetGrouped(root, letters) {
 function startSession() {
   const queue = planSession();
   if (!queue.length) { toast('Nada para revisar agora.'); return; }
-  state.session = { queue, index: 0, stats: { again: 0, good: 0, easy: 0 }, answered: 0, total: queue.length };
+  state.session = {
+    queue, index: 0, stats: { again: 0, good: 0, easy: 0 }, answered: 0, total: queue.length,
+    cardDirections: {}  // per-card chosen direction for reversible cards in this session
+  };
   showView('study');
 }
 
@@ -753,8 +756,15 @@ function renderSessionCard() {
   const catBadge = el('div', { class: 'card-meta' }, categoryLabel(card.category || 'custom'), isNew ? ' · nova' : '');
   flashcard.appendChild(catBadge);
 
-  const front = renderFront(card);
-  const back = renderBack(card);
+  let front, back;
+  if (card.type === 'cloze') {
+    const blankIdx = pickClozeIndex(card);
+    front = renderClozeFront(card, blankIdx);
+    back = renderClozeBack(card, blankIdx);
+  } else {
+    front = renderFront(card);
+    back = renderBack(card);
+  }
   flashcard.appendChild(front);
   flashcard.appendChild(back);
   flashcard.appendChild(el('div', { class: 'card-hint' }, 'Toque para virar'));
@@ -821,15 +831,99 @@ function letterSpoken(card) {
   const g = letterGlyph(card);
   return LETTER_NAMES[g] || g;
 }
-function stripMarkup(text) { return text ? text.replace(/\*\*/g, '') : text; }
+function stripMarkup(text) { return text ? text.replace(/\*\*/g, '').replace(/[{}]/g, '') : text; }
 function russianAudioText(card) {
   if (card.back?.language === 'ru') return stripMarkup(card.back.text);
   if (card.front?.language === 'ru') return stripMarkup(card.front.text);
   return null;
 }
 
+function effectiveDirection(card) {
+  // Reversible cards flip a coin per (session, card) so the user practices both
+  // recognition and production over time. Non-reversible cards keep the global setting.
+  const base = state.settings.phraseDirection;
+  if (card.type === 'letter') return base;
+  if (!card.reversible || !state.session) return base;
+  const cached = state.session.cardDirections[card.id];
+  if (cached) return cached;
+  const choice = Math.random() < 0.5 ? 'ru-to-pt' : 'pt-to-ru';
+  state.session.cardDirections[card.id] = choice;
+  return choice;
+}
+
 function isCyrillicFirst(card) {
-  return card.type !== 'letter' && state.settings.phraseDirection === 'ru-to-pt';
+  return card.type !== 'letter' && effectiveDirection(card) === 'ru-to-pt';
+}
+
+/* ---------- Cloze cards ---------- */
+
+function parseClozes(text) {
+  // Split text into segments. Each segment is either a literal text run or a cloze (a {word}).
+  // Returns { segments, positions } where positions are the indices into segments that are clozes.
+  const segments = [];
+  const positions = [];
+  if (!text) return { segments, positions };
+  const re = /\{([^}\n]+)\}/g;
+  let last = 0; let m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) segments.push({ type: 'text', text: text.slice(last, m.index) });
+    segments.push({ type: 'cloze', text: m[1] });
+    positions.push(segments.length - 1);
+    last = re.lastIndex;
+  }
+  if (last < text.length) segments.push({ type: 'text', text: text.slice(last) });
+  return { segments, positions };
+}
+
+function pickClozeIndex(card) {
+  // Fresh pick every render — within a session, an Again-loop can land on a different blank.
+  const { positions } = parseClozes(card.front?.text || '');
+  if (!positions.length) return -1;
+  return positions[Math.floor(Math.random() * positions.length)];
+}
+
+function renderClozeFront(card, blankSegmentIdx) {
+  const face = el('div', { class: 'face face-front' });
+  const { segments } = parseClozes(card.front?.text || '');
+  const nodes = segments.map((seg, i) => {
+    if (seg.type === 'text') return document.createTextNode(seg.text);
+    if (i === blankSegmentIdx) return el('span', { class: 'cloze-blank' }, '      ');
+    return document.createTextNode(seg.text);
+  });
+  face.appendChild(el('div', { class: 'front-text phrase' }, ...nodes));
+  return face;
+}
+
+function renderClozeBack(card, blankSegmentIdx) {
+  const face = el('div', { class: 'face face-back' });
+  const { segments } = parseClozes(card.front?.text || '');
+  // Reveal the answer in context — wrap the previously-blanked segment in em-focus.
+  const nodes = segments.map((seg, i) => {
+    if (seg.type === 'text') return document.createTextNode(seg.text);
+    if (i === blankSegmentIdx) return el('strong', { class: 'em-focus' }, seg.text);
+    return document.createTextNode(seg.text);
+  });
+  face.appendChild(el('div', { class: 'back-main' }, ...nodes));
+  if (card.back?.text) {
+    face.appendChild(el('div', { class: 'back-translation' }, card.back.text));
+  }
+  if (card.back?.transliteration) {
+    face.appendChild(el('div', { class: 'back-translit' }, card.back.transliteration));
+  }
+  if (card.back?.note) {
+    face.appendChild(el('div', { class: 'back-note' }, card.back.note));
+  }
+  // Audio button — speak the full Cyrillic with cloze words intact.
+  const ruText = russianAudioText(card);
+  if (ruText) {
+    face.appendChild(el('div', { class: 'back-audio-row' },
+      el('button', {
+        class: 'btn-audio',
+        onclick: (ev) => { ev.stopPropagation(); TTS.speak(ruText); }
+      }, '♪ Ouvir')
+    ));
+  }
+  return face;
 }
 
 function nodesFromMarkup(text) {

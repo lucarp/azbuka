@@ -601,6 +601,23 @@ p { margin: 0 0 12px; color: var(--ink-2); }
   font-weight: 700;
 }
 
+/* ---------- Cloze blank ---------- */
+.cloze-blank {
+  display: inline-block;
+  min-width: 80px;
+  padding: 0 6px;
+  border-bottom: 3px solid var(--accent);
+  color: transparent;
+  font-weight: 700;
+  vertical-align: baseline;
+}
+.back-translation {
+  margin-top: 12px;
+  font-size: 18px;
+  color: var(--ink-2);
+  font-style: italic;
+}
+
 /* ---------- Daily reading ---------- */
 .reading-tile {
   display: block; width: 100%; text-align: left; cursor: pointer;
