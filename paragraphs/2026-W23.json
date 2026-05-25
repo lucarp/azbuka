@@ -1,0 +1,148 @@
+{
+  "format": "azbuka-paragraphs-week",
+  "version": 1,
+  "week": "2026-W23",
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-07",
+  "generatedAt": "2026-05-25T12:00:00Z",
+  "coreVocab": [
+    { "ru": "город", "pt": "cidade", "note": "Masculino. Plural: города." },
+    { "ru": "большой", "pt": "grande", "note": "Adjetivo. Fem.: большая; neutro: большое; loc. m.: большом." },
+    { "ru": "люди", "pt": "pessoas", "note": "Sempre plural. Singular: человек. Genitivo plural: людей." },
+    { "ru": "идёт", "pt": "vai / acontece", "note": "Verbo идти, 3ª pessoa singular. Também usado para dizer que um evento está ocorrendo." },
+    { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular. Plural: живут." },
+    { "ru": "дом", "pt": "casa", "note": "Masculino. Locativo: в доме; genitivo: из дома; acusativo (movimento): в дом." },
+    { "ru": "красивый", "pt": "bonito / belo", "note": "Adjetivo. Fem.: красивая; loc. m.: красивом; concorda com o gênero do substantivo." },
+    { "ru": "находит", "pt": "encontra / acha", "note": "Verbo находить, 3ª pessoa singular. Plural: находят. Pede acusativo direto." },
+    { "ru": "новый", "pt": "novo", "note": "Adjetivo. Fem.: новая; neutro: новое; concorda com o gênero do substantivo." },
+    { "ru": "земля", "pt": "terra / chão", "note": "Feminino. Locativo: в земле; acusativo: в землю (com movimento)." }
+  ],
+  "days": [
+    {
+      "date": "2026-06-01",
+      "kind": "news",
+      "title": "Финал в Будапеште",
+      "ru": "В Будапеште идёт большой футбольный матч. Две команды играют за главный кубок. Люди смотрят финал на большом красивом стадионе. Весь город поёт и радуется.",
+      "pt": "Em Budapeste acontece um grande jogo de futebol. Dois times jogam pela taça principal. As pessoas assistem à final em um estádio grande e bonito. A cidade inteira canta e comemora.",
+      "transliteration": "V Budapéshtie idiót bol'chói futból'ny match. Dvié komándy igráiut za glávny kubók. Liúdi smótriat finál na bol'chóm krasívom stadiónye. Vies' górod poiót i radúyetsia.",
+      "notes": [
+        { "ru": "в Будапеште", "pt": "em Budapeste", "note": "Locativo de Будапешт (m). Termina em -е." },
+        { "ru": "идёт", "pt": "acontece / está em curso", "note": "Verbo идти também expressa que um evento está ocorrendo. Uso idiomático." },
+        { "ru": "футбольный", "pt": "de futebol (adj.)", "note": "Adjetivo derivado de футбол. Concorda com матч (m) em nominativo." },
+        { "ru": "команды", "pt": "times / equipes", "note": "Plural de команда (f). Após две, usa-se genitivo singular: две команды." },
+        { "ru": "за главный кубок", "pt": "pela taça principal", "note": "За + acusativo indica objetivo. Главный кубок = a taça/o troféu principal." },
+        { "ru": "на большом красивом стадионе", "pt": "no estádio grande e bonito", "note": "На + locativo. Adjetivos concordam com стадион (m) no locativo: -ом." },
+        { "ru": "весь город", "pt": "a cidade inteira", "note": "Весь = todo/inteiro. Concorda com город (m). Fem.: вся; neutro: всё; pl.: все." },
+        { "ru": "радуется", "pt": "comemora / se alegra", "note": "Verbo радоваться, 3ª pessoa singular. Reflexivo: sufixo -ся." }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "kind": "story",
+      "title": "Колобок",
+      "ru": "Бабушка и дедушка живут в маленьком доме. Бабушка делает большой колобок из муки. Колобок уходит из дома и катится по дороге. Лиса находит колобок в лесу.",
+      "pt": "Vovó e vovô moram em uma casinha. Vovó faz um grande kolobók de farinha. O kolobók sai de casa e rola pela estrada. A raposa encontra o kolobók na floresta.",
+      "transliteration": "Bábuchka i déduchka jiviút v málen'kom dómye. Bábuchka diélayet bol'chói kolobók iz moukí. Kolobók ukhódit iz dóma i kátitsia po doróghye. Lisá nakhódit kolobók v liesú.",
+      "notes": [
+        { "ru": "Колобок", "pt": "Kolobók", "note": "Conto folclórico russo. Um bolinho redondo foge de casa rolando e encontra animais na floresta." },
+        { "ru": "живут", "pt": "moram", "note": "Verbo жить, 3ª pessoa plural (бабушка e дедушка são dois). Compare: живёт (singular)." },
+        { "ru": "в маленьком доме", "pt": "em uma casinha", "note": "Locativo. Adjetivo маленький → маленьком no locativo masculino. Дом → доме." },
+        { "ru": "делает", "pt": "faz / prepara", "note": "Verbo делать, 3ª pessoa singular. Pede acusativo direto: делает колобок." },
+        { "ru": "из муки", "pt": "de farinha", "note": "Из + genitivo indica o material. Мука (f) → муки no genitivo singular." },
+        { "ru": "уходит из дома", "pt": "sai de casa", "note": "Уходить = partir/sair. Из + genitivo de дом (m): дома. Compare: в дом (direção)." },
+        { "ru": "катится", "pt": "rola", "note": "Verbo кататься, 3ª pessoa singular. Reflexivo (-ся). Indica movimento rodando." },
+        { "ru": "находит", "pt": "encontra", "note": "Verbo находить, 3ª pessoa singular. Pede acusativo: находит колобок." }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "kind": "news",
+      "title": "Древние инструменты в Греции",
+      "ru": "Учёные работают в Греции и находят инструменты в земле. Инструменты сделаны из дерева — они очень-очень старые. Учёные смотрят на них и удивляются. Это новое и большое открытие для людей и науки.",
+      "pt": "Cientistas trabalham na Grécia e encontram ferramentas no chão. As ferramentas são feitas de madeira — são muito, muito antigas. Os cientistas as observam e ficam maravilhados. É uma descoberta nova e grande para as pessoas e a ciência.",
+      "transliteration": "Uchónye rabótaiut v Grécii i nakhódiat instrouménty v zemlié. Instrouménty sdélany iz diérieva — oní óchen'-óchen' stárye. Uchónye smótriat na nikh i udivlíaiutsia. Éto nóvoye i bol'choye otkrýtiye dlia liudéi i naúki.",
+      "notes": [
+        { "ru": "учёные", "pt": "cientistas", "note": "Plural de учёный. Substantivo adjetival: declina como adjetivo." },
+        { "ru": "работают", "pt": "trabalham", "note": "Verbo работать, 3ª pessoa plural." },
+        { "ru": "в Греции", "pt": "na Grécia", "note": "Locativo de Греция (f). Substantivos em -ия formam locativo em -ии." },
+        { "ru": "в земле", "pt": "no chão / na terra", "note": "Locativo de земля (f). В + locativo indica localização: 'enterrado na terra'." },
+        { "ru": "сделаны из дерева", "pt": "feitas de madeira", "note": "Сделаны = forma curta passiva plural. Из + genitivo: дерево (n) → дерева." },
+        { "ru": "старые", "pt": "antigas / velhas", "note": "Plural de старый. Concorda com инструменты (pl.) em nominativo plural." },
+        { "ru": "удивляются", "pt": "ficam maravilhados", "note": "Verbo удивляться, 3ª pessoa plural. Reflexivo (-ся)." },
+        { "ru": "для людей", "pt": "para as pessoas", "note": "Для + genitivo plural de люди → людей. Preposição для sempre pede genitivo." }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "kind": "story",
+      "title": "Утро в городе",
+      "ru": "Утром Иван идёт в большой магазин. Там он находит свежий хлеб и молоко. Он живёт в красивом доме рядом с магазином. Сосед говорит ему «доброе утро» и улыбается.",
+      "pt": "De manhã, Ivan vai a um grande mercado. Lá ele encontra pão fresco e leite. Ele mora em uma casa bonita perto do mercado. O vizinho diz 'bom dia' para ele e sorri.",
+      "transliteration": "Útrom Iván idiót v bol'chói magazín. Tam on nakhódit svéji khlieb i molokó. On jiviót v krasívom dómye ríadom s magazínom. Sosiéd govórit yemú «dóbroye útro» i ulybaietsia.",
+      "notes": [
+        { "ru": "утром", "pt": "de manhã", "note": "Instrumental de утро (n) usado como advérbio. Série: утром / днём / вечером / ночью." },
+        { "ru": "идёт в магазин", "pt": "vai ao mercado", "note": "В + acusativo (магазин) com verbo de movimento indica direção." },
+        { "ru": "свежий", "pt": "fresco", "note": "Adjetivo. Concorda com хлеб (m) em acusativo: свежий хлеб." },
+        { "ru": "хлеб", "pt": "pão", "note": "Masculino. Acusativo = nominativo (inanimado): находит хлеб." },
+        { "ru": "в красивом доме", "pt": "em uma casa bonita", "note": "Locativo. Красивый → красивом no locativo (m). Дом → доме." },
+        { "ru": "рядом с магазином", "pt": "perto do mercado", "note": "Рядом с + instrumental. Магазин → магазином. 'Ao lado / perto de'." },
+        { "ru": "говорит ему", "pt": "diz a ele", "note": "Verbo говорить, 3ª pessoa singular. O dativo (ему) indica o destinatário da fala." },
+        { "ru": "улыбается", "pt": "sorri", "note": "Verbo улыбаться, 3ª pessoa singular. Reflexivo (-ся)." }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "kind": "news",
+      "title": "Орлы возвращаются",
+      "ru": "Люди защищают орлов много лет. Сейчас орлы снова живут в больших лесах. Учёные смотрят на больших птиц. Для учёных это новое и важное событие.",
+      "pt": "As pessoas protegem as águias há muitos anos. Agora as águias vivem novamente em grandes florestas. Os cientistas observam as grandes aves. Para os cientistas, é um evento novo e importante.",
+      "transliteration": "Liúdi zashchishháiut orlóv mnogo liet. Sieiychás orly snóva jiviút v bol'chikh liésakh. Uchónye smótriat na bol'chikh ptits. Dlia uchónykh éto nóvoye i vájnoye sobýtiye.",
+      "notes": [
+        { "ru": "защищают", "pt": "protegem", "note": "Verbo защищать, 3ª pessoa plural. Pede acusativo: защищают орлов." },
+        { "ru": "орлов", "pt": "águias", "note": "Acusativo plural de орёл (m, animado). Para animados, acusativo = genitivo: орлов." },
+        { "ru": "много лет", "pt": "muitos anos", "note": "Много + genitivo plural. Лет = genitivo plural de год (ano)." },
+        { "ru": "сейчас", "pt": "agora", "note": "Advérbio temporal invariável." },
+        { "ru": "снова", "pt": "de novo / novamente", "note": "Advérbio invariável." },
+        { "ru": "в больших лесах", "pt": "em grandes florestas", "note": "Locativo plural de лес (m). Большой → больших (gen./loc. pl.); лес → лесах." },
+        { "ru": "на больших птиц", "pt": "as grandes aves", "note": "Смотреть на + acusativo. Птица (f, animada): acusativo pl. = genitivo pl. → птиц." },
+        { "ru": "новое и важное", "pt": "novo e importante", "note": "Formas neutras de новый e важный. Concordam com событие (n) em nominativo." }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "kind": "story",
+      "title": "Репка",
+      "ru": "Дедушка сажает репку в землю. Репка растёт и становится большой. Дедушка тянет репку, но она не идёт. Бабушка и внучка помогают дедушке.",
+      "pt": "O vovô planta um nabo na terra. O nabo cresce e fica grande. O vovô puxa o nabo, mas ele não sai. A vovó e a netinha ajudam o vovô.",
+      "transliteration": "Déduchka sájayiet riépku v ziemlíu. Riépka rastiót i stanovítsia bol'chói. Déduchka tiániet riépku, no aná nie idiót. Bábuchka i vnúchka pomogáiut déduchkie.",
+      "notes": [
+        { "ru": "Репка", "pt": "O Nabo", "note": "Conto folclórico russo clássico: o vovô planta um nabo gigante e toda a família ajuda a puxá-lo." },
+        { "ru": "сажает в землю", "pt": "planta na terra", "note": "Сажать = plantar, 3ª pessoa singular. В + acusativo de земля (f): землю. Indica direção (enterrar)." },
+        { "ru": "растёт", "pt": "cresce", "note": "Verbo расти, 3ª pessoa singular." },
+        { "ru": "становится большой", "pt": "fica grande", "note": "Стать + instrumental predicativo. Инструmental sg. f. de большой = большой." },
+        { "ru": "тянет", "pt": "puxa", "note": "Verbo тянуть, 3ª pessoa singular. Pede acusativo: тянет репку." },
+        { "ru": "не идёт", "pt": "não sai / não se move", "note": "Expressão idiomática: идти no sentido de 'se mover/sair do lugar'. A repka 'não vai'." },
+        { "ru": "помогают + дат.", "pt": "ajudam (+ dativo)", "note": "Verbo помогать, 3ª pessoa plural. Pede dativo do beneficiário: помогают дедушке." },
+        { "ru": "внучка", "pt": "netinha / neta", "note": "Feminino. Personagem do conto que vem ajudar o vovô." }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "kind": "news",
+      "title": "Фестиваль музыки в Сан-Паулу",
+      "ru": "В Сан-Паулу идёт большой музыкальный фестиваль. Люди приходят в парк слушать концерты. Артисты из разных стран поют и танцуют. Город красивый и весёлый в эти дни.",
+      "pt": "Em São Paulo acontece um grande festival de música. As pessoas vão ao parque ouvir shows. Artistas de países diferentes cantam e dançam. A cidade fica bonita e animada nesses dias.",
+      "transliteration": "V San-Paulou idiót bol'chói muzykal'ny fiestivál'. Liúdi prikhódiat v park slúshat' kontsérty. Artísty iz ráznych stran poiút i tantsuiut. Górod krasívyi i viesiólyi v éti dni.",
+      "notes": [
+        { "ru": "музыкальный", "pt": "musical (adj.)", "note": "Adjetivo derivado de музыка. Concorda com фестиваль (m) em nominativo." },
+        { "ru": "приходят", "pt": "chegam / vão", "note": "Verbo приходить, 3ª pessoa plural. Chegar/vir a pé." },
+        { "ru": "в парк", "pt": "ao parque", "note": "В + acusativo (парк) com verbo de movimento = direção." },
+        { "ru": "слушать", "pt": "ouvir / escutar", "note": "Infinitivo de слушать. Após verbo de movimento indica finalidade: 'para ouvir'." },
+        { "ru": "из разных стран", "pt": "de países diferentes", "note": "Из + genitivo plural. Страна (f) → стран (gen. pl.); разных = gen. pl. de разный." },
+        { "ru": "поют", "pt": "cantam", "note": "Verbo петь, 3ª pessoa plural." },
+        { "ru": "танцуют", "pt": "dançam", "note": "Verbo танцевать, 3ª pessoa plural." },
+        { "ru": "в эти дни", "pt": "nesses dias", "note": "В + acusativo plural de день (m). Plural: дни. 'Nestes dias'." }
+      ]
+    }
+  ]
+}

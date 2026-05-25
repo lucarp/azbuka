@@ -3,6 +3,7 @@
   "version": 1,
   "weeks": [
     { "id": "2026-W19", "startDate": "2026-05-04", "endDate": "2026-05-10", "file": "2026-W19.json" },
-    { "id": "2026-W21", "startDate": "2026-05-18", "endDate": "2026-05-24", "file": "2026-W21.json" }
+    { "id": "2026-W21", "startDate": "2026-05-18", "endDate": "2026-05-24", "file": "2026-W21.json" },
+    { "id": "2026-W23", "startDate": "2026-06-01", "endDate": "2026-06-07", "file": "2026-W23.json" }
   ]
 }
