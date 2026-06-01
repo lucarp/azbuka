@@ -1,0 +1,149 @@
+{
+  "format": "azbuka-paragraphs-week",
+  "version": 1,
+  "week": "2026-W24",
+  "startDate": "2026-06-08",
+  "endDate": "2026-06-14",
+  "generatedAt": "2026-06-01T12:00:00Z",
+  "coreVocab": [
+    { "ru": "город", "pt": "cidade", "note": "Masculino. Plural: города. Locativo: в городе." },
+    { "ru": "большой", "pt": "grande", "note": "Adjetivo. Fem.: большая; pl.: большие; concorda com o substantivo em gênero e número." },
+    { "ru": "люди", "pt": "pessoas", "note": "Sempre plural. Singular: человек. Genitivo plural: людей." },
+    { "ru": "идёт", "pt": "vai / acontece", "note": "Verbo идти, 3ª pessoa singular. Também indica que um evento está em curso." },
+    { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular. Plural: живут." },
+    { "ru": "дом", "pt": "casa", "note": "Masculino. Locativo: в доме; genitivo: из дома; acusativo (movimento): в дом." },
+    { "ru": "красивый", "pt": "bonito / belo", "note": "Adjetivo. Fem.: красивая; neutro: красивое; concorda com o gênero do substantivo." },
+    { "ru": "вода", "pt": "água", "note": "Feminino. Locativo: в воде; acusativo: воду." },
+    { "ru": "помогает", "pt": "ajuda", "note": "Verbo помогать, 3ª pessoa singular. Pede dativo do beneficiário: помогает кому." },
+    { "ru": "день", "pt": "dia", "note": "Masculino. Acusativo temporal: весь день; locativo: в этот день; plural: дни." }
+  ],
+  "days": [
+    {
+      "date": "2026-06-08",
+      "kind": "news",
+      "title": "Кубок мира начинается",
+      "ru": "В этот день начинается большой турнир по футболу. Люди из многих стран едут в большие города Мексики и США. На стадионах идут первые матчи. Весь мир смотрит и болеет за свои команды.",
+      "pt": "Neste dia começa um grande torneio de futebol. Pessoas de muitos países viajam para as grandes cidades do México e dos EUA. Nos estádios acontecem as primeiras partidas. O mundo inteiro assiste e torce pelos seus times.",
+      "transliteration": "V étot den' nachinÁyetsia bol'chói turnir po futbólu. Liúdi iz mnógikh stran yédut v bol'chíye goroda Meksíki i SCHA. Na stadiónakh idút pérvyye machi. Vies' mir smótrit i boliéyet za svoí komandy.",
+      "notes": [
+        { "ru": "начинается", "pt": "começa / tem início", "note": "Verbo начинаться, 3ª pessoa singular. Reflexivo (-ся). Indica início de um evento." },
+        { "ru": "турнир по футболу", "pt": "torneio de futebol", "note": "По + dativo indica modalidade esportiva. Футбол (m) → по футболу." },
+        { "ru": "из многих стран", "pt": "de muitos países", "note": "Из + genitivo plural. Страна (f) → стран (gen. pl.); многих = gen. pl. de много." },
+        { "ru": "едут", "pt": "viajam / vão", "note": "Verbo ехать, 3ª pessoa plural. Movimento com veículo — diferente de идут (a pé)." },
+        { "ru": "в большие города", "pt": "para as grandes cidades", "note": "В + acusativo plural com verbo de movimento. Город → города; большой → большие." },
+        { "ru": "на стадионах", "pt": "nos estádios", "note": "На + locativo plural. Стадион (m) → стадионах." },
+        { "ru": "идут матчи", "pt": "acontecem as partidas", "note": "Uso idiomático de идти = estar em curso/acontecer. Матчи = plural de матч (m)." },
+        { "ru": "болеет за", "pt": "torce por", "note": "Verbo болеть no sentido de 'torcer por time'. За + acusativo: болеет за команды." }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "kind": "story",
+      "title": "Маша и медведь",
+      "ru": "Маша живёт в маленьком доме в лесу. Большой медведь тоже живёт рядом. Каждый день медведь приносит еду в дом. Маша помогает медведю и готовит суп.",
+      "pt": "Masha mora em uma casinha na floresta. Um grande urso também mora perto. Todo dia o urso traz comida para casa. Masha ajuda o urso e prepara sopa.",
+      "transliteration": "Mácha jiviót v málen'kom dómye v liesú. Bol'chói miedvied' tójie jiviót ríadom. Kájdy den' miedvied' prinóssit iedú v dom. Mácha pomogáyet miedvédiu i gotóvit soup.",
+      "notes": [
+        { "ru": "медведь", "pt": "urso", "note": "Masculino. Genitivo: медведя; dativo: медведю; plural: медведи." },
+        { "ru": "тоже", "pt": "também", "note": "Advérbio invariável. Acrescenta informação paralela sobre o mesmo sujeito." },
+        { "ru": "рядом", "pt": "perto / ao lado", "note": "Advérbio de lugar invariável. Pode ser seguido de с + instrumental: рядом с домом." },
+        { "ru": "каждый день", "pt": "todo dia", "note": "Каждый + acusativo temporal. Акусativo de день (m, inanimado) = nominativo: день." },
+        { "ru": "приносит", "pt": "traz", "note": "Verbo приносить, 3ª pessoa singular. Pede acusativo: приносит еду." },
+        { "ru": "еду", "pt": "comida", "note": "Acusativo de еда (f). Nominativo: еда; acusativo: еду." },
+        { "ru": "помогает медведю", "pt": "ajuda o urso", "note": "Verbo помогать + dativo. Медведь (m) → медведю no dativo singular." },
+        { "ru": "готовит", "pt": "prepara / cozinha", "note": "Verbo готовить, 3ª pessoa singular. Pede acusativo direto: готовит суп." }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "kind": "news",
+      "title": "Маленький синий осьминог",
+      "ru": "Учёные находят маленького синего осьминога глубоко в воде. Он живёт очень далеко от берега. Этот осьминог — совсем новый вид для науки. Учёные фотографируют его и изучают.",
+      "pt": "Cientistas encontram um pequeno polvo azul bem fundo na água. Ele mora muito longe da costa. Esse polvo é uma espécie completamente nova para a ciência. Os cientistas o fotografam e estudam.",
+      "transliteration": "Uchónye nakhódiat málen'kogo sínego os'minóga glubokó v vodié. On jiviót óchen' dalekó ot bérega. Etot os'minók — sovsiém nóvy vid dlia naúki. Uchónye fotografíruiut yevó i izucháiut.",
+      "notes": [
+        { "ru": "осьминог", "pt": "polvo", "note": "Masculino. Plural: осьминоги. Animal marinho de oito braços." },
+        { "ru": "маленького синего", "pt": "pequeno azul (acusativo)", "note": "Acusativo singular masculino animado. Para animados, acusativo = genitivo: terminação -ого." },
+        { "ru": "глубоко в воде", "pt": "bem fundo na água", "note": "В + locativo de вода (f): воде. Глубоко = advérbio 'profundamente'." },
+        { "ru": "далеко от берега", "pt": "longe da costa", "note": "От + genitivo de берег (m): берега. Далеко = advérbio de distância." },
+        { "ru": "совсем", "pt": "completamente / totalmente", "note": "Advérbio intensificador invariável. Reforça o adjetivo seguinte: совсем новый." },
+        { "ru": "вид", "pt": "espécie / tipo", "note": "Masculino. Usado em contexto científico para 'espécie'. Plural: виды." },
+        { "ru": "для науки", "pt": "para a ciência", "note": "Для + genitivo. Наука (f) → науки no genitivo singular." },
+        { "ru": "изучают", "pt": "estudam / pesquisam", "note": "Verbo изучать, 3ª pessoa plural. Pede acusativo direto." }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "kind": "story",
+      "title": "Теремок",
+      "ru": "В лесу стоит маленький домик — теремок. Мышка приходит и живёт там. Потом лягушка тоже приходит жить в теремок. Каждый день к домику приходят новые звери.",
+      "pt": "Na floresta fica uma casinha — o teremók. O camundongo chega e mora lá. Depois a rã também vem morar no teremók. Todo dia chegam novos animais à casinha.",
+      "transliteration": "V liesú stoít málen'ky dómik — tieremók. Mýchka prikhódit i jiviót tam. Potóm liagúchka tójie prikhódit jit' v tieremók. Kájdy den' k dómiku prikhódiat nóvyye zvieri.",
+      "notes": [
+        { "ru": "Теремок", "pt": "O Teremók", "note": "Conto folclórico russo: uma casinha na floresta onde vários animais vêm morar um a um." },
+        { "ru": "стоит", "pt": "fica / está de pé", "note": "Verbo стоять, 3ª pessoa singular. Para objetos estáticos: 'a casinha fica na floresta'." },
+        { "ru": "мышка", "pt": "ratinha / camundongo", "note": "Feminino. Diminutivo de мышь (f). Sufixo -ка confere sentido carinhoso ou diminutivo." },
+        { "ru": "приходит", "pt": "chega / vem", "note": "Verbo приходить, 3ª pessoa singular. Movimento a pé em direção a um lugar." },
+        { "ru": "лягушка", "pt": "rã", "note": "Feminino. Plural: лягушки. Personagem típica dos contos folclóricos russos." },
+        { "ru": "приходит жить", "pt": "vem morar", "note": "Verbo de movimento + infinitivo indica finalidade: 'chega para morar lá'." },
+        { "ru": "к домику", "pt": "à casinha", "note": "К + dativo indica aproximação. Домик (diminutivo de дом) → домику no dativo." },
+        { "ru": "звери", "pt": "animais (selvagens)", "note": "Plural de зверь (m). Refere-se a animais da floresta. Genitivo plural: зверей." }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "kind": "news",
+      "title": "Река снова живёт",
+      "ru": "В Лондоне течёт большая река Темза. Люди долго работают и чистят воду в реке. Сейчас вода чистая, и в реке живут рыбы и птицы. Учёные говорят: это большая победа для города.",
+      "pt": "Em Londres corre o grande rio Tâmisa. As pessoas trabalham há muito tempo e limpam a água do rio. Agora a água está limpa, e no rio vivem peixes e pássaros. Os cientistas dizem: é uma grande vitória para a cidade.",
+      "transliteration": "V Lóndonie tiechiót bol'cháia rieká Tiémza. Liúdi dólgo rabótaiut i chístiat vódu v rieké. Sieichás vodá chístaia, i v rieké jiviút rýby i ptítsy. Uchónye govoriát: eto bol'cháia pobéda dlia góroda.",
+      "notes": [
+        { "ru": "течёт", "pt": "corre / flui", "note": "Verbo течь, 3ª pessoa singular. Usado para rios e líquidos em movimento contínuo." },
+        { "ru": "большая река", "pt": "rio grande", "note": "Река (f) pede adjetivos femininos: большая (nom. f.), não большой." },
+        { "ru": "долго", "pt": "por muito tempo / há muito", "note": "Advérbio temporal invariável. Indica duração prolongada de uma ação." },
+        { "ru": "чистят воду", "pt": "limpam a água", "note": "Verbo чистить, 3ª pessoa plural. Pede acusativo: вода (f) → воду." },
+        { "ru": "в реке", "pt": "no rio", "note": "В + locativo de река (f): реке. Indica localização estática dentro do rio." },
+        { "ru": "чистая", "pt": "limpa", "note": "Adjetivo feminino de чистый. Concorda com вода (f) em nominativo predicativo." },
+        { "ru": "рыбы и птицы", "pt": "peixes e pássaros", "note": "Plural nominativo: рыба (f) → рыбы; птица (f) → птицы. São os sujeitos de живут." },
+        { "ru": "победа для города", "pt": "vitória para a cidade", "note": "Для + genitivo. Город (m) → города no genitivo singular." },
+        { "ru": "говорят:", "pt": "dizem:", "note": "Verbo говорить, 3ª pessoa plural. Os dois pontos introduzem discurso direto." }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "kind": "story",
+      "title": "День в парке",
+      "ru": "В субботу Анна идёт в большой красивый парк в городе. Там она видит детей — они играют и смеются. Старый дедушка помогает маленькой девочке кормить уток. Анне нравится этот спокойный день в парке.",
+      "pt": "No sábado, Anna vai a um grande parque bonito na cidade. Lá ela vê crianças — elas brincam e riem. Um velhinho ajuda uma menina pequena a alimentar os patos. Anna gosta desse dia tranquilo no parque.",
+      "transliteration": "V subótu Ánna idiót v bol'chói krasívy park v górode. Tam oná vídit dietiéy — oní igráiut i sméiutsia. Stáry déduchka pomogáyet málen'koi diévochkie kormít' útok. Ánnie nrávitsia etot spokóiny den' v párkie.",
+      "notes": [
+        { "ru": "в субботу", "pt": "no sábado", "note": "В + acusativo de суббота (f) para dias da semana: субботу. Indica quando algo ocorre." },
+        { "ru": "видит", "pt": "vê", "note": "Verbo видеть, 3ª pessoa singular. Pede acusativo: видит детей." },
+        { "ru": "детей", "pt": "crianças", "note": "Acusativo plural de ребёнок (irregular). Como animado, acusativo = genitivo plural: детей." },
+        { "ru": "смеются", "pt": "riem", "note": "Verbo смеяться, 3ª pessoa plural. Reflexivo (-ся)." },
+        { "ru": "помогает маленькой девочке", "pt": "ajuda a menina pequena", "note": "Помогать + dativo. Девочка (f) → девочке; маленький f. dativo → маленькой." },
+        { "ru": "кормить уток", "pt": "alimentar os patos", "note": "Кормить + acusativo. Утка (f, animada): acusativo pl. = genitivo pl.: уток." },
+        { "ru": "нравится", "pt": "agrada / gosta", "note": "Verbo нравиться, 3ª pessoa singular. Construção: кому нравится что. Анне (dativo) нравится день." },
+        { "ru": "спокойный", "pt": "tranquilo / calmo", "note": "Adjetivo masculino. Concorda com день (m) em nominativo: спокойный день." }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "kind": "news",
+      "title": "Большая игра в Нью-Йорке",
+      "ru": "В Нью-Йорке начинаются финальные матчи по баскетболу. Команда из этого города идёт в большой финал. Люди в городе очень рады — весь день они поют и танцуют. На улицах красиво и весело.",
+      "pt": "Em Nova York começam as partidas finais de basquete. O time desta cidade vai para a grande final. As pessoas na cidade estão muito felizes — o dia inteiro elas cantam e dançam. Nas ruas está bonito e animado.",
+      "transliteration": "V N'iu-Yórkye nachinaiutsia finál'nye machi po basketbólu. Kománda iz étogo góroda idiót v bol'chói finál. Liúdi v górode óchen' rádi — vies' den' oní poiút i tantsuiut. Na úlitsakh krasívo i viéselo.",
+      "notes": [
+        { "ru": "начинаются", "pt": "começam", "note": "Verbo начинаться, 3ª pessoa plural. Reflexivo (-ся). O sujeito plural матчи exige plural." },
+        { "ru": "финальные матчи", "pt": "partidas finais", "note": "Adjetivo финальный no plural concorda com матчи (pl. de матч, m): финальные." },
+        { "ru": "по баскетболу", "pt": "de basquete", "note": "По + dativo indica modalidade esportiva. Mesmo padrão de турнир по футболу." },
+        { "ru": "из этого города", "pt": "desta cidade", "note": "Из + genitivo. Этот (m) → этого; город (m) → города no genitivo singular." },
+        { "ru": "рады", "pt": "felizes / contentes", "note": "Forma curta predicativa de рад. Plural: рады. Indica alegria momentânea." },
+        { "ru": "весь день", "pt": "o dia inteiro", "note": "Весь + acusativo temporal. Акусativo de день (m, inanimado) = nominativo: день." },
+        { "ru": "поют", "pt": "cantam", "note": "Verbo петь, 3ª pessoa plural." },
+        { "ru": "на улицах", "pt": "nas ruas", "note": "На + locativo plural. Улица (f) → улицах. Indica localização em área pública aberta." }
+      ]
+    }
+  ]
+}
