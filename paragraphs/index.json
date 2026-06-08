@@ -5,6 +5,7 @@
     { "id": "2026-W19", "startDate": "2026-05-04", "endDate": "2026-05-10", "file": "2026-W19.json" },
     { "id": "2026-W21", "startDate": "2026-05-18", "endDate": "2026-05-24", "file": "2026-W21.json" },
     { "id": "2026-W23", "startDate": "2026-06-01", "endDate": "2026-06-07", "file": "2026-W23.json" },
-    { "id": "2026-W24", "startDate": "2026-06-08", "endDate": "2026-06-14", "file": "2026-W24.json" }
+    { "id": "2026-W24", "startDate": "2026-06-08", "endDate": "2026-06-14", "file": "2026-W24.json" },
+    { "id": "2026-W25", "startDate": "2026-06-15", "endDate": "2026-06-21", "file": "2026-W25.json" }
   ]
 }

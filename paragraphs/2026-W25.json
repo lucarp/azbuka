@@ -1,0 +1,148 @@
+{
+  "format": "azbuka-paragraphs-week",
+  "version": 1,
+  "week": "2026-W25",
+  "startDate": "2026-06-15",
+  "endDate": "2026-06-21",
+  "generatedAt": "2026-06-08T12:00:00Z",
+  "coreVocab": [
+    { "ru": "город", "pt": "cidade", "note": "Masculino. Plural: города. Locativo: в городе; locativo plural: в городах." },
+    { "ru": "большой", "pt": "grande", "note": "Adjetivo. Fem.: большая; pl.: большие; genitivo/locativo pl.: больших." },
+    { "ru": "люди", "pt": "pessoas", "note": "Sempre plural. Singular: человек. Genitivo plural: людей. Dativo: людям." },
+    { "ru": "идёт", "pt": "vai / acontece", "note": "Verbo идти, 3ª pessoa singular. Plural: идут. Também indica que um evento está em curso." },
+    { "ru": "живёт", "pt": "mora / vive", "note": "Verbo жить, 3ª pessoa singular. Plural: живут. Indica residência ou modo de vida." },
+    { "ru": "дом", "pt": "casa", "note": "Masculino. Locativo: в доме; acusativo (direção): в дом; plural: дома." },
+    { "ru": "день", "pt": "dia", "note": "Masculino. Acusativo temporal: каждый день, весь день. Plural: дни." },
+    { "ru": "солнце", "pt": "sol", "note": "Neutro. Locativo: на солнце ('ao sol'). Sujeito típico de светить ('brilhar')." },
+    { "ru": "учёные", "pt": "cientistas", "note": "Adjetivo substantivado, plural. Singular: учёный (m) / учёная (f). Genitivo plural: учёных." },
+    { "ru": "новый", "pt": "novo", "note": "Adjetivo. Fem.: новая; neutro: новое; pl.: новые. Concorda em gênero, número e caso." }
+  ],
+  "days": [
+    {
+      "date": "2026-06-15",
+      "kind": "news",
+      "title": "Кубок мира: первые матчи",
+      "ru": "В этом месяце люди из разных стран смотрят большой турнир по футболу — Кубок мира. В больших городах США и Мексики каждый день идут матчи на стадионах. Команды играют хорошо, и болельщики радуются и поют. Весь мир следит за игрой — в каждом городе очень весело.",
+      "pt": "Neste mês, pessoas de diferentes países assistem ao grande torneio de futebol — a Copa do Mundo. Nas grandes cidades dos EUA e do México, todos os dias acontecem partidas nos estádios. Os times jogam bem, e os torcedores ficam contentes e cantam. O mundo inteiro acompanha o jogo — em cada cidade está muito animado.",
+      "transliteration": "V etom miésiatsye liúdi iz ráznykh stran smótriat bol'chói turnir po futbólu — Kúbok míra. V bol'chíkh gorodákh SCHA i Meksíki kájdy den' idút machi na stadiónakh. Komándy igráiut khorosho, i bolél'chiki radúiutsia i poiút. Vies' mir slíedit za igrói — v kájdom górode óchen' viéselo.",
+      "notes": [
+        { "ru": "в этом месяце", "pt": "neste mês", "note": "В + locativo de месяц (m): месяце. Этот → этом no locativo masculino singular." },
+        { "ru": "из разных стран", "pt": "de diferentes países", "note": "Из + genitivo plural. Разный → разных (gen. pl.); страна (f) → стран (gen. pl.)." },
+        { "ru": "следит за", "pt": "acompanha", "note": "Verbo следить, 3ª pessoa singular. Pede за + instrumental: за игрой." },
+        { "ru": "болельщики", "pt": "torcedores", "note": "Plural de болельщик (m). Derivado de болеть no sentido esportivo de 'torcer por time'." },
+        { "ru": "радуются", "pt": "ficam contentes / alegram-se", "note": "Verbo радоваться, 3ª pessoa plural. Reflexivo (-ся)." },
+        { "ru": "поют", "pt": "cantam", "note": "Verbo петь, 3ª pessoa plural. Irregular: пою, поёшь, поёт, поём, поёте, поют." },
+        { "ru": "идут матчи", "pt": "as partidas acontecem", "note": "Uso idiomático de идти = 'estar em curso'. Матч (m) → матчи no plural nominativo." },
+        { "ru": "весело", "pt": "animado / alegremente", "note": "Advérbio predicativo invariável. Indica ambiente alegre sem sujeito explícito." }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "kind": "story",
+      "title": "Колобок",
+      "ru": "В маленьком доме в лесу живут дед и баба. Баба делает круглый колобок из муки и кладёт его на окно. Колобок катится по лесу и поёт свою песню. В лесу он встречает зайца, волка и лису.",
+      "pt": "Em uma casinha na floresta moram um vovô e uma vovó. A vovó faz um pãozinho redondo de farinha e o coloca na janela. O Kolobók rola pela floresta cantando a sua canção. Na floresta ele encontra um coelho, um lobo e uma raposa.",
+      "transliteration": "V málen'kom dómye v liesú jiviút died i bába. Bába diélayet krúgly kolobók iz múki i kladiót yevó na ókno. Kolobók katítsia po liesú i poiót svoiú piésniu. V liesú on vstrecháyet záitsa, vólka i lisú.",
+      "notes": [
+        { "ru": "дед и баба", "pt": "o vovô e a vovó", "note": "Personagens dos contos folclóricos russos. Дед (m), баба (f) — formas carinhosas para avô/avó." },
+        { "ru": "делает", "pt": "faz / prepara", "note": "Verbo делать, 3ª pessoa singular. Pede acusativo direto: делает колобок." },
+        { "ru": "из муки", "pt": "de farinha", "note": "Из + genitivo de мука (f): муки. Indica matéria-prima ou origem do objeto." },
+        { "ru": "кладёт", "pt": "coloca / põe", "note": "Verbo класть, 3ª pessoa singular. Irregular. Pede acusativo do objeto colocado." },
+        { "ru": "катится", "pt": "rola", "note": "Verbo катиться, 3ª pessoa singular. Reflexivo (-ся). Indica movimento circular e contínuo." },
+        { "ru": "по лесу", "pt": "pela floresta", "note": "По + dativo de лес (m): лесу. Indica movimento por dentro de um espaço." },
+        { "ru": "встречает", "pt": "encontra", "note": "Verbo встречать, 3ª pessoa singular. Pede acusativo: встречает зайца." },
+        { "ru": "зайца, волка, лису", "pt": "coelho, lobo, raposa", "note": "Acusativo de animados: заяц (m) → зайца; волк (m) → волка; лиса (f) → лису." }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "kind": "news",
+      "title": "Умные шмели",
+      "ru": "Учёные изучают маленьких шмелей и находят новые удивительные факты. Маленький шмель видит задачу и сам находит решение. Такое умение есть обычно только у больших животных — у слонов и обезьян. Теперь учёные говорят: большой ум живёт и в маленькой голове.",
+      "pt": "Cientistas estudam pequenas abelhas-zangão e descobrem fatos novos e surpreendentes. A pequena abelha-zangão vê um problema e sozinha encontra a solução. Essa habilidade normalmente existe apenas nos animais grandes — em elefantes e macacos. Agora os cientistas dizem: uma grande inteligência vive até numa cabeça pequena.",
+      "transliteration": "Uchónye izucháiut málen'kikh chmelié i nakhódiat nóvyye udivítel'nyye fakty. Málen'ky chmiel' vídit zadáchu i sam nakhódit reschénie. Takóye umién'ye yest' obýchno tól'ko u bol'chíkh jivótnykh — u slonóv i obiez'ián. Tiepér' uchónye govoriát: bol'chói um jiviót i v málen'koi golovié.",
+      "notes": [
+        { "ru": "шмелей", "pt": "abelhas-zangão", "note": "Acusativo plural de шмель (m, animado). Para animados: acusativo = genitivo: шмелей." },
+        { "ru": "удивительные факты", "pt": "fatos surpreendentes", "note": "Факт (m), pl.: факты. Adjetivo pl. concorda: удивительные (acusativo inanimado = nominativo)." },
+        { "ru": "задачу", "pt": "o problema / a tarefa", "note": "Acusativo de задача (f): задачу. Usado aqui no sentido de 'problema a ser resolvido'." },
+        { "ru": "сам", "pt": "sozinho / por conta própria", "note": "Pronome intensificador. Concorda com o sujeito: сам (m sing.) com шмель." },
+        { "ru": "умение", "pt": "habilidade / capacidade", "note": "Neutro. Derivado de уметь 'saber fazer algo'. Genitivo: умения." },
+        { "ru": "у больших животных", "pt": "nos animais grandes", "note": "У + genitivo plural. Большой → больших; животное (n) → животных no genitivo plural." },
+        { "ru": "теперь", "pt": "agora / a partir de agora", "note": "Advérbio temporal. Contrasta com раньше ('antes'). Indica mudança de perspectiva." },
+        { "ru": "ум", "pt": "inteligência / mente", "note": "Masculino. Nominativo predicativo aqui: большой ум. Plural: умы." }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "kind": "story",
+      "title": "Курочка Ряба",
+      "ru": "В маленьком доме живут дед, баба и курочка по имени Ряба. Каждый день курочка даёт им одно золотое яйцо. Мышка бежит мимо дома, и яйцо падает на пол. Курочка смотрит на деда и бабу и говорит: «Я дам вам новое яйцо».",
+      "pt": "Em uma casinha moram o vovô, a vovó e uma galinha chamada Riaba. Todo dia a galinha lhes dá um ovo de ouro. Um camundongo corre passando pela casa e o ovo cai no chão. A galinha olha para o vovô e a vovó e diz: «Eu vou dar a vocês um ovo novo».",
+      "transliteration": "V málen'kom dómye jiviút died, bába i kúrochka po ímeni Riába. Kájdy den' kúrochka daiót im odnó zolotóye yaitsó. Mýchka bejít mimo dóma, i yaitsó padáyet na pol. Kúrochka smótrit na diéda i bábu i govorít: «Ya dam vam nóvoye yaitsó».",
+      "notes": [
+        { "ru": "курочка", "pt": "galinha (carinhoso)", "note": "Feminino. Diminutivo de курица. Sufixo -очка confere tom carinhoso ao nome do animal." },
+        { "ru": "по имени", "pt": "de nome / chamada", "note": "Expressão fixa: по + dativo de имя (n): имени. Equivale a 'de nome' em português." },
+        { "ru": "даёт им", "pt": "dá para eles / lhes dá", "note": "Давать, 3ª pessoa singular. Им = dativo plural de они, sem preposição." },
+        { "ru": "одно золотое яйцо", "pt": "um ovo de ouro", "note": "Яйцо (n): acusativo = nominativo (inanimado). Золотое: adjetivo neutro. Одно: numeral neutro." },
+        { "ru": "мимо дома", "pt": "passando pela casa", "note": "Мимо + genitivo de дом (m): дома. Indica movimento ao longo de algo sem entrar." },
+        { "ru": "падает", "pt": "cai", "note": "Verbo падать, 3ª pessoa singular. Intransitivo: o objeto cai por si só sem agente." },
+        { "ru": "смотрит на", "pt": "olha para", "note": "Смотреть + на + acusativo. Деда (anim. m., acus.): дед → деда; бабу (f., acus.): баба → бабу." },
+        { "ru": "я дам", "pt": "eu vou dar", "note": "Дам: futuro de дать (dar), 1ª pessoa singular. Вам = dativo plural de вы." }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "kind": "news",
+      "title": "Солнце делает воду",
+      "ru": "Учёные создают новый прибор: он делает чистую воду из воды океана. Солнце нагревает специальные панели, и солёная вода становится чистой. Такая вода хороша для питья — её можно пить каждый день. Этот прибор важен для людей, которые живут в жарких странах.",
+      "pt": "Cientistas criam um novo aparelho: ele faz água limpa da água do oceano. O sol aquece painéis especiais e a água salgada se torna limpa. Essa água é boa para beber — dá para bebê-la todo dia. Esse aparelho é importante para as pessoas que vivem em países quentes.",
+      "transliteration": "Uchónye sozdaióut nóvy pribor: on diélayet chístuiu vódu iz vody okiána. Sólntse nagrieváyet spetsiál'nyye panéli, i soliónaya vodá stanovítsia chístoi. Takáia vodá khorochá dlia pit'iá — yeió mózhno pit' kájdy den'. Etot pribor vájen dlia liudéi, kotórye jiviút v járkikh stranákh.",
+      "notes": [
+        { "ru": "создают", "pt": "criam / desenvolvem", "note": "Verbo создавать, 3ª pessoa plural. Pede acusativo: создают прибор." },
+        { "ru": "прибор", "pt": "aparelho / dispositivo", "note": "Masculino. Acusativo = nominativo (inanimado): прибор. Plural: приборы." },
+        { "ru": "из воды океана", "pt": "da água do oceano", "note": "Из + genitivo: вода (f) → воды; океан (m) → океана. Dois genitivos encadeados." },
+        { "ru": "нагревает", "pt": "aquece", "note": "Verbo нагревать, 3ª pessoa singular. Pede acusativo direto: нагревает панели." },
+        { "ru": "становится", "pt": "torna-se / vira", "note": "Verbo становиться, 3ª pessoa singular. Reflexivo (-ся). Pede instrumental do resultado: чистой." },
+        { "ru": "для питья", "pt": "para beber", "note": "Для + genitivo de питьё (n): питья. Питьё = bebida / ato de beber." },
+        { "ru": "можно пить", "pt": "dá para beber / pode-se beber", "note": "Можно + infinitivo: construção impessoal sem sujeito. Muito comum no russo cotidiano." },
+        { "ru": "важен", "pt": "importante", "note": "Forma curta masculina de важный. Usada como predicado: прибор важен. Não declina." }
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "kind": "story",
+      "title": "В саду у бабушки",
+      "ru": "В субботу маленький Миша идёт в сад к бабушке. В саду растут большие красные помидоры и зелёные огурцы. Солнце светит ярко, и в саду очень тепло и хорошо. Миша поливает цветы, а бабушка готовит обед в доме.",
+      "pt": "No sábado, o pequeno Misha vai ao jardim da vovó. No jardim crescem grandes tomates vermelhos e pepinos verdes. O sol brilha forte, e no jardim está muito quente e agradável. Misha rega as flores, e a vovó prepara o almoço em casa.",
+      "transliteration": "V subótu málen'ky Mícha idiót v sad k bábuchke. V sadú rastút bol'chíye krásnyye pomidóry i zeliónyye ogurtsý. Sólntse svietít iárko, i v sadú óchen' tiepló i khoroshó. Mícha poliváyet tsvetý, a bábuchka gotóvit obiéd v dómye.",
+      "notes": [
+        { "ru": "в сад", "pt": "ao jardim", "note": "В + acusativo de сад (m) com verbo de movimento: сад → сад. Contraste: в саду (locativo, sem movimento)." },
+        { "ru": "к бабушке", "pt": "à vovó / até a vovó", "note": "К + dativo de бабушка (f): бабушке. Indica movimento em direção a uma pessoa." },
+        { "ru": "в саду", "pt": "no jardim", "note": "В + locativo de сад (m): саду (forma especial com -у). Indica localização estática." },
+        { "ru": "растут", "pt": "crescem", "note": "Verbo расти, 3ª pessoa plural. Intransitivo, usado para plantas que crescem no solo." },
+        { "ru": "помидоры", "pt": "tomates", "note": "Plural de помидор (m). Nominativo plural: помидоры. Muito presente na cozinha russa." },
+        { "ru": "огурцы", "pt": "pepinos", "note": "Plural de огурец (m). Terminação especial -цы. Clássico da culinária russa." },
+        { "ru": "светит", "pt": "brilha", "note": "Verbo светить, 3ª pessoa singular. Intransitivo com солнце (n) como sujeito." },
+        { "ru": "поливает цветы", "pt": "rega as flores", "note": "Поливать, 3ª pessoa singular. Цветок (m) → цветы (pl.); acusativo inanimado = nominativo." }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "kind": "news",
+      "title": "Самый длинный день в году",
+      "ru": "Сегодня самый длинный день в году — это летнее солнцестояние. В этот день солнце светит очень долго, и ночь очень короткая. Люди в разных городах идут на улицы и отмечают этот праздник. Для всех это знак: настоящее лето уже здесь, и тепло идёт в каждый дом.",
+      "pt": "Hoje é o dia mais longo do ano — é o solstício de verão. Neste dia o sol brilha por muito tempo, e a noite é muito curta. Pessoas em diferentes cidades vão às ruas e celebram esta festa. Para todos, isso é um sinal: o verão de verdade já chegou, e o calor chega a cada casa.",
+      "transliteration": "Seivódnia sámyi dlínny den' v godú — eto liétnoye solntsestoiániye. V etot den' sólntse svietít óchen' dólgo, i noch' óchen' korótkaya. Liúdi v ráznykh gorodákh idút na úlitsy i otmiecháiut etot prázdnik. Dlia vsiekh eto znak: nastoyáschieye liéto uzhe zdies', i tiepló idiót v kájdy dom.",
+      "notes": [
+        { "ru": "самый длинный", "pt": "o mais longo", "note": "Самый + adjetivo forma o superlativo. Длинный (m) concorda com день (m) em nominativo." },
+        { "ru": "в году", "pt": "no ano", "note": "В + locativo de год (m): году (forma especial). Contraste: в прошлом году ('no ano passado')." },
+        { "ru": "солнцестояние", "pt": "solstício", "note": "Neutro. Composto de солнце + стояние ('parada do sol'). Летнее (n) = de verão; concorda em gênero." },
+        { "ru": "ночь", "pt": "noite", "note": "Feminino. Adjetivo concordante: короткая (f). Instrumental temporal: ночью. Plural: ночи." },
+        { "ru": "отмечают", "pt": "comemoram / celebram", "note": "Verbo отмечать, 3ª pessoa plural. Pede acusativo: отмечают праздник." },
+        { "ru": "праздник", "pt": "feriado / festividade", "note": "Masculino. Acusativo = nominativo (inanimado): праздник. Plural: праздники." },
+        { "ru": "знак", "pt": "sinal / símbolo", "note": "Masculino. Usado predicativamente aqui: это знак ('isso é um sinal'). Plural: знаки." },
+        { "ru": "настоящее", "pt": "verdadeiro / de verdade", "note": "Adjetivo neutro de настоящий. Concorda com лето (n): настоящее лето." }
+      ]
+    }
+  ]
+}
