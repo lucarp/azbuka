@@ -78,8 +78,39 @@ const DEFAULTS = {
   starterVersion: 0,
   lastSessionDate: null,
   streak: 0,
+  focusMode: false,            // when true, study queue is limited to FOCUS_CATEGORIES (the current lessons)
+  preFocusNewCards: null,      // remembers the new-cards/day setting before focus mode lowered it
   backupReminder: Date.now()
 };
+
+// "Modo foco": pause every other deck and drill only the in-progress lessons.
+// Toggle in Ajustes › Sessão. Categories here mirror the lesson material
+// (conjugation, pronouns/gender, numbers, this-week vocab, sentence/question practice).
+const FOCUS_CATEGORIES = ['verbs', 'grammar', 'numbers', 'vocab', 'sentences'];
+function studyPool() {
+  return state.settings.focusMode
+    ? state.cards.filter(c => FOCUS_CATEGORIES.includes(c.category))
+    : state.cards;
+}
+// Steady pace during the lesson focus: cap new cards at 15/day, remembering the
+// prior value so turning focus off restores the user's normal setting.
+const FOCUS_NEW_PER_DAY = 15;
+async function enableFocusMode() {
+  if (state.settings.focusMode) return;
+  if ((state.settings.newCardsPerDay || 0) > FOCUS_NEW_PER_DAY) {
+    await setSetting('preFocusNewCards', state.settings.newCardsPerDay);
+    await setSetting('newCardsPerDay', FOCUS_NEW_PER_DAY);
+  }
+  await setSetting('focusMode', true);
+}
+async function disableFocusMode() {
+  if (!state.settings.focusMode) return;
+  await setSetting('focusMode', false);
+  if (state.settings.preFocusNewCards != null) {
+    await setSetting('newCardsPerDay', state.settings.preFocusNewCards);
+    await setSetting('preFocusNewCards', null);
+  }
+}
 
 // Pedagogical grouping — same-as-Latin, false friends, new shapes.
 const LETTER_GROUPS = [
@@ -250,7 +281,7 @@ function uid(prefix = 'U') {
 
 /* ---------- Planning / stats ---------- */
 function categoryLabel(c) {
-  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', numbers: 'números', vocab: 'vocabulário', countries: 'países', verbs: 'verbos', custom: 'pessoal' }[c] || c;
+  return { alphabet: 'alfabeto', romantic: 'romance', family: 'família', survival: 'sobrevivência', numbers: 'números', vocab: 'vocabulário', countries: 'países', verbs: 'verbos', grammar: 'gramática', sentences: 'frases', custom: 'pessoal' }[c] || c;
 }
 
 function daysSince(dateStr) {
@@ -288,7 +319,8 @@ function countsForToday() {
   let dueLetters = 0, freshLetters = 0;
   let duePhrases = 0, freshPhrases = 0;
   let mastered = 0;
-  for (const c of state.cards) {
+  const pool = studyPool();
+  for (const c of pool) {
     const p = state.progress[c.id];
     if (c.type === 'letter') {
       if (isFresh(p)) freshLetters++;
@@ -312,15 +344,16 @@ function countsForToday() {
     newBudget,
     newDailyCap: state.settings.newCardsPerDay || 0,
     sessionSize,
-    total: state.cards.length,
+    total: pool.length,
     mastered
   };
 }
 
 function planSession() {
   const now = Date.now();
-  const letters = state.cards.filter(c => c.type === 'letter');
-  const phrases = state.cards.filter(c => c.type !== 'letter');
+  const pool = studyPool();
+  const letters = pool.filter(c => c.type === 'letter');
+  const phrases = pool.filter(c => c.type !== 'letter');
 
   const dueLettersAll = letters
     .filter(c => isDue(state.progress[c.id], now))
@@ -611,6 +644,14 @@ function renderDashboard() {
   );
   root.appendChild(hero);
 
+  if (state.settings.focusMode) {
+    root.appendChild(el('button', {
+      class: 'focus-banner',
+      onclick: () => showView('settings'),
+      title: 'Tocar para ajustar'
+    }, '🎯 Modo foco ativo — só as aulas. Outros baralhos pausados.'));
+  }
+
   const readingTile = renderReadingTile();
   if (readingTile) root.appendChild(readingTile);
 
@@ -884,26 +925,34 @@ function pickClozeIndex(card) {
 
 function renderClozeFront(card, blankSegmentIdx) {
   const face = el('div', { class: 'face face-front' });
+  const visual = cardVisualNode(card);
+  if (visual) face.appendChild(visual);
   const { segments } = parseClozes(card.front?.text || '');
-  const nodes = segments.map((seg, i) => {
-    if (seg.type === 'text') return document.createTextNode(seg.text);
-    if (i === blankSegmentIdx) return el('span', { class: 'cloze-blank' }, '      ');
-    return document.createTextNode(seg.text);
+  const nodes = [];
+  segments.forEach((seg, i) => {
+    if (seg.type === 'text') pushWithBreaks(nodes, seg.text);
+    else if (i === blankSegmentIdx) nodes.push(el('span', { class: 'cloze-blank' }, '      '));
+    else nodes.push(document.createTextNode(seg.text));
   });
-  face.appendChild(el('div', { class: 'front-text phrase' }, ...nodes));
+  const ml = (card.front?.text || '').includes('\n') ? ' multiline' : '';
+  face.appendChild(el('div', { class: `front-text phrase${ml}` }, ...nodes));
   return face;
 }
 
 function renderClozeBack(card, blankSegmentIdx) {
   const face = el('div', { class: 'face face-back' });
+  const visual = cardVisualNode(card);
+  if (visual) face.appendChild(visual);
   const { segments } = parseClozes(card.front?.text || '');
   // Reveal the answer in context — wrap the previously-blanked segment in em-focus.
-  const nodes = segments.map((seg, i) => {
-    if (seg.type === 'text') return document.createTextNode(seg.text);
-    if (i === blankSegmentIdx) return el('strong', { class: 'em-focus' }, seg.text);
-    return document.createTextNode(seg.text);
+  const nodes = [];
+  segments.forEach((seg, i) => {
+    if (seg.type === 'text') pushWithBreaks(nodes, seg.text);
+    else if (i === blankSegmentIdx) nodes.push(el('strong', { class: 'em-focus' }, seg.text));
+    else nodes.push(document.createTextNode(seg.text));
   });
-  face.appendChild(el('div', { class: 'back-main' }, ...nodes));
+  const mlBack = (card.front?.text || '').includes('\n') ? ' multiline' : '';
+  face.appendChild(el('div', { class: `back-main${mlBack}` }, ...nodes));
   if (card.back?.text) {
     face.appendChild(el('div', { class: 'back-translation' }, card.back.text));
   }
@@ -927,26 +976,67 @@ function renderClozeBack(card, blankSegmentIdx) {
 }
 
 function nodesFromMarkup(text) {
-  // Tiny **bold** parser — used to emphasise the target word/phrase in
-  // example-sentence cards and reader paragraphs. Plain text otherwise.
-  if (!text || !text.includes('**')) return [document.createTextNode(text || '')];
-  const re = /\*\*([^*\n]+)\*\*/g;
+  // Tiny **bold** parser + newline support — used to emphasise the target
+  // word/phrase and to stack short lines (e.g. conjugation paradigms).
+  if (!text) return [document.createTextNode('')];
   const out = [];
-  let last = 0; let m;
-  while ((m = re.exec(text)) !== null) {
-    if (m.index > last) out.push(document.createTextNode(text.slice(last, m.index)));
-    out.push(el('strong', { class: 'em-focus' }, m[1]));
-    last = re.lastIndex;
-  }
-  if (last < text.length) out.push(document.createTextNode(text.slice(last)));
+  String(text).split('\n').forEach((line, li) => {
+    if (li > 0) out.push(el('br'));
+    const re = /\*\*([^*\n]+)\*\*/g;
+    let last = 0; let m;
+    while ((m = re.exec(line)) !== null) {
+      if (m.index > last) out.push(document.createTextNode(line.slice(last, m.index)));
+      out.push(el('strong', { class: 'em-focus' }, m[1]));
+      last = re.lastIndex;
+    }
+    if (last < line.length) out.push(document.createTextNode(line.slice(last)));
+  });
   return out;
+}
+function pushWithBreaks(arr, text) {
+  // Append a plain text run, turning \n into <br> (for cloze segments).
+  String(text).split('\n').forEach((p, i) => {
+    if (i > 0) arr.push(el('br'));
+    if (p) arr.push(document.createTextNode(p));
+  });
+}
+
+/* ---------- Card visuals (illustration / emoji hero + gender colour) ---------- */
+const GENDER_LABEL = { m: 'm', f: 'f', n: 'n' };
+function isEmojiOnly(s) {
+  if (!s) return false;
+  const t = s.trim();
+  return /\p{Extended_Pictographic}/u.test(t) && /^[\p{Extended_Pictographic}‍️⃣\s]+$/u.test(t);
+}
+function cardVisualNode(card) {
+  // A picture (illustration), a card.emoji, or an emoji-only front becomes the
+  // card's language-neutral hero. Gender (m/f/n) tints the frame + adds a badge.
+  let inner = null;
+  if (card.image) {
+    inner = el('img', { class: 'card-visual', src: `images/${card.image}`, alt: '', draggable: 'false', loading: 'lazy' });
+  } else {
+    const emo = card.emoji || (isEmojiOnly(card.front?.text) ? card.front.text.trim() : null);
+    if (emo) inner = el('span', { class: 'card-emoji-glyph' }, emo);
+  }
+  if (!inner) return null;
+  const g = card.gender && GENDER_LABEL[card.gender] ? ` gender-${card.gender}` : '';
+  const box = el('div', { class: `card-visual-box${g}` }, inner);
+  if (g) box.appendChild(el('span', { class: `gender-badge gender-${card.gender}` }, GENDER_LABEL[card.gender]));
+  return el('div', { class: 'card-visual-row' }, box);
 }
 
 function renderFront(card) {
   const face = el('div', { class: 'face face-front' });
   const isLetter = card.type === 'letter';
+  const visual = isLetter ? null : cardVisualNode(card);
+  if (visual) face.appendChild(visual);
   const frontText = isCyrillicFirst(card) ? card.back.text : card.front.text;
-  face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}` }, ...nodesFromMarkup(frontText)));
+  // If the prompt text is just the emoji we already rendered as the hero, skip the duplicate.
+  const skipText = visual && !card.image && !card.emoji && isEmojiOnly(frontText);
+  if (!skipText) {
+    const ml = (frontText || '').includes('\n') ? ' multiline' : '';
+    face.appendChild(el('div', { class: `front-text ${isLetter ? 'letter' : 'phrase'}${ml}` }, ...nodesFromMarkup(frontText)));
+  }
   if (isLetter && card.example?.ru) {
     face.appendChild(el('div', { class: 'front-example' }, card.example.ru));
   }
@@ -965,11 +1055,12 @@ function renderBack(card) {
       el('span', { class: 'back-arrow' }, '→'),
       el('span', { class: 'back-sound' }, card.back.text)
     ));
-  } else if (cyrillicFirst) {
-    // Cyrillic on the front → reveal Portuguese translation here.
-    face.appendChild(el('div', { class: 'back-main' }, ...nodesFromMarkup(card.front.text)));
   } else {
-    face.appendChild(el('div', { class: 'back-main' }, ...nodesFromMarkup(card.back.text)));
+    const visual = cardVisualNode(card);
+    if (visual) face.appendChild(visual);
+    const mainText = cyrillicFirst ? card.front.text : card.back.text;
+    const ml = (mainText || '').includes('\n') ? ' multiline' : '';
+    face.appendChild(el('div', { class: `back-main${ml}` }, ...nodesFromMarkup(mainText)));
   }
 
   // Pronunciation note (letters) or transliteration (phrases)
@@ -1184,7 +1275,7 @@ function renderAdd() {
     el('div', { class: 'form-group' },
       el('label', {}, 'Categoria'),
       el('div', { class: 'chip-row' },
-        ...['romantic', 'family', 'survival', 'alphabet', 'numbers', 'vocab', 'countries', 'verbs', 'custom'].map(cat =>
+        ...['romantic', 'family', 'survival', 'alphabet', 'numbers', 'vocab', 'verbs', 'grammar', 'sentences', 'countries', 'custom'].map(cat =>
           el('button', {
             class: `chip ${category === cat ? 'active' : ''}`,
             dataset: { cat },
@@ -1370,7 +1461,7 @@ function renderBrowse() {
       oninput: (e) => { browseState.query = e.target.value; renderBrowseList(); }
     }),
     el('div', { class: 'chip-row mt-1' },
-      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'numbers', 'vocab', 'countries', 'verbs', 'custom', 'due'].map(f =>
+      ...['all', 'alphabet', 'romantic', 'family', 'survival', 'numbers', 'vocab', 'verbs', 'grammar', 'sentences', 'countries', 'custom', 'due'].map(f =>
         el('button', {
           class: `chip ${browseState.filter === f ? 'active' : ''}`,
           onclick: () => { browseState.filter = f; renderBrowse(); }
@@ -1432,8 +1523,30 @@ function renderSettings() {
   const root = $('#view-settings');
   root.innerHTML = '';
 
+  const focusCount = state.cards.filter(c => FOCUS_CATEGORIES.includes(c.category)).length;
+  const pausedCount = state.cards.length - focusCount;
+
   const card = el('div', { class: 'card' },
     el('h2', {}, 'Sessão'),
+    // Focus mode — pause every other deck and drill only the current lessons
+    el('div', { class: `setting-row focus-row${state.settings.focusMode ? ' focus-on' : ''}` },
+      el('div', {},
+        el('div', { class: 'setting-label' }, '🎯 Modo foco (aulas)'),
+        el('div', { class: 'setting-hint' }, state.settings.focusMode
+          ? `Estudando só: conjugação, gramática, números e vocabulário das aulas (${focusCount} cartas). ${pausedCount} cartas pausadas — voltam ao desligar.`
+          : 'Pausa todos os outros baralhos e treina só o material das aulas (conjugação, pronomes/gênero, números, vocabulário, frases).')
+      ),
+      el('div', { class: 'seg' },
+        el('button', {
+          class: state.settings.focusMode ? 'active' : '',
+          onclick: async () => { await enableFocusMode(); renderSettings(); }
+        }, 'Ligado'),
+        el('button', {
+          class: !state.settings.focusMode ? 'active' : '',
+          onclick: async () => { await disableFocusMode(); renderSettings(); }
+        }, 'Desligado')
+      )
+    ),
     // New cards per day (letters + phrases combined)
     el('div', { class: 'setting-row' },
       el('div', {},

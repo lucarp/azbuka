@@ -13,3 +13,9 @@ __pycache__/
 dist/
 .cache/
 .playwright-mcp/
+
+# Lesson source material — large binaries, kept local only
+new_lessons/*.pdf
+new_lessons/*.png
+# Personal device backups (data exports) must never go in the repo
+azbuka-backup-*.json

@@ -348,6 +348,28 @@ p { margin: 0 0 12px; color: var(--ink-2); }
   margin-bottom: 10px;
   word-wrap: break-word;
 }
+
+/* ---------- Card visuals: illustration / emoji hero + gender colour ---------- */
+.card-visual-row { display: flex; justify-content: center; margin: 0 0 14px; }
+.card-visual-box {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px; border-radius: 22px; background: var(--surface-2); line-height: 0;
+}
+.card-visual { width: 100px; height: 100px; object-fit: contain; display: block; }
+.card-emoji-glyph { font-size: 70px; line-height: 1; }
+.card-visual-box.gender-m { background: rgba(59,130,246,.15); box-shadow: inset 0 0 0 2px rgba(59,130,246,.55); }
+.card-visual-box.gender-f { background: rgba(236,72,153,.15); box-shadow: inset 0 0 0 2px rgba(236,72,153,.55); }
+.card-visual-box.gender-n { background: rgba(34,197,94,.16);  box-shadow: inset 0 0 0 2px rgba(34,197,94,.55); }
+.gender-badge {
+  position: absolute; right: -7px; bottom: -7px;
+  min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+  font: 700 13px/22px system-ui, sans-serif; color: #fff; text-align: center;
+}
+.gender-badge.gender-m { background: #3b82f6; }
+.gender-badge.gender-f { background: #ec4899; }
+.gender-badge.gender-n { background: #22c55e; }
+/* Stacked short lines (e.g. conjugation paradigms) stay compact */
+.front-text.multiline, .back-main.multiline { font-size: 21px; line-height: 1.45; }
 .back-letter-header {
   display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap;
   gap: 14px; margin-bottom: 10px; line-height: 1;
@@ -540,6 +562,22 @@ p { margin: 0 0 12px; color: var(--ink-2); }
   min-height: 32px;
 }
 .seg button.active { background: var(--accent); color: var(--accent-ink); }
+
+/* Focus mode — highlighted setting row + dashboard banner */
+.focus-row.focus-on {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent);
+  border-radius: var(--radius); padding-left: 10px; padding-right: 10px;
+  margin: 0 -10px; border-bottom: 0;
+}
+.focus-banner {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  margin: 12px 0 4px; padding: 10px 14px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: var(--radius); color: var(--ink);
+  font-size: 13px; font-weight: 600;
+}
+.focus-banner:active { transform: translateY(1px); }
 
 /* ---------- Bottom tab bar ---------- */
 .tabbar {

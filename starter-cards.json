@@ -1,202 +1,5124 @@
 {
-  "version": 9,
+  "version": 11,
   "name": "Азбука starter deck",
-  "generatedAt": "2026-05-29",
+  "generatedAt": "2026-06-17",
   "cards": [
-    { "id": "L-01", "type": "letter", "category": "alphabet", "front": { "text": "А а", "language": "ru" }, "back": { "text": "A", "language": "pt", "transliteration": "a", "note": "Como 'a' em 'casa'." }, "example": { "ru": "мама", "pt": "mamãe", "translit": "máma" }, "createdBy": "seed" },
-    { "id": "L-02", "type": "letter", "category": "alphabet", "front": { "text": "Б б", "language": "ru" }, "back": { "text": "B", "language": "pt", "transliteration": "b", "note": "Como 'b' em 'bola'." }, "example": { "ru": "брат", "pt": "irmão", "translit": "brat" }, "createdBy": "seed" },
-    { "id": "L-03", "type": "letter", "category": "alphabet", "front": { "text": "В в", "language": "ru" }, "back": { "text": "V", "language": "pt", "transliteration": "v", "note": "Parece B mas soa V." }, "example": { "ru": "вода", "pt": "água", "translit": "vadá" }, "createdBy": "seed" },
-    { "id": "L-04", "type": "letter", "category": "alphabet", "front": { "text": "Г г", "language": "ru" }, "back": { "text": "G", "language": "pt", "transliteration": "g", "note": "Sempre G forte (como em 'gato')." }, "example": { "ru": "город", "pt": "cidade", "translit": "górad" }, "createdBy": "seed" },
-    { "id": "L-05", "type": "letter", "category": "alphabet", "front": { "text": "Д д", "language": "ru" }, "back": { "text": "D", "language": "pt", "transliteration": "d", "note": "Como 'd' em 'dado'." }, "example": { "ru": "да", "pt": "sim", "translit": "da" }, "createdBy": "seed" },
-    { "id": "L-06", "type": "letter", "category": "alphabet", "front": { "text": "Е е", "language": "ru" }, "back": { "text": "IÉ", "language": "pt", "transliteration": "ye", "note": "No início/tônica: 'ié'. Átona: 'i'." }, "example": { "ru": "нет", "pt": "não", "translit": "niet" }, "createdBy": "seed" },
-    { "id": "L-07", "type": "letter", "category": "alphabet", "front": { "text": "Ё ё", "language": "ru" }, "back": { "text": "IÔ", "language": "pt", "transliteration": "yo", "note": "Soa 'iô'. É sempre tônica." }, "example": { "ru": "ёж", "pt": "ouriço", "translit": "iój" }, "createdBy": "seed" },
-    { "id": "L-08", "type": "letter", "category": "alphabet", "front": { "text": "Ж ж", "language": "ru" }, "back": { "text": "J", "language": "pt", "transliteration": "zh", "note": "Como J em 'já'." }, "example": { "ru": "жена", "pt": "esposa", "translit": "jená" }, "createdBy": "seed" },
-    { "id": "L-09", "type": "letter", "category": "alphabet", "front": { "text": "З з", "language": "ru" }, "back": { "text": "Z", "language": "pt", "transliteration": "z", "note": "Como Z em 'zero'." }, "example": { "ru": "зима", "pt": "inverno", "translit": "zimá" }, "createdBy": "seed" },
-    { "id": "L-10", "type": "letter", "category": "alphabet", "front": { "text": "И и", "language": "ru" }, "back": { "text": "I", "language": "pt", "transliteration": "i", "note": "Parece N mas soa I." }, "example": { "ru": "имя", "pt": "nome", "translit": "ímia" }, "createdBy": "seed" },
-    { "id": "L-11", "type": "letter", "category": "alphabet", "front": { "text": "Й й", "language": "ru" }, "back": { "text": "I curto (j)", "language": "pt", "transliteration": "y", "note": "Como Y em 'maio'. Semivogal." }, "example": { "ru": "йогурт", "pt": "iogurte", "translit": "yógurt" }, "createdBy": "seed" },
-    { "id": "L-12", "type": "letter", "category": "alphabet", "front": { "text": "К к", "language": "ru" }, "back": { "text": "K", "language": "pt", "transliteration": "k", "note": "Como C em 'casa'." }, "example": { "ru": "кот", "pt": "gato", "translit": "kot" }, "createdBy": "seed" },
-    { "id": "L-13", "type": "letter", "category": "alphabet", "front": { "text": "Л л", "language": "ru" }, "back": { "text": "L", "language": "pt", "transliteration": "l", "note": "Como L em 'lua'." }, "example": { "ru": "лето", "pt": "verão", "translit": "liéta" }, "createdBy": "seed" },
-    { "id": "L-14", "type": "letter", "category": "alphabet", "front": { "text": "М м", "language": "ru" }, "back": { "text": "M", "language": "pt", "transliteration": "m", "note": "Como M em 'mãe'." }, "example": { "ru": "мир", "pt": "paz / mundo", "translit": "mir" }, "createdBy": "seed" },
-    { "id": "L-15", "type": "letter", "category": "alphabet", "front": { "text": "Н н", "language": "ru" }, "back": { "text": "N", "language": "pt", "transliteration": "n", "note": "Parece H mas soa N." }, "example": { "ru": "нос", "pt": "nariz", "translit": "nos" }, "createdBy": "seed" },
-    { "id": "L-16", "type": "letter", "category": "alphabet", "front": { "text": "О о", "language": "ru" }, "back": { "text": "O", "language": "pt", "transliteration": "o", "note": "Tônica 'ô'; átona vira 'a'." }, "example": { "ru": "он", "pt": "ele", "translit": "on" }, "createdBy": "seed" },
-    { "id": "L-17", "type": "letter", "category": "alphabet", "front": { "text": "П п", "language": "ru" }, "back": { "text": "P", "language": "pt", "transliteration": "p", "note": "Como P em 'pai'." }, "example": { "ru": "папа", "pt": "pai", "translit": "pápa" }, "createdBy": "seed" },
-    { "id": "L-18", "type": "letter", "category": "alphabet", "front": { "text": "Р р", "language": "ru" }, "back": { "text": "R vibrado", "language": "pt", "transliteration": "r", "note": "R forte, vibrado (como 'perro' em espanhol)." }, "example": { "ru": "рука", "pt": "mão", "translit": "ruká" }, "createdBy": "seed" },
-    { "id": "L-19", "type": "letter", "category": "alphabet", "front": { "text": "С с", "language": "ru" }, "back": { "text": "S", "language": "pt", "transliteration": "s", "note": "Parece C mas soa S." }, "example": { "ru": "сын", "pt": "filho", "translit": "syn" }, "createdBy": "seed" },
-    { "id": "L-20", "type": "letter", "category": "alphabet", "front": { "text": "Т т", "language": "ru" }, "back": { "text": "T", "language": "pt", "transliteration": "t", "note": "Como T em 'tarde'." }, "example": { "ru": "ты", "pt": "você (informal)", "translit": "ty" }, "createdBy": "seed" },
-    { "id": "L-21", "type": "letter", "category": "alphabet", "front": { "text": "У у", "language": "ru" }, "back": { "text": "U", "language": "pt", "transliteration": "u", "note": "Parece Y mas soa U." }, "example": { "ru": "утро", "pt": "manhã", "translit": "útra" }, "createdBy": "seed" },
-    { "id": "L-22", "type": "letter", "category": "alphabet", "front": { "text": "Ф ф", "language": "ru" }, "back": { "text": "F", "language": "pt", "transliteration": "f", "note": "Como F em 'faca'." }, "example": { "ru": "фото", "pt": "foto", "translit": "fóta" }, "createdBy": "seed" },
-    { "id": "L-23", "type": "letter", "category": "alphabet", "front": { "text": "Х х", "language": "ru" }, "back": { "text": "RR gutural", "language": "pt", "transliteration": "kh", "note": "Som gutural (como J espanhol ou 'rr' carioca)." }, "example": { "ru": "хлеб", "pt": "pão", "translit": "khliep" }, "createdBy": "seed" },
-    { "id": "L-24", "type": "letter", "category": "alphabet", "front": { "text": "Ц ц", "language": "ru" }, "back": { "text": "TS", "language": "pt", "transliteration": "ts", "note": "Como 'ts' em 'tsunami'." }, "example": { "ru": "цена", "pt": "preço", "translit": "tsená" }, "createdBy": "seed" },
-    { "id": "L-25", "type": "letter", "category": "alphabet", "front": { "text": "Ч ч", "language": "ru" }, "back": { "text": "TCH", "language": "pt", "transliteration": "ch", "note": "Como 'tch' em 'tchau'." }, "example": { "ru": "час", "pt": "hora", "translit": "chas" }, "createdBy": "seed" },
-    { "id": "L-26", "type": "letter", "category": "alphabet", "front": { "text": "Ш ш", "language": "ru" }, "back": { "text": "CH", "language": "pt", "transliteration": "sh", "note": "Como 'ch' em 'chá'." }, "example": { "ru": "школа", "pt": "escola", "translit": "shkóla" }, "createdBy": "seed" },
-    { "id": "L-27", "type": "letter", "category": "alphabet", "front": { "text": "Щ щ", "language": "ru" }, "back": { "text": "CH suave", "language": "pt", "transliteration": "shch", "note": "'ch' mais suave e longo que Ш." }, "example": { "ru": "щенок", "pt": "filhote", "translit": "schinók" }, "createdBy": "seed" },
-    { "id": "L-28", "type": "letter", "category": "alphabet", "front": { "text": "Ъ ъ", "language": "ru" }, "back": { "text": "sinal duro", "language": "pt", "transliteration": "\"", "note": "Sem som. Separa consoante e vogal." }, "example": { "ru": "объект", "pt": "objeto", "translit": "abiékt" }, "createdBy": "seed" },
-    { "id": "L-29", "type": "letter", "category": "alphabet", "front": { "text": "Ы ы", "language": "ru" }, "back": { "text": "I gutural", "language": "pt", "transliteration": "y", "note": "Som entre 'i' e 'u', com a língua puxada para trás." }, "example": { "ru": "рыба", "pt": "peixe", "translit": "rýba" }, "createdBy": "seed" },
-    { "id": "L-30", "type": "letter", "category": "alphabet", "front": { "text": "Ь ь", "language": "ru" }, "back": { "text": "sinal suave", "language": "pt", "transliteration": "'", "note": "Sem som próprio. Amolece a consoante anterior." }, "example": { "ru": "мать", "pt": "mãe (formal)", "translit": "mat'" }, "createdBy": "seed" },
-    { "id": "L-31", "type": "letter", "category": "alphabet", "front": { "text": "Э э", "language": "ru" }, "back": { "text": "É", "language": "pt", "transliteration": "e", "note": "Som 'é' aberto." }, "example": { "ru": "это", "pt": "isto / isso", "translit": "éta" }, "createdBy": "seed" },
-    { "id": "L-32", "type": "letter", "category": "alphabet", "front": { "text": "Ю ю", "language": "ru" }, "back": { "text": "IU", "language": "pt", "transliteration": "yu", "note": "Soa 'iu'." }, "example": { "ru": "юг", "pt": "sul", "translit": "yug" }, "createdBy": "seed" },
-    { "id": "L-33", "type": "letter", "category": "alphabet", "front": { "text": "Я я", "language": "ru" }, "back": { "text": "IÁ / EU", "language": "pt", "transliteration": "ya", "note": "Soa 'iá'. Sozinha, significa 'eu'." }, "example": { "ru": "я", "pt": "eu", "translit": "ya" }, "createdBy": "seed" },
-
-    { "id": "R-01", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Eu te amo", "language": "pt" }, "back": { "text": "Я тебя люблю", "language": "ru", "transliteration": "Ya tibiá liubliú", "note": "A frase clássica. Informal, entre casal." }, "createdBy": "seed" },
-    { "id": "R-02", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Sinto sua falta", "language": "pt" }, "back": { "text": "Я скучаю по тебе", "language": "ru", "transliteration": "Ya skucháiu po tibié", "note": "Literalmente 'me entedio por você' — é assim que se diz 'ter saudade'." }, "createdBy": "seed" },
-    { "id": "R-03", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Você é linda", "language": "pt" }, "back": { "text": "Ты красивая", "language": "ru", "transliteration": "Ty krasívaia", "note": "Feminino. Para homem: красивый (krasívy)." }, "createdBy": "seed" },
-    { "id": "R-04", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Me beija", "language": "pt" }, "back": { "text": "Поцелуй меня", "language": "ru", "transliteration": "Potselúi miniá", "note": "Imperativo, carinhoso." }, "createdBy": "seed" },
-    { "id": "R-05", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Me abraça", "language": "pt" }, "back": { "text": "Обними меня", "language": "ru", "transliteration": "Obnimí miniá", "note": "Imperativo." }, "createdBy": "seed" },
-    { "id": "R-06", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Você é minha vida", "language": "pt" }, "back": { "text": "Ты моя жизнь", "language": "ru", "transliteration": "Ty maiá jizn'", "note": "Forte e dramático — use com parcimônia." }, "createdBy": "seed" },
-    { "id": "R-07", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Estou bem com você", "language": "pt" }, "back": { "text": "С тобой хорошо", "language": "ru", "transliteration": "S tobói khorochó", "note": "Literalmente 'com você é bom' — expressão comum." }, "createdBy": "seed" },
-    { "id": "R-08", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Meu sol (querida)", "language": "pt" }, "back": { "text": "Солнышко моё", "language": "ru", "transliteration": "Sólnychko maió", "note": "Apelido carinhoso literalmente 'solzinho meu'. Neutro, serve para ele ou ela." }, "createdBy": "seed" },
-    { "id": "R-09", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Minha coelhinha", "language": "pt" }, "back": { "text": "Зайка моя", "language": "ru", "transliteration": "Záika maiá", "note": "Apelido muito comum entre casais na Rússia." }, "createdBy": "seed" },
-    { "id": "R-10", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Boa noite, meu amor", "language": "pt" }, "back": { "text": "Спокойной ночи, любимая", "language": "ru", "transliteration": "Spokóinoi nóchi, liubímaia", "note": "Para ela. Para ele: любимый (liubímy)." }, "createdBy": "seed" },
-    { "id": "R-11", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Bom dia, querida", "language": "pt" }, "back": { "text": "Доброе утро, милая", "language": "ru", "transliteration": "Dóbroie útro, mílaia", "note": "Usa-se até umas 11h. Depois: добрый день." }, "createdBy": "seed" },
-    { "id": "R-12", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Quero estar com você", "language": "pt" }, "back": { "text": "Я хочу быть с тобой", "language": "ru", "transliteration": "Ya khochú byt' s tobói", "note": "Declaração simples e direta." }, "createdBy": "seed" },
-    { "id": "R-13", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Você é a melhor", "language": "pt" }, "back": { "text": "Ты самая лучшая", "language": "ru", "transliteration": "Ty sámaia lútchchaia", "note": "Feminino. Para ele: самый лучший (sámy lútchchy)." }, "createdBy": "seed" },
-    { "id": "R-14", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Estou pensando em você", "language": "pt" }, "back": { "text": "Я думаю о тебе", "language": "ru", "transliteration": "Ya dúmaiu o tibié", "note": "Perfeito para uma mensagem no meio do dia." }, "createdBy": "seed" },
-    { "id": "R-15", "type": "phrase", "category": "romantic", "reversible": true, "front": { "text": "Você é meu mundo", "language": "pt" }, "back": { "text": "Ты весь мой мир", "language": "ru", "transliteration": "Ty ves' moi mir", "note": "Mir também significa 'paz' — um dos duplos sentidos favoritos do russo." }, "createdBy": "seed" },
-
-    { "id": "F-01", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Olá (formal)", "language": "pt" }, "back": { "text": "Здравствуйте", "language": "ru", "transliteration": "Zdrávstvuite", "note": "Formal, plural. Obrigatório com os pais dela no primeiro contato." }, "createdBy": "seed" },
-    { "id": "F-02", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Muito prazer", "language": "pt" }, "back": { "text": "Очень приятно", "language": "ru", "transliteration": "Óchen' priátno", "note": "Ao ser apresentado. Combina com um aperto de mão firme." }, "createdBy": "seed" },
-    { "id": "F-03", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Me chamo Lucas", "language": "pt" }, "back": { "text": "Меня зовут Лукас", "language": "ru", "transliteration": "Miniá zovút Lúkas", "note": "Literalmente 'me chamam Lucas'. Troque o nome se quiser." }, "createdBy": "seed" },
-    { "id": "F-04", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Sou do Brasil", "language": "pt" }, "back": { "text": "Я из Бразилии", "language": "ru", "transliteration": "Ya iz Brazílii", "note": "Из = 'de' (procedência)." }, "createdBy": "seed" },
-    { "id": "F-05", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Muito obrigado", "language": "pt" }, "back": { "text": "Спасибо большое", "language": "ru", "transliteration": "Spasíbo bolchóie", "note": "Literalmente 'obrigado grande'. Spasíbo sozinho também serve." }, "createdBy": "seed" },
-    { "id": "F-06", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Está muito gostoso", "language": "pt" }, "back": { "text": "Очень вкусно", "language": "ru", "transliteration": "Óchen' vkúsno", "note": "A frase de ouro no jantar da família dela." }, "createdBy": "seed" },
-    { "id": "F-07", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Desculpe (formal)", "language": "pt" }, "back": { "text": "Извините", "language": "ru", "transliteration": "Izvinítie", "note": "Formal. Informal: извини (izviní)." }, "createdBy": "seed" },
-    { "id": "F-08", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Posso repetir (mais)?", "language": "pt" }, "back": { "text": "Можно ещё?", "language": "ru", "transliteration": "Mójno ieschió?", "note": "No jantar, quando querem ver você comer mais. Diga 'sim' se gostou." }, "createdBy": "seed" },
-    { "id": "F-09", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Me ajude, por favor", "language": "pt" }, "back": { "text": "Помогите, пожалуйста", "language": "ru", "transliteration": "Pomogítie, pojálusta", "note": "Formal. 'Пожалуйста' (por favor) pronuncia-se 'pojálsta' — o 'lu' quase some." }, "createdBy": "seed" },
-    { "id": "F-10", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Não entendo", "language": "pt" }, "back": { "text": "Я не понимаю", "language": "ru", "transliteration": "Ya ne ponimáiu", "note": "Use sem vergonha — ajuda a baixar o ritmo da conversa." }, "createdBy": "seed" },
-    { "id": "F-11", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Fale mais devagar, por favor", "language": "pt" }, "back": { "text": "Говорите медленнее, пожалуйста", "language": "ru", "transliteration": "Govorítie miédlennie, pojálusta", "note": "Frase que salva vidas em qualquer conversa." }, "createdBy": "seed" },
-    { "id": "F-12", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Como vai? (formal)", "language": "pt" }, "back": { "text": "Как дела?", "language": "ru", "transliteration": "Kak dielá?", "note": "Informal também. Resposta padrão: 'Хорошо' (khorochó — bem)." }, "createdBy": "seed" },
-    { "id": "F-13", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Estou aprendendo russo", "language": "pt" }, "back": { "text": "Я учу русский", "language": "ru", "transliteration": "Ya uchú rússky", "note": "Frase-passaporte. Costuma provocar sorrisos." }, "createdBy": "seed" },
-    { "id": "F-14", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Repita, por favor", "language": "pt" }, "back": { "text": "Повторите, пожалуйста", "language": "ru", "transliteration": "Povtorítie, pojálusta", "note": "Formal. Informal: повтори (povtorí)." }, "createdBy": "seed" },
-    { "id": "F-15", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Mãe, pai", "language": "pt" }, "back": { "text": "Мама, папа", "language": "ru", "transliteration": "Máma, pápa", "note": "Usado também ao falar DA mãe/pai de alguém, não só dos seus." }, "createdBy": "seed" },
-
-    { "id": "S-01", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Oi", "language": "pt" }, "back": { "text": "Привет", "language": "ru", "transliteration": "Privét", "note": "Informal. Só para amigos, família, crianças." }, "createdBy": "seed" },
-    { "id": "S-02", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Tchau", "language": "pt" }, "back": { "text": "Пока", "language": "ru", "transliteration": "Poká", "note": "Informal. Formal: 'До свидания' (Do svidánia)." }, "createdBy": "seed" },
-    { "id": "S-03", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Sim / Não", "language": "pt" }, "back": { "text": "Да / Нет", "language": "ru", "transliteration": "Da / Niet", "note": "Os dois primeiros palavras a reconhecer em qualquer idioma." }, "createdBy": "seed" },
-    { "id": "S-04", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Quanto custa?", "language": "pt" }, "back": { "text": "Сколько стоит?", "language": "ru", "transliteration": "Skól'ko stóit?", "note": "Imprescindível em qualquer mercado ou loja." }, "createdBy": "seed" },
-    { "id": "S-05", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Onde fica o banheiro?", "language": "pt" }, "back": { "text": "Где туалет?", "language": "ru", "transliteration": "Gdié tualiét?", "note": "'Где' significa 'onde' — memorize, é útil." }, "createdBy": "seed" },
-    { "id": "S-06", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Um café, por favor", "language": "pt" }, "back": { "text": "Один кофе, пожалуйста", "language": "ru", "transliteration": "Odín kófie, pojálusta", "note": "Truque: кофе é indeclinável, fácil de usar." }, "createdBy": "seed" },
-    { "id": "S-07", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "A conta, por favor", "language": "pt" }, "back": { "text": "Счёт, пожалуйста", "language": "ru", "transliteration": "Schiót, pojálusta", "note": "Também se pode fazer o gesto universal de rabiscar no ar." }, "createdBy": "seed" },
-    { "id": "S-08", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Eu quero...", "language": "pt" }, "back": { "text": "Я хочу...", "language": "ru", "transliteration": "Ya khochú...", "note": "Funcional mas direto. Mais educado: 'Я хотел бы' (queria)." }, "createdBy": "seed" },
-    { "id": "S-09", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Tenho alergia", "language": "pt" }, "back": { "text": "У меня аллергия", "language": "ru", "transliteration": "U miniá alliérgia", "note": "Literalmente 'comigo [existe] alergia'. Adicione o alimento depois." }, "createdBy": "seed" },
-    { "id": "S-10", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Não falo russo", "language": "pt" }, "back": { "text": "Я не говорю по-русски", "language": "ru", "transliteration": "Ya ne govoriú po-rússki", "note": "Ironicamente, se você sabe dizer isto, já fala um pouco." }, "createdBy": "seed" },
-    { "id": "S-11", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Você fala inglês?", "language": "pt" }, "back": { "text": "Вы говорите по-английски?", "language": "ru", "transliteration": "Vy govorítie po-anglíiski?", "note": "Formal. Informal: 'Ты говоришь…'" }, "createdBy": "seed" },
-    { "id": "S-12", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Hoje / amanhã", "language": "pt" }, "back": { "text": "Сегодня / завтра", "language": "ru", "transliteration": "Sievódnia / závtra", "note": "Em сегодня o 'г' soa como 'v' — irregularidade clássica." }, "createdBy": "seed" },
-    { "id": "S-13", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Água", "language": "pt" }, "back": { "text": "Вода", "language": "ru", "transliteration": "Vadá", "note": "Tônica no fim; o 'о' átono vira 'a'. Com gás: 'с газом' (s gázom)." }, "createdBy": "seed" },
-    { "id": "S-14", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Socorro!", "language": "pt" }, "back": { "text": "Помогите!", "language": "ru", "transliteration": "Pomogítie!", "note": "Grite forte. Não é a mesma palavra que 'me ajude' do cotidiano — o tom muda tudo." }, "createdBy": "seed" },
-    { "id": "S-15", "type": "phrase", "category": "survival", "reversible": true, "front": { "text": "Estou perdido", "language": "pt" }, "back": { "text": "Я заблудился", "language": "ru", "transliteration": "Ya zabludílsia", "note": "Masculino. Feminino: заблудилась (zabludílas')." }, "createdBy": "seed" },
-
-    { "id": "N-01", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Um (1)", "language": "pt" }, "back": { "text": "один", "language": "ru", "transliteration": "odín", "note": "Forma masculina. Feminino: одна (odná). Neutro: одно (odnó)." }, "createdBy": "seed" },
-    { "id": "N-02", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Dois (2)", "language": "pt" }, "back": { "text": "два", "language": "ru", "transliteration": "dva", "note": "Masculino/neutro. Feminino: две (dvie)." }, "createdBy": "seed" },
-    { "id": "N-03", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Três (3)", "language": "pt" }, "back": { "text": "три", "language": "ru", "transliteration": "tri", "note": "Mesma forma para todos os gêneros." }, "createdBy": "seed" },
-    { "id": "N-04", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Quatro (4)", "language": "pt" }, "back": { "text": "четыре", "language": "ru", "transliteration": "chetýre", "note": "Mesma forma para todos os gêneros. Tônica em -ты-." }, "createdBy": "seed" },
-    { "id": "N-05", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Cinco (5)", "language": "pt" }, "back": { "text": "пять", "language": "ru", "transliteration": "piat'", "note": "Termina em sinal suave — amolece o T final." }, "createdBy": "seed" },
-    { "id": "N-06", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Seis (6)", "language": "pt" }, "back": { "text": "шесть", "language": "ru", "transliteration": "chiest'", "note": "Sinal suave no final. Ш + Е stressed = 'chié'." }, "createdBy": "seed" },
-    { "id": "N-07", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Sete (7)", "language": "pt" }, "back": { "text": "семь", "language": "ru", "transliteration": "siem'", "note": "Sinal suave amolece o M final." }, "createdBy": "seed" },
-    { "id": "N-08", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Oito (8)", "language": "pt" }, "back": { "text": "восемь", "language": "ru", "transliteration": "vósiem'", "note": "Tônica em во-." }, "createdBy": "seed" },
-    { "id": "N-09", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Nove (9)", "language": "pt" }, "back": { "text": "девять", "language": "ru", "transliteration": "diéviat'", "note": "Tônica em де-." }, "createdBy": "seed" },
-    { "id": "N-10", "type": "phrase", "category": "numbers", "priority": 1, "reversible": true, "front": { "text": "Dez (10)", "language": "pt" }, "back": { "text": "десять", "language": "ru", "transliteration": "diésiat'", "note": "Tônica em де-. Para 11–19, soma-se '-надцать' (одиннадцать, двенадцать…)." }, "createdBy": "seed" },
-
-    { "id": "N-RUL-1", "type": "phrase", "category": "numbers", "priority": 1, "front": { "text": "Regra: contar 11–19", "language": "pt" }, "back": { "text": "base (1–9) + надцать", "language": "ru", "transliteration": "...nádtsat'", "note": "Sufixo de 'на десять' (sobre dez). Tônica sempre em -на-. • 11 одиннадцать (один + НН) • 12 двенадцать (две-, forma fem. do 2) • 13 тринадцать • 14 четырнадцать • 15 пятнадцать • 16 шестнадцать • 17 семнадцать • 18 восемнадцать (mantém Е) • 19 девятнадцать. Os 5/6/7/9 perdem o ь final ao receber o sufixo." }, "createdBy": "seed" },
-    { "id": "N-RUL-2", "type": "phrase", "category": "numbers", "priority": 1, "front": { "text": "Regra: 20 e 30", "language": "pt" }, "back": { "text": "numeral + дцать", "language": "ru", "transliteration": "...dtsat' (cai a tônica no início)", "note": "Versão curta de десять. 20 = двадцать (dvádtsat'), 30 = тридцать (trídtsat'). ⚠️ Diferente de 11–19, a tônica volta para a PRIMEIRA sílaba (двá-, трú-). Cuidado para não confundir двадцать (20) com двенадцать (12)." }, "createdBy": "seed" },
-    { "id": "N-RUL-3", "type": "phrase", "category": "numbers", "priority": 1, "front": { "text": "Regra: compor 21–29 e 31–39", "language": "pt" }, "back": { "text": "dezena + unidade", "language": "ru", "transliteration": "(sem ligação, sem 'e')", "note": "Junte com um espaço, sem 'e' como em português. Cada palavra mantém sua tônica. • 21 двадцать один • 22 двадцать два • 25 двадцать пять • 29 двадцать девять • 31 тридцать один • 35 тридцать пять • 39 тридцать девять. A unidade concorda em gênero: 21 livros (m) = двадцать один; 21 casas (f) = двадцать одна." }, "createdBy": "seed" },
-
-    { "id": "V-01", "type": "phrase", "category": "vocab", "front": { "text": "Carro", "language": "pt" }, "back": { "text": "машина", "language": "ru", "transliteration": "machína", "note": "Feminino. Plural: машины (machíny). Tb. significa 'máquina'." }, "createdBy": "seed" },
-    { "id": "V-02", "type": "phrase", "category": "vocab", "front": { "text": "Mar", "language": "pt" }, "back": { "text": "море", "language": "ru", "transliteration": "móre", "note": "Neutro. Plural: моря (moriá)." }, "createdBy": "seed" },
-    { "id": "V-03", "type": "phrase", "category": "vocab", "front": { "text": "Mosca", "language": "pt" }, "back": { "text": "муха", "language": "ru", "transliteration": "múkha", "note": "Feminino. Insecto. Verbo 'voar' é летать (letát')." }, "createdBy": "seed" },
-    { "id": "V-04", "type": "phrase", "category": "vocab", "front": { "text": "Rato (mouse)", "language": "pt" }, "back": { "text": "мышь", "language": "ru", "transliteration": "mych'", "note": "Feminino, sinal suave no fim. Vale para o animal e para o mouse de computador." }, "createdBy": "seed" },
-    { "id": "V-05", "type": "phrase", "category": "vocab", "front": { "text": "Bola", "language": "pt" }, "back": { "text": "мяч", "language": "ru", "transliteration": "miach", "note": "Masculino. Diminutivo carinhoso: мячик (miáchik)." }, "createdBy": "seed" },
-    { "id": "V-06", "type": "phrase", "category": "vocab", "front": { "text": "(Eu) moro / vivo", "language": "pt" }, "back": { "text": "я живу", "language": "ru", "transliteration": "ya jivú", "note": "Verbo жить (viver), 1ª pessoa singular. Tu vives: ты живёшь (ty jiviósh)." }, "createdBy": "seed" },
-    { "id": "V-07", "type": "phrase", "category": "vocab", "front": { "text": "(Eu) falo", "language": "pt" }, "back": { "text": "я говорю", "language": "ru", "transliteration": "ya govoriú", "note": "Verbo говорить (falar). Para idiomas: 'я говорю по-русски / по-английски'." }, "createdBy": "seed" },
-    { "id": "V-08", "type": "phrase", "category": "vocab", "front": { "text": "(Eu) aprendo / estudo", "language": "pt" }, "back": { "text": "я учу", "language": "ru", "transliteration": "ya uchú", "note": "Verbo учить + acusativo. Também pode significar 'ensinar' dependendo da regência." }, "createdBy": "seed" },
-    { "id": "V-09", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Piscina", "language": "pt" }, "back": { "text": "бассейн", "language": "ru", "transliteration": "basséin", "note": "Masculino. Plural: бассейны. Empréstimo do francês 'bassin'. Ex.: я иду в бассейн (vou à piscina)." }, "createdBy": "seed" },
-    { "id": "V-10", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Amigo / Amigos (sg + pl)", "language": "pt" }, "back": { "text": "друг / друзья", "language": "ru", "transliteration": "drug / druziá", "note": "Plural irregular (palatalização). Fem. sg.: подруга (podrúga); pl.: подруги. Com possessivo: мой друг (meu amigo), мои друзья (meus amigos)." }, "createdBy": "seed" },
-
-    { "id": "M-01", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Janeiro", "language": "pt" }, "back": { "text": "Январь", "language": "ru", "transliteration": "yanvár'", "note": "Masc. Em janeiro: в январе. Meses NÃO são capitalizados no meio da frase." }, "createdBy": "seed" },
-    { "id": "M-02", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Fevereiro", "language": "pt" }, "back": { "text": "Февраль", "language": "ru", "transliteration": "fevrál'", "note": "Masc. Em fevereiro: в феврале." }, "createdBy": "seed" },
-    { "id": "M-03", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Março", "language": "pt" }, "back": { "text": "Март", "language": "ru", "transliteration": "mart", "note": "Masc. Em março: в марте. Cognato de 'Marte'." }, "createdBy": "seed" },
-    { "id": "M-04", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Abril", "language": "pt" }, "back": { "text": "Апрель", "language": "ru", "transliteration": "apriél'", "note": "Masc. Em abril: в апреле." }, "createdBy": "seed" },
-    { "id": "M-05", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Maio", "language": "pt" }, "back": { "text": "Май", "language": "ru", "transliteration": "mai", "note": "Masc. Em maio: в мае. Curto e fácil — termina em Й (i curto)." }, "createdBy": "seed" },
-    { "id": "M-06", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Junho", "language": "pt" }, "back": { "text": "Июнь", "language": "ru", "transliteration": "iiún'", "note": "Masc. Em junho: в июне. Tônica em -ю-." }, "createdBy": "seed" },
-    { "id": "M-07", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Julho", "language": "pt" }, "back": { "text": "Июль", "language": "ru", "transliteration": "iiúl'", "note": "Masc. Em julho: в июле. Diferença com июнь: termina em Л." }, "createdBy": "seed" },
-    { "id": "M-08", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Agosto", "language": "pt" }, "back": { "text": "Август", "language": "ru", "transliteration": "ávgust", "note": "Masc. Em agosto: в августе. Tônica na PRIMEIRA sílaba (Áv-gust)." }, "createdBy": "seed" },
-    { "id": "M-09", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Setembro", "language": "pt" }, "back": { "text": "Сентябрь", "language": "ru", "transliteration": "sintiábr'", "note": "Masc. Em setembro: в сентябре. Tônica em -тя-." }, "createdBy": "seed" },
-    { "id": "M-10", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Outubro", "language": "pt" }, "back": { "text": "Октябрь", "language": "ru", "transliteration": "oktiábr'", "note": "Masc. Em outubro: в октябре. Tônica em -тя-." }, "createdBy": "seed" },
-    { "id": "M-11", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Novembro", "language": "pt" }, "back": { "text": "Ноябрь", "language": "ru", "transliteration": "noiábr'", "note": "Masc. Em novembro: в ноябре. Tônica em -я-." }, "createdBy": "seed" },
-    { "id": "M-12", "type": "phrase", "category": "vocab", "priority": 2, "front": { "text": "Dezembro", "language": "pt" }, "back": { "text": "Декабрь", "language": "ru", "transliteration": "dikábr'", "note": "Masc. Em dezembro: в декабре. Tônica em -ка-." }, "createdBy": "seed" },
-    { "id": "PRO-01", "type": "phrase", "category": "vocab", "priority": 1, "front": { "text": "eu · tu · ele/ela · nós · vocês · eles/elas", "language": "pt" }, "back": { "text": "Я · Ты · Он / Она · Мы · Вы · Они", "language": "ru", "transliteration": "ya · ty · on / aná · my · vy · aní", "note": "Pronomes pessoais (nominativo). Ты = informal sg. · Вы = formal sg. OU plural (como 'vous' em francês). Gênero só no 3º sg.: он (m) / она (f) / оно (n). Мы (nós) e они (eles/elas) não distinguem gênero." }, "createdBy": "seed" },
-
-    { "id": "C-01", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Rússia", "language": "pt" }, "back": { "text": "Россия", "language": "ru", "transliteration": "Rossíia", "note": "Para 'sou da Rússia': Я из России (genitivo)." }, "createdBy": "seed" },
-    { "id": "C-02", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "França", "language": "pt" }, "back": { "text": "Франция", "language": "ru", "transliteration": "Frántsia", "note": "Ц soa 'ts'. Tônica em Фра-." }, "createdBy": "seed" },
-    { "id": "C-03", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Itália", "language": "pt" }, "back": { "text": "Италия", "language": "ru", "transliteration": "Itáliia", "note": "Tônica em -та-." }, "createdBy": "seed" },
-    { "id": "C-04", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Alemanha", "language": "pt" }, "back": { "text": "Германия", "language": "ru", "transliteration": "Guermániia", "note": "Г é sempre G forte (como em 'gato')." }, "createdBy": "seed" },
-    { "id": "C-05", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Espanha", "language": "pt" }, "back": { "text": "Испания", "language": "ru", "transliteration": "Ispániia", "note": "Tônica em -па-." }, "createdBy": "seed" },
-    { "id": "C-06", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Brasil", "language": "pt" }, "back": { "text": "Бразилия", "language": "ru", "transliteration": "Brazíliia", "note": "Genitivo: Бразилии (de/da Brasil) — usado em 'Я из Бразилии'." }, "createdBy": "seed" },
-    { "id": "C-07", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "EUA / América", "language": "pt" }, "back": { "text": "США / Америка", "language": "ru", "transliteration": "Es-Sha-A / Amiérika", "note": "США lê-se letra por letra: 'es-sha-a'. Coloquial: Америка." }, "createdBy": "seed" },
-    { "id": "C-08", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Inglaterra", "language": "pt" }, "back": { "text": "Англия", "language": "ru", "transliteration": "Ángliia", "note": "Para 'falo inglês': говорю по-английски (po-anglíiski)." }, "createdBy": "seed" },
-    { "id": "C-09", "type": "phrase", "category": "countries", "reversible": true, "front": { "text": "Japão", "language": "pt" }, "back": { "text": "Япония", "language": "ru", "transliteration": "Yapóniia", "note": "Я no início soa 'ya'. Tônica em -по-." }, "createdBy": "seed" },
-    { "id": "C-10", "type": "phrase", "category": "countries", "priority": 1, "front": { "text": "'Sou do Brasil' ≠ 'Sou brasileiro'", "language": "pt" }, "back": { "text": "Я из Бразилии · Я бразилец", "language": "ru", "transliteration": "Ya iz Brazílii · Ya brazíliets", "note": "São coisas diferentes! 'Я из Бразилии' = de onde vim (из + genitivo: Бразилия → Бразилии). 'Я бразилец' = nacionalidade (substantivo, masc.; fem.: бразильянка). ⚠️ 'Я Бразилия' (sou Brasil) é ERRADO — país não é nacionalidade." }, "createdBy": "seed" },
-
-    { "id": "F-16", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Sou da Rússia", "language": "pt" }, "back": { "text": "Я из России", "language": "ru", "transliteration": "Ya iz Rossíi", "note": "Из + genitivo (Россия → России). Espelho de F-04 ('Sou do Brasil')." }, "createdBy": "seed" },
-    { "id": "F-17", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Sou brasileiro", "language": "pt" }, "back": { "text": "Я бразилец", "language": "ru", "transliteration": "Ya brazíliets", "note": "Masculino. Feminino: бразильянка. Variante coloquial vista na aula: бразильянец." }, "createdBy": "seed" },
-    { "id": "F-18", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Moro em Portugal", "language": "pt" }, "back": { "text": "Я живу в Португалии", "language": "ru", "transliteration": "Ya jivú v Portugálii", "note": "В + locativo (Португалия → Португалии). Estrutura idêntica para outros países." }, "createdBy": "seed" },
-    { "id": "F-19", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Moro no Porto", "language": "pt" }, "back": { "text": "Я живу в Порто", "language": "ru", "transliteration": "Ya jivú v Pórto", "note": "Порто é estrangeirismo, geralmente indeclinável." }, "createdBy": "seed" },
-    { "id": "F-20", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Aprendo português", "language": "pt" }, "back": { "text": "Я учу португальский", "language": "ru", "transliteration": "Ya uchú portugálsky", "note": "Учу + acusativo do adjetivo (subentende-se язык, idioma)." }, "createdBy": "seed" },
-    { "id": "F-21", "type": "phrase", "category": "family", "reversible": true, "front": { "text": "Falo inglês", "language": "pt" }, "back": { "text": "Я говорю по-английски", "language": "ru", "transliteration": "Ya govoriú po-anglíiski", "note": "Estrutura 'по- + adjetivo de idioma -ски' = falar em [idioma]. Mesma forma para по-русски, по-португальски." }, "createdBy": "seed" },
-
-    { "id": "VRB-01", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "ler (infinitivo)", "language": "pt" }, "back": { "text": "читать", "language": "ru", "transliteration": "chitát'", "note": "Я читаю · Ты читаешь · Он/она читает. 1ª conjugação (-ать)." }, "createdBy": "seed" },
-    { "id": "VRB-02", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "olhar / assistir (infinitivo)", "language": "pt" }, "back": { "text": "смотреть", "language": "ru", "transliteration": "smotriét'", "note": "Я смотрю · Ты смотришь · Он/она смотрит. 2ª conjugação (-еть com mutação)." }, "createdBy": "seed" },
-    { "id": "VRB-03", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "ouvir / escutar (infinitivo)", "language": "pt" }, "back": { "text": "слушать", "language": "ru", "transliteration": "slúchat'", "note": "Я слушаю · Ты слушаешь · Он/она слушает. 1ª conjugação." }, "createdBy": "seed" },
-    { "id": "VRB-04", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "jogar / brincar (infinitivo)", "language": "pt" }, "back": { "text": "играть", "language": "ru", "transliteration": "igrát'", "note": "Я играю · Ты играешь · Он/она играет. Para jogos: играть в + acusativo (играть в футбол)." }, "createdBy": "seed" },
-    { "id": "VRB-05", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "trabalhar (infinitivo)", "language": "pt" }, "back": { "text": "работать", "language": "ru", "transliteration": "rabótat'", "note": "Я работаю · Ты работаешь · Он/она работает. 1ª conjugação." }, "createdBy": "seed" },
-    { "id": "VRB-06", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "descansar (infinitivo)", "language": "pt" }, "back": { "text": "отдыхать", "language": "ru", "transliteration": "otdykhát'", "note": "Я отдыхаю · Ты отдыхаешь · Он/она отдыхает. 1ª conjugação." }, "createdBy": "seed" },
-    { "id": "VRB-07", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "passear (infinitivo)", "language": "pt" }, "back": { "text": "гулять", "language": "ru", "transliteration": "guliát'", "note": "Я гуляю · Ты гуляешь · Он/она гуляет. Caminhar sem destino fixo." }, "createdBy": "seed" },
-    { "id": "VRB-08", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "viajar (infinitivo)", "language": "pt" }, "back": { "text": "путешествовать", "language": "ru", "transliteration": "putechiéstvovat'", "note": "Я путешествую · Ты путешествуешь · Он/она путешествует. Conjugação -овать → -у- no presente." }, "createdBy": "seed" },
-    { "id": "VRB-09", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "cozinhar / preparar (infinitivo)", "language": "pt" }, "back": { "text": "готовить", "language": "ru", "transliteration": "gotóvit'", "note": "Я готовлю · Ты готовишь · Он/она готовит. Mutação в → вл na 1ª pessoa." }, "createdBy": "seed" },
-    { "id": "VRB-10", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "praticar esporte (locução)", "language": "pt" }, "back": { "text": "заниматься спортом", "language": "ru", "transliteration": "zanimát'sia spórtom", "note": "Я занимаюсь · Ты занимаешься · Он/она занимается. Verbo reflexivo (-ся). Pede instrumental: спортом." }, "createdBy": "seed" },
-    { "id": "VRB-11", "type": "phrase", "category": "verbs", "priority": 4, "front": { "text": "amar / gostar de (infinitivo)", "language": "pt" }, "back": { "text": "любить", "language": "ru", "transliteration": "liubít'", "note": "Я люблю · Ты любишь · Он/она любит. Mutação б → бл na 1ª pessoa. Pede acusativo direto." }, "createdBy": "seed" },
-
-    { "id": "VC-01", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu leio **livros**.", "language": "pt" }, "back": { "text": "Я читаю **книги**.", "language": "ru", "transliteration": "Ya chitáiu knígi.", "note": "книга (f) — livro. Plural: книги. Aqui acusativo = nominativo (inanimado)." }, "createdBy": "seed" },
-    { "id": "VC-02", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu assisto **filmes**.", "language": "pt" }, "back": { "text": "Я смотрю **фильмы**.", "language": "ru", "transliteration": "Ya smotriú fíl'my.", "note": "фильм (m) — filme. Plural: фильмы (-ы após consoante dura)." }, "createdBy": "seed" },
-    { "id": "VC-03", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu adoro **música**.", "language": "pt" }, "back": { "text": "Я люблю **музыку**.", "language": "ru", "transliteration": "Ya liubliú múzyku.", "note": "музыка (f) — música. Aqui no acusativo: музыку (-а → -у)." }, "createdBy": "seed" },
-    { "id": "VC-04", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu pratico **esporte**.", "language": "pt" }, "back": { "text": "Я занимаюсь **спортом**.", "language": "ru", "transliteration": "Ya zanimáius' spórtom.", "note": "спорт (m) — esporte. Aqui no instrumental: спортом (-ом)." }, "createdBy": "seed" },
-    { "id": "VC-05", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu jogo **futebol**.", "language": "pt" }, "back": { "text": "Я играю в **футбол**.", "language": "ru", "transliteration": "Ya igráiu v futból.", "note": "футбол (m) — futebol. Após 'играть в' o substantivo vai para o acusativo (= nominativo aqui, inanimado)." }, "createdBy": "seed" },
-    { "id": "VC-06", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu adoro **café**.", "language": "pt" }, "back": { "text": "Я люблю **кофе**.", "language": "ru", "transliteration": "Ya liubliú kófie.", "note": "кофе (m) — café. Indeclinável (estrangeirismo): mesma forma em todos os casos." }, "createdBy": "seed" },
-    { "id": "VC-07", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu bebo **chá**.", "language": "pt" }, "back": { "text": "Я пью **чай**.", "language": "ru", "transliteration": "Ya p'iu chai.", "note": "чай (m) — chá. Aqui no acusativo = nominativo (inanimado). Verbo пить (beber): я пью, ты пьёшь." }, "createdBy": "seed" },
-    { "id": "VC-08", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu passeio com **um amigo**.", "language": "pt" }, "back": { "text": "Я гуляю с **другом**.", "language": "ru", "transliteration": "Ya guliáiu s drúgom.", "note": "друг (m) — amigo. С + instrumental: другом. Fem.: подруга (instrumental: подругой). Pl.: друзья (irregular)." }, "createdBy": "seed" },
-    { "id": "VC-09", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu moro na **cidade**.", "language": "pt" }, "back": { "text": "Я живу в **городе**.", "language": "ru", "transliteration": "Ya jivú v górodie.", "note": "город (m) — cidade. В + locativo: городе (-е). Pl.: города (tônica desloca)." }, "createdBy": "seed" },
-    { "id": "VC-10", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Eu passeio no **parque**.", "language": "pt" }, "back": { "text": "Я гуляю в **парке**.", "language": "ru", "transliteration": "Ya guliáiu v párkie.", "note": "парк (m) — parque. В + locativo: парке (-е)." }, "createdBy": "seed" },
-    { "id": "VC-11", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "Ele é **inteligente** / Ela é **inteligente**", "language": "pt" }, "back": { "text": "Он **умный** / Она **умная**", "language": "ru", "transliteration": "On úmny / Aná úmnaia", "note": "Regra: adjetivo concorda em gênero. Masc. -ый/-ой · Fem. -ая · Neutro -ое · Plural -ые. Outros pares úteis: красивый/красивая (bonito/a), добрый/добрая (bondoso/a), новый/новая (novo/a)." }, "createdBy": "seed" },
-    { "id": "VC-12", "type": "phrase", "category": "vocab", "priority": 1, "reversible": true, "front": { "text": "**Meu amigo** é de Toulouse.", "language": "pt" }, "back": { "text": "**Мой друг** из Тулузы.", "language": "ru", "transliteration": "Moi drug iz Tulúzy.", "note": "Possessivo masc.: мой (mói); fem.: моя; pl.: мои (мои друзья = meus amigos). Origem: из + genitivo. Тулуза → Тулузы (-а → -ы). Para fem.: моя подруга из Тулузы." }, "createdBy": "seed" },
-
-    { "id": "NA-01", "type": "phrase", "category": "countries", "priority": 4, "front": { "text": "Italiano / Italiana", "language": "pt" }, "back": { "text": "итальянец / итальянка", "language": "ru", "transliteration": "ital'iánets / ital'iánka", "note": "Padrão -ец/-ка. País: Италия (Itália)." }, "createdBy": "seed" },
-    { "id": "NA-02", "type": "phrase", "category": "countries", "priority": 4, "front": { "text": "Espanhol / Espanhola", "language": "pt" }, "back": { "text": "испанец / испанка", "language": "ru", "transliteration": "ispánets / ispánka", "note": "Padrão -ец/-ка. País: Испания (Espanha)." }, "createdBy": "seed" },
-    { "id": "NA-03", "type": "phrase", "category": "countries", "priority": 4, "front": { "text": "Francês / Francesa", "language": "pt" }, "back": { "text": "француз / француженка", "language": "ru", "transliteration": "frantsúz / frantsújenka", "note": "Sem -ец. Fem. usa -енка. País: Франция (França)." }, "createdBy": "seed" },
-    { "id": "NA-04", "type": "phrase", "category": "countries", "priority": 4, "front": { "text": "Alemão / Alemã", "language": "pt" }, "back": { "text": "немец / немка", "language": "ru", "transliteration": "niémets / niémka", "note": "Padrão -ец/-ка mas com radical irregular (não vem de Германия)." }, "createdBy": "seed" },
-    { "id": "NA-05", "type": "phrase", "category": "countries", "priority": 4, "front": { "text": "Russo / Russa", "language": "pt" }, "back": { "text": "русский / русская", "language": "ru", "transliteration": "rússky / rússkaia", "note": "Padrão -ский/-ская — declina como adjetivo. País: Россия." }, "createdBy": "seed" },
-
-    { "id": "CZV-01", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {читаю} книги. Он {читает} книги.", "language": "ru" }, "back": { "text": "Eu leio livros. Ele lê livros.", "language": "pt", "transliteration": "Ya chitáiu knígi. On chitáiet knígi.", "note": "Verbo читать (1ª conj. -ать). Я-form: -аю. Он/она-form: -ает." }, "createdBy": "seed" },
-    { "id": "CZV-02", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {смотрю} фильмы. Она {смотрит} фильмы.", "language": "ru" }, "back": { "text": "Eu assisto filmes. Ela assiste filmes.", "language": "pt", "transliteration": "Ya smotriú fíl'my. Aná smótrit fíl'my.", "note": "Verbo смотреть (2ª conj. -еть). Я-form: -ю. Он/она-form: -ит. Tônica desloca." }, "createdBy": "seed" },
-    { "id": "CZV-03", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {слушаю} музыку. Он {слушает} музыку.", "language": "ru" }, "back": { "text": "Eu escuto música. Ele escuta música.", "language": "pt", "transliteration": "Ya slúchaiu múzyku. On slúchaiet múzyku.", "note": "Verbo слушать (1ª conj. -ать). Padrão regular -аю / -ает." }, "createdBy": "seed" },
-    { "id": "CZV-04", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {играю} в футбол. Он {играет} в футбол.", "language": "ru" }, "back": { "text": "Eu jogo futebol. Ele joga futebol.", "language": "pt", "transliteration": "Ya igráiu v futból. On igráiet v futból.", "note": "Verbo играть. Para jogos: играть в + acusativo." }, "createdBy": "seed" },
-    { "id": "CZV-05", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {работаю}. Она {работает}.", "language": "ru" }, "back": { "text": "Eu trabalho. Ela trabalha.", "language": "pt", "transliteration": "Ya rabótaiu. Aná rabótaiet.", "note": "Verbo работать. 1ª conj. regular -аю / -ает." }, "createdBy": "seed" },
-    { "id": "CZV-06", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {отдыхаю}. Он {отдыхает}.", "language": "ru" }, "back": { "text": "Eu descanso. Ele descansa.", "language": "pt", "transliteration": "Ya otdykháiu. On otdykháiet.", "note": "Verbo отдыхать. 1ª conj. regular." }, "createdBy": "seed" },
-    { "id": "CZV-07", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {гуляю} в парке. Она {гуляет} в парке.", "language": "ru" }, "back": { "text": "Eu passeio no parque. Ela passeia no parque.", "language": "pt", "transliteration": "Ya guliáiu v párkie. Aná guliáiet v párkie.", "note": "Verbo гулять. В + locativo: в парке. Caminhar sem destino fixo." }, "createdBy": "seed" },
-    { "id": "CZV-08", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {путешествую}. Он {путешествует}.", "language": "ru" }, "back": { "text": "Eu viajo. Ele viaja.", "language": "pt", "transliteration": "Ya putechiéstvuiu. On putechiéstvuiet.", "note": "Verbo путешествовать (-овать → -у- no presente)." }, "createdBy": "seed" },
-    { "id": "CZV-09", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {готовлю} обед. Она {готовит} обед.", "language": "ru" }, "back": { "text": "Eu cozinho o almoço. Ela cozinha o almoço.", "language": "pt", "transliteration": "Ya gotóvliu obiéd. Aná gotóvit obiéd.", "note": "Verbo готовить. Mutação в → вл somente na 1ª pessoa (готовлю), depois normal: готовишь, готовит." }, "createdBy": "seed" },
-    { "id": "CZV-10", "type": "cloze", "category": "verbs", "priority": 1, "front": { "text": "Я {занимаюсь} спортом. Он {занимается} спортом.", "language": "ru" }, "back": { "text": "Eu pratico esporte. Ele pratica esporte.", "language": "pt", "transliteration": "Ya zanimáius' spórtom. On zanimáietsia spórtom.", "note": "Verbo reflexivo (-ся / -сь). Pede instrumental: спортом." }, "createdBy": "seed" },
-
-    { "id": "CZN-01", "type": "cloze", "category": "numbers", "priority": 1, "front": { "text": "{один}, {два}, {три}, {четыре}, {пять}", "language": "ru" }, "back": { "text": "1, 2, 3, 4, 5", "language": "pt", "transliteration": "odín, dva, tri, chetýre, piat'", "note": "Sequência 1–5. Use para treinar 'o que vem antes/depois'." }, "createdBy": "seed" },
-    { "id": "CZN-02", "type": "cloze", "category": "numbers", "priority": 1, "front": { "text": "{шесть}, {семь}, {восемь}, {девять}, {десять}", "language": "ru" }, "back": { "text": "6, 7, 8, 9, 10", "language": "pt", "transliteration": "chiest', siem', vósiem', diéviat', diésiat'", "note": "Sequência 6–10. Todos terminam em sinal suave (-ь)." }, "createdBy": "seed" },
-    { "id": "CZN-03", "type": "cloze", "category": "numbers", "priority": 1, "front": { "text": "{одиннадцать}, {двенадцать}, {тринадцать}, {четырнадцать}, {пятнадцать}", "language": "ru" }, "back": { "text": "11, 12, 13, 14, 15", "language": "pt", "transliteration": "adínnatsat', dvenátsat', trinátsat', chetýrnatsat', piatnátsat'", "note": "Sequência 11–15. Padrão: base + надцать. Tônica em -на-. Em 11 dobra o Н; em 12 usa-se a forma feminina 'две'." }, "createdBy": "seed" },
-    { "id": "CZN-04", "type": "cloze", "category": "numbers", "priority": 1, "front": { "text": "{шестнадцать}, {семнадцать}, {восемнадцать}, {девятнадцать}, {двадцать}", "language": "ru" }, "back": { "text": "16, 17, 18, 19, 20", "language": "pt", "transliteration": "shesnátsat', semnátsat', vosemnátsat', deviatnátsat', dvátsat'", "note": "Sequência 16–20. ⚠️ Mudança de padrão: até 19 a tônica está em -на-; em 20 (двадцать) volta para a primeira sílaba." }, "createdBy": "seed" },
-
-    { "id": "G-01", "type": "phrase", "category": "survival", "priority": 1, "reversible": true, "front": { "text": "Boa tarde", "language": "pt" }, "back": { "text": "Добрый день!", "language": "ru", "transliteration": "Dóbry dien'", "note": "Saudação diurna (cerca de 12h até o entardecer). Literalmente 'bom dia [longo]'." }, "createdBy": "seed" },
-    { "id": "G-02", "type": "phrase", "category": "survival", "priority": 1, "reversible": true, "front": { "text": "Boa noite (chegada)", "language": "pt" }, "back": { "text": "Добрый вечер!", "language": "ru", "transliteration": "Dóbry viéchir", "note": "Saudação noturna ao encontrar alguém. Literalmente 'boa tarde-noite'." }, "createdBy": "seed" },
-    { "id": "G-03", "type": "phrase", "category": "survival", "priority": 1, "reversible": true, "front": { "text": "Boa noite (despedida)", "language": "pt" }, "back": { "text": "Доброй ночи!", "language": "ru", "transliteration": "Dóbroi nóchi", "note": "Genitivo de noite — usado ao se despedir já tarde da noite. Diferente de Спокойной ночи." }, "createdBy": "seed" },
-    { "id": "G-04", "type": "phrase", "category": "survival", "priority": 1, "reversible": true, "front": { "text": "Tenha uma noite tranquila", "language": "pt" }, "back": { "text": "Спокойной ночи", "language": "ru", "transliteration": "Spokóinoi nóchi", "note": "Literalmente 'noite tranquila'. Usado ao ir dormir — desejar bom sono." }, "createdBy": "seed" },
-
-    { "id": "D-01", "type": "phrase", "category": "family", "priority": 1, "reversible": true, "front": { "text": "Qual é o seu nome? (informal)", "language": "pt" }, "back": { "text": "Как тебя зовут?", "language": "ru", "transliteration": "Kak tibiá zovút?", "note": "Literalmente 'como te chamam?'. Formal: 'Как Вас зовут?' (Kak vas zovút?)." }, "createdBy": "seed" },
-    { "id": "D-02", "type": "phrase", "category": "family", "priority": 1, "reversible": true, "front": { "text": "Bem (como vai? — resposta)", "language": "pt" }, "back": { "text": "Хорошо", "language": "ru", "transliteration": "Khorochó", "note": "Resposta padrão a 'Как дела?'. Tônica final, 'о' átono no início vira 'a'." }, "createdBy": "seed" },
-    { "id": "D-03", "type": "phrase", "category": "family", "priority": 1, "reversible": true, "front": { "text": "Super / Excelente", "language": "pt" }, "back": { "text": "Супер · Отлично", "language": "ru", "transliteration": "Súper · Otlíchno", "note": "Resposta entusiasmada a 'Как дела?'. Супер é estrangeirismo informal; Отлично é mais 'culto'." }, "createdBy": "seed" }
+    {
+      "id": "L-01",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "А а",
+        "language": "ru"
+      },
+      "back": {
+        "text": "A",
+        "language": "pt",
+        "transliteration": "a",
+        "note": "Como 'a' em 'casa'."
+      },
+      "example": {
+        "ru": "мама",
+        "pt": "mamãe",
+        "translit": "máma"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-02",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Б б",
+        "language": "ru"
+      },
+      "back": {
+        "text": "B",
+        "language": "pt",
+        "transliteration": "b",
+        "note": "Como 'b' em 'bola'."
+      },
+      "example": {
+        "ru": "брат",
+        "pt": "irmão",
+        "translit": "brat"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-03",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "В в",
+        "language": "ru"
+      },
+      "back": {
+        "text": "V",
+        "language": "pt",
+        "transliteration": "v",
+        "note": "Parece B mas soa V."
+      },
+      "example": {
+        "ru": "вода",
+        "pt": "água",
+        "translit": "vadá"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-04",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Г г",
+        "language": "ru"
+      },
+      "back": {
+        "text": "G",
+        "language": "pt",
+        "transliteration": "g",
+        "note": "Sempre G forte (como em 'gato')."
+      },
+      "example": {
+        "ru": "город",
+        "pt": "cidade",
+        "translit": "górad"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-05",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Д д",
+        "language": "ru"
+      },
+      "back": {
+        "text": "D",
+        "language": "pt",
+        "transliteration": "d",
+        "note": "Como 'd' em 'dado'."
+      },
+      "example": {
+        "ru": "да",
+        "pt": "sim",
+        "translit": "da"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-06",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Е е",
+        "language": "ru"
+      },
+      "back": {
+        "text": "IÉ",
+        "language": "pt",
+        "transliteration": "ye",
+        "note": "No início/tônica: 'ié'. Átona: 'i'."
+      },
+      "example": {
+        "ru": "нет",
+        "pt": "não",
+        "translit": "niet"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-07",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ё ё",
+        "language": "ru"
+      },
+      "back": {
+        "text": "IÔ",
+        "language": "pt",
+        "transliteration": "yo",
+        "note": "Soa 'iô'. É sempre tônica."
+      },
+      "example": {
+        "ru": "ёж",
+        "pt": "ouriço",
+        "translit": "iój"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-08",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ж ж",
+        "language": "ru"
+      },
+      "back": {
+        "text": "J",
+        "language": "pt",
+        "transliteration": "zh",
+        "note": "Como J em 'já'."
+      },
+      "example": {
+        "ru": "жена",
+        "pt": "esposa",
+        "translit": "jená"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-09",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "З з",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Z",
+        "language": "pt",
+        "transliteration": "z",
+        "note": "Como Z em 'zero'."
+      },
+      "example": {
+        "ru": "зима",
+        "pt": "inverno",
+        "translit": "zimá"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-10",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "И и",
+        "language": "ru"
+      },
+      "back": {
+        "text": "I",
+        "language": "pt",
+        "transliteration": "i",
+        "note": "Parece N mas soa I."
+      },
+      "example": {
+        "ru": "имя",
+        "pt": "nome",
+        "translit": "ímia"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-11",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Й й",
+        "language": "ru"
+      },
+      "back": {
+        "text": "I curto (j)",
+        "language": "pt",
+        "transliteration": "y",
+        "note": "Como Y em 'maio'. Semivogal."
+      },
+      "example": {
+        "ru": "йогурт",
+        "pt": "iogurte",
+        "translit": "yógurt"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-12",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "К к",
+        "language": "ru"
+      },
+      "back": {
+        "text": "K",
+        "language": "pt",
+        "transliteration": "k",
+        "note": "Como C em 'casa'."
+      },
+      "example": {
+        "ru": "кот",
+        "pt": "gato",
+        "translit": "kot"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-13",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Л л",
+        "language": "ru"
+      },
+      "back": {
+        "text": "L",
+        "language": "pt",
+        "transliteration": "l",
+        "note": "Como L em 'lua'."
+      },
+      "example": {
+        "ru": "лето",
+        "pt": "verão",
+        "translit": "liéta"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-14",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "М м",
+        "language": "ru"
+      },
+      "back": {
+        "text": "M",
+        "language": "pt",
+        "transliteration": "m",
+        "note": "Como M em 'mãe'."
+      },
+      "example": {
+        "ru": "мир",
+        "pt": "paz / mundo",
+        "translit": "mir"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-15",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Н н",
+        "language": "ru"
+      },
+      "back": {
+        "text": "N",
+        "language": "pt",
+        "transliteration": "n",
+        "note": "Parece H mas soa N."
+      },
+      "example": {
+        "ru": "нос",
+        "pt": "nariz",
+        "translit": "nos"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-16",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "О о",
+        "language": "ru"
+      },
+      "back": {
+        "text": "O",
+        "language": "pt",
+        "transliteration": "o",
+        "note": "Tônica 'ô'; átona vira 'a'."
+      },
+      "example": {
+        "ru": "он",
+        "pt": "ele",
+        "translit": "on"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-17",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "П п",
+        "language": "ru"
+      },
+      "back": {
+        "text": "P",
+        "language": "pt",
+        "transliteration": "p",
+        "note": "Como P em 'pai'."
+      },
+      "example": {
+        "ru": "папа",
+        "pt": "pai",
+        "translit": "pápa"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-18",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Р р",
+        "language": "ru"
+      },
+      "back": {
+        "text": "R vibrado",
+        "language": "pt",
+        "transliteration": "r",
+        "note": "R forte, vibrado (como 'perro' em espanhol)."
+      },
+      "example": {
+        "ru": "рука",
+        "pt": "mão",
+        "translit": "ruká"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-19",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "С с",
+        "language": "ru"
+      },
+      "back": {
+        "text": "S",
+        "language": "pt",
+        "transliteration": "s",
+        "note": "Parece C mas soa S."
+      },
+      "example": {
+        "ru": "сын",
+        "pt": "filho",
+        "translit": "syn"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-20",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Т т",
+        "language": "ru"
+      },
+      "back": {
+        "text": "T",
+        "language": "pt",
+        "transliteration": "t",
+        "note": "Como T em 'tarde'."
+      },
+      "example": {
+        "ru": "ты",
+        "pt": "você (informal)",
+        "translit": "ty"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-21",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "У у",
+        "language": "ru"
+      },
+      "back": {
+        "text": "U",
+        "language": "pt",
+        "transliteration": "u",
+        "note": "Parece Y mas soa U."
+      },
+      "example": {
+        "ru": "утро",
+        "pt": "manhã",
+        "translit": "útra"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-22",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ф ф",
+        "language": "ru"
+      },
+      "back": {
+        "text": "F",
+        "language": "pt",
+        "transliteration": "f",
+        "note": "Como F em 'faca'."
+      },
+      "example": {
+        "ru": "фото",
+        "pt": "foto",
+        "translit": "fóta"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-23",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Х х",
+        "language": "ru"
+      },
+      "back": {
+        "text": "RR gutural",
+        "language": "pt",
+        "transliteration": "kh",
+        "note": "Som gutural (como J espanhol ou 'rr' carioca)."
+      },
+      "example": {
+        "ru": "хлеб",
+        "pt": "pão",
+        "translit": "khliep"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-24",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ц ц",
+        "language": "ru"
+      },
+      "back": {
+        "text": "TS",
+        "language": "pt",
+        "transliteration": "ts",
+        "note": "Como 'ts' em 'tsunami'."
+      },
+      "example": {
+        "ru": "цена",
+        "pt": "preço",
+        "translit": "tsená"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-25",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ч ч",
+        "language": "ru"
+      },
+      "back": {
+        "text": "TCH",
+        "language": "pt",
+        "transliteration": "ch",
+        "note": "Como 'tch' em 'tchau'."
+      },
+      "example": {
+        "ru": "час",
+        "pt": "hora",
+        "translit": "chas"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-26",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ш ш",
+        "language": "ru"
+      },
+      "back": {
+        "text": "CH",
+        "language": "pt",
+        "transliteration": "sh",
+        "note": "Como 'ch' em 'chá'."
+      },
+      "example": {
+        "ru": "школа",
+        "pt": "escola",
+        "translit": "shkóla"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-27",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Щ щ",
+        "language": "ru"
+      },
+      "back": {
+        "text": "CH suave",
+        "language": "pt",
+        "transliteration": "shch",
+        "note": "'ch' mais suave e longo que Ш."
+      },
+      "example": {
+        "ru": "щенок",
+        "pt": "filhote",
+        "translit": "schinók"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-28",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ъ ъ",
+        "language": "ru"
+      },
+      "back": {
+        "text": "sinal duro",
+        "language": "pt",
+        "transliteration": "\"",
+        "note": "Sem som. Separa consoante e vogal."
+      },
+      "example": {
+        "ru": "объект",
+        "pt": "objeto",
+        "translit": "abiékt"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-29",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ы ы",
+        "language": "ru"
+      },
+      "back": {
+        "text": "I gutural",
+        "language": "pt",
+        "transliteration": "y",
+        "note": "Som entre 'i' e 'u', com a língua puxada para trás."
+      },
+      "example": {
+        "ru": "рыба",
+        "pt": "peixe",
+        "translit": "rýba"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-30",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ь ь",
+        "language": "ru"
+      },
+      "back": {
+        "text": "sinal suave",
+        "language": "pt",
+        "transliteration": "'",
+        "note": "Sem som próprio. Amolece a consoante anterior."
+      },
+      "example": {
+        "ru": "мать",
+        "pt": "mãe (formal)",
+        "translit": "mat'"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-31",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Э э",
+        "language": "ru"
+      },
+      "back": {
+        "text": "É",
+        "language": "pt",
+        "transliteration": "e",
+        "note": "Som 'é' aberto."
+      },
+      "example": {
+        "ru": "это",
+        "pt": "isto / isso",
+        "translit": "éta"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-32",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Ю ю",
+        "language": "ru"
+      },
+      "back": {
+        "text": "IU",
+        "language": "pt",
+        "transliteration": "yu",
+        "note": "Soa 'iu'."
+      },
+      "example": {
+        "ru": "юг",
+        "pt": "sul",
+        "translit": "yug"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "L-33",
+      "type": "letter",
+      "category": "alphabet",
+      "front": {
+        "text": "Я я",
+        "language": "ru"
+      },
+      "back": {
+        "text": "IÁ / EU",
+        "language": "pt",
+        "transliteration": "ya",
+        "note": "Soa 'iá'. Sozinha, significa 'eu'."
+      },
+      "example": {
+        "ru": "я",
+        "pt": "eu",
+        "translit": "ya"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-01",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Eu te amo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я тебя люблю",
+        "language": "ru",
+        "transliteration": "Ya tibiá liubliú",
+        "note": "A frase clássica. Informal, entre casal."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-02",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Sinto sua falta",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я скучаю по тебе",
+        "language": "ru",
+        "transliteration": "Ya skucháiu po tibié",
+        "note": "Literalmente 'me entedio por você' — é assim que se diz 'ter saudade'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-03",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Você é linda",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты красивая",
+        "language": "ru",
+        "transliteration": "Ty krasívaia",
+        "note": "Feminino. Para homem: красивый (krasívy)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-04",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Me beija",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Поцелуй меня",
+        "language": "ru",
+        "transliteration": "Potselúi miniá",
+        "note": "Imperativo, carinhoso."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-05",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Me abraça",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Обними меня",
+        "language": "ru",
+        "transliteration": "Obnimí miniá",
+        "note": "Imperativo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-06",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Você é minha vida",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты моя жизнь",
+        "language": "ru",
+        "transliteration": "Ty maiá jizn'",
+        "note": "Forte e dramático — use com parcimônia."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-07",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Estou bem com você",
+        "language": "pt"
+      },
+      "back": {
+        "text": "С тобой хорошо",
+        "language": "ru",
+        "transliteration": "S tobói khorochó",
+        "note": "Literalmente 'com você é bom' — expressão comum."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-08",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Meu sol (querida)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Солнышко моё",
+        "language": "ru",
+        "transliteration": "Sólnychko maió",
+        "note": "Apelido carinhoso literalmente 'solzinho meu'. Neutro, serve para ele ou ela."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-09",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Minha coelhinha",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Зайка моя",
+        "language": "ru",
+        "transliteration": "Záika maiá",
+        "note": "Apelido muito comum entre casais na Rússia."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-10",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Boa noite, meu amor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Спокойной ночи, любимая",
+        "language": "ru",
+        "transliteration": "Spokóinoi nóchi, liubímaia",
+        "note": "Para ela. Para ele: любимый (liubímy)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-11",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Bom dia, querida",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Доброе утро, милая",
+        "language": "ru",
+        "transliteration": "Dóbroie útro, mílaia",
+        "note": "Usa-se até umas 11h. Depois: добрый день."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-12",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Quero estar com você",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я хочу быть с тобой",
+        "language": "ru",
+        "transliteration": "Ya khochú byt' s tobói",
+        "note": "Declaração simples e direta."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-13",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Você é a melhor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты самая лучшая",
+        "language": "ru",
+        "transliteration": "Ty sámaia lútchchaia",
+        "note": "Feminino. Para ele: самый лучший (sámy lútchchy)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-14",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Estou pensando em você",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я думаю о тебе",
+        "language": "ru",
+        "transliteration": "Ya dúmaiu o tibié",
+        "note": "Perfeito para uma mensagem no meio do dia."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "R-15",
+      "type": "phrase",
+      "category": "romantic",
+      "reversible": true,
+      "front": {
+        "text": "Você é meu mundo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты весь мой мир",
+        "language": "ru",
+        "transliteration": "Ty ves' moi mir",
+        "note": "Mir também significa 'paz' — um dos duplos sentidos favoritos do russo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-01",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Olá (formal)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Здравствуйте",
+        "language": "ru",
+        "transliteration": "Zdrávstvuite",
+        "note": "Formal, plural. Obrigatório com os pais dela no primeiro contato."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-02",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Muito prazer",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Очень приятно",
+        "language": "ru",
+        "transliteration": "Óchen' priátno",
+        "note": "Ao ser apresentado. Combina com um aperto de mão firme."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-03",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Me chamo Lucas",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Меня зовут Лукас",
+        "language": "ru",
+        "transliteration": "Miniá zovút Lúkas",
+        "note": "Literalmente 'me chamam Lucas'. Troque o nome se quiser."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-04",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Sou do Brasil",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я из Бразилии",
+        "language": "ru",
+        "transliteration": "Ya iz Brazílii",
+        "note": "Из = 'de' (procedência)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-05",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Muito obrigado",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Спасибо большое",
+        "language": "ru",
+        "transliteration": "Spasíbo bolchóie",
+        "note": "Literalmente 'obrigado grande'. Spasíbo sozinho também serve."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-06",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Está muito gostoso",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Очень вкусно",
+        "language": "ru",
+        "transliteration": "Óchen' vkúsno",
+        "note": "A frase de ouro no jantar da família dela."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-07",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Desculpe (formal)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Извините",
+        "language": "ru",
+        "transliteration": "Izvinítie",
+        "note": "Formal. Informal: извини (izviní)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-08",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Posso repetir (mais)?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Можно ещё?",
+        "language": "ru",
+        "transliteration": "Mójno ieschió?",
+        "note": "No jantar, quando querem ver você comer mais. Diga 'sim' se gostou."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-09",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Me ajude, por favor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Помогите, пожалуйста",
+        "language": "ru",
+        "transliteration": "Pomogítie, pojálusta",
+        "note": "Formal. 'Пожалуйста' (por favor) pronuncia-se 'pojálsta' — o 'lu' quase some."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-10",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Não entendo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я не понимаю",
+        "language": "ru",
+        "transliteration": "Ya ne ponimáiu",
+        "note": "Use sem vergonha — ajuda a baixar o ritmo da conversa."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-11",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Fale mais devagar, por favor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Говорите медленнее, пожалуйста",
+        "language": "ru",
+        "transliteration": "Govorítie miédlennie, pojálusta",
+        "note": "Frase que salva vidas em qualquer conversa."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-12",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Como vai? (formal)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Как дела?",
+        "language": "ru",
+        "transliteration": "Kak dielá?",
+        "note": "Informal também. Resposta padrão: 'Хорошо' (khorochó — bem)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-13",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Estou aprendendo russo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я учу русский",
+        "language": "ru",
+        "transliteration": "Ya uchú rússky",
+        "note": "Frase-passaporte. Costuma provocar sorrisos."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-14",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Repita, por favor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Повторите, пожалуйста",
+        "language": "ru",
+        "transliteration": "Povtorítie, pojálusta",
+        "note": "Formal. Informal: повтори (povtorí)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-15",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Mãe, pai",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Мама, папа",
+        "language": "ru",
+        "transliteration": "Máma, pápa",
+        "note": "Usado também ao falar DA mãe/pai de alguém, não só dos seus."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-01",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Oi",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Привет",
+        "language": "ru",
+        "transliteration": "Privét",
+        "note": "Informal. Só para amigos, família, crianças."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-02",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Tchau",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Пока",
+        "language": "ru",
+        "transliteration": "Poká",
+        "note": "Informal. Formal: 'До свидания' (Do svidánia)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-03",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Sim / Não",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Да / Нет",
+        "language": "ru",
+        "transliteration": "Da / Niet",
+        "note": "Os dois primeiros palavras a reconhecer em qualquer idioma."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-04",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Quanto custa?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Сколько стоит?",
+        "language": "ru",
+        "transliteration": "Skól'ko stóit?",
+        "note": "Imprescindível em qualquer mercado ou loja."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-05",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Onde fica o banheiro?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Где туалет?",
+        "language": "ru",
+        "transliteration": "Gdié tualiét?",
+        "note": "'Где' significa 'onde' — memorize, é útil."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-06",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Um café, por favor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Один кофе, пожалуйста",
+        "language": "ru",
+        "transliteration": "Odín kófie, pojálusta",
+        "note": "Truque: кофе é indeclinável, fácil de usar."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-07",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "A conta, por favor",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Счёт, пожалуйста",
+        "language": "ru",
+        "transliteration": "Schiót, pojálusta",
+        "note": "Também se pode fazer o gesto universal de rabiscar no ar."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-08",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Eu quero...",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я хочу...",
+        "language": "ru",
+        "transliteration": "Ya khochú...",
+        "note": "Funcional mas direto. Mais educado: 'Я хотел бы' (queria)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-09",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Tenho alergia",
+        "language": "pt"
+      },
+      "back": {
+        "text": "У меня аллергия",
+        "language": "ru",
+        "transliteration": "U miniá alliérgia",
+        "note": "Literalmente 'comigo [existe] alergia'. Adicione o alimento depois."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-10",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Não falo russo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я не говорю по-русски",
+        "language": "ru",
+        "transliteration": "Ya ne govoriú po-rússki",
+        "note": "Ironicamente, se você sabe dizer isto, já fala um pouco."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-11",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Você fala inglês?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Вы говорите по-английски?",
+        "language": "ru",
+        "transliteration": "Vy govorítie po-anglíiski?",
+        "note": "Formal. Informal: 'Ты говоришь…'"
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-12",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Hoje / amanhã",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Сегодня / завтра",
+        "language": "ru",
+        "transliteration": "Sievódnia / závtra",
+        "note": "Em сегодня o 'г' soa como 'v' — irregularidade clássica."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-13",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Água",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Вода",
+        "language": "ru",
+        "transliteration": "Vadá",
+        "note": "Tônica no fim; o 'о' átono vira 'a'. Com gás: 'с газом' (s gázom)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-14",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Socorro!",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Помогите!",
+        "language": "ru",
+        "transliteration": "Pomogítie!",
+        "note": "Grite forte. Não é a mesma palavra que 'me ajude' do cotidiano — o tom muda tudo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "S-15",
+      "type": "phrase",
+      "category": "survival",
+      "reversible": true,
+      "front": {
+        "text": "Estou perdido",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я заблудился",
+        "language": "ru",
+        "transliteration": "Ya zabludílsia",
+        "note": "Masculino. Feminino: заблудилась (zabludílas')."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-01",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Um (1)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "один",
+        "language": "ru",
+        "transliteration": "odín",
+        "note": "Forma masculina. Feminino: одна (odná). Neutro: одно (odnó)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-02",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Dois (2)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "два",
+        "language": "ru",
+        "transliteration": "dva",
+        "note": "Masculino/neutro. Feminino: две (dvie)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-03",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Três (3)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "три",
+        "language": "ru",
+        "transliteration": "tri",
+        "note": "Mesma forma para todos os gêneros."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-04",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Quatro (4)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "четыре",
+        "language": "ru",
+        "transliteration": "chetýre",
+        "note": "Mesma forma para todos os gêneros. Tônica em -ты-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-05",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Cinco (5)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "пять",
+        "language": "ru",
+        "transliteration": "piat'",
+        "note": "Termina em sinal suave — amolece o T final."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-06",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Seis (6)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "шесть",
+        "language": "ru",
+        "transliteration": "chiest'",
+        "note": "Sinal suave no final. Ш + Е stressed = 'chié'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-07",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Sete (7)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "семь",
+        "language": "ru",
+        "transliteration": "siem'",
+        "note": "Sinal suave amolece o M final."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-08",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Oito (8)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "восемь",
+        "language": "ru",
+        "transliteration": "vósiem'",
+        "note": "Tônica em во-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-09",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Nove (9)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "девять",
+        "language": "ru",
+        "transliteration": "diéviat'",
+        "note": "Tônica em де-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-10",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Dez (10)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "десять",
+        "language": "ru",
+        "transliteration": "diésiat'",
+        "note": "Tônica em де-. Para 11–19, soma-se '-надцать' (одиннадцать, двенадцать…)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-RUL-1",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "Regra: contar 11–19",
+        "language": "pt"
+      },
+      "back": {
+        "text": "base (1–9) + надцать",
+        "language": "ru",
+        "transliteration": "...nádtsat'",
+        "note": "Sufixo de 'на десять' (sobre dez). Tônica sempre em -на-. • 11 одиннадцать (один + НН) • 12 двенадцать (две-, forma fem. do 2) • 13 тринадцать • 14 четырнадцать • 15 пятнадцать • 16 шестнадцать • 17 семнадцать • 18 восемнадцать (mantém Е) • 19 девятнадцать. Os 5/6/7/9 perdem o ь final ao receber o sufixo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-RUL-2",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "Regra: 20 e 30",
+        "language": "pt"
+      },
+      "back": {
+        "text": "numeral + дцать",
+        "language": "ru",
+        "transliteration": "...dtsat' (cai a tônica no início)",
+        "note": "Versão curta de десять. 20 = двадцать (dvádtsat'), 30 = тридцать (trídtsat'). ⚠️ Diferente de 11–19, a tônica volta para a PRIMEIRA sílaba (двá-, трú-). Cuidado para não confundir двадцать (20) com двенадцать (12)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "N-RUL-3",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "Regra: compor 21–29 e 31–39",
+        "language": "pt"
+      },
+      "back": {
+        "text": "dezena + unidade",
+        "language": "ru",
+        "transliteration": "(sem ligação, sem 'e')",
+        "note": "Junte com um espaço, sem 'e' como em português. Cada palavra mantém sua tônica. • 21 двадцать один • 22 двадцать два • 25 двадцать пять • 29 двадцать девять • 31 тридцать один • 35 тридцать пять • 39 тридцать девять. A unidade concorda em gênero: 21 livros (m) = двадцать один; 21 casas (f) = двадцать одна."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-01",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "Carro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "машина",
+        "language": "ru",
+        "transliteration": "machína",
+        "note": "Feminino. Plural: машины (machíny). Tb. significa 'máquina'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-02",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "Mar",
+        "language": "pt"
+      },
+      "back": {
+        "text": "море",
+        "language": "ru",
+        "transliteration": "móre",
+        "note": "Neutro. Plural: моря (moriá)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-03",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "Mosca",
+        "language": "pt"
+      },
+      "back": {
+        "text": "муха",
+        "language": "ru",
+        "transliteration": "múkha",
+        "note": "Feminino. Insecto. Verbo 'voar' é летать (letát')."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-04",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "Rato (mouse)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "мышь",
+        "language": "ru",
+        "transliteration": "mych'",
+        "note": "Feminino, sinal suave no fim. Vale para o animal e para o mouse de computador."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-05",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "Bola",
+        "language": "pt"
+      },
+      "back": {
+        "text": "мяч",
+        "language": "ru",
+        "transliteration": "miach",
+        "note": "Masculino. Diminutivo carinhoso: мячик (miáchik)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-06",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "(Eu) moro / vivo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "я живу",
+        "language": "ru",
+        "transliteration": "ya jivú",
+        "note": "Verbo жить (viver), 1ª pessoa singular. Tu vives: ты живёшь (ty jiviósh)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-07",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "(Eu) falo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "я говорю",
+        "language": "ru",
+        "transliteration": "ya govoriú",
+        "note": "Verbo говорить (falar). Para idiomas: 'я говорю по-русски / по-английски'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-08",
+      "type": "phrase",
+      "category": "vocab",
+      "front": {
+        "text": "(Eu) aprendo / estudo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "я учу",
+        "language": "ru",
+        "transliteration": "ya uchú",
+        "note": "Verbo учить + acusativo. Também pode significar 'ensinar' dependendo da regência."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-09",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Piscina",
+        "language": "pt"
+      },
+      "back": {
+        "text": "бассейн",
+        "language": "ru",
+        "transliteration": "basséin",
+        "note": "Masculino. Plural: бассейны. Empréstimo do francês 'bassin'. Ex.: я иду в бассейн (vou à piscina)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "V-10",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Amigo / Amigos (sg + pl)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "друг / друзья",
+        "language": "ru",
+        "transliteration": "drug / druziá",
+        "note": "Plural irregular (palatalização). Fem. sg.: подруга (podrúga); pl.: подруги. Com possessivo: мой друг (meu amigo), мои друзья (meus amigos)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-01",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Janeiro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Январь",
+        "language": "ru",
+        "transliteration": "yanvár'",
+        "note": "Masc. Em janeiro: в январе. Meses NÃO são capitalizados no meio da frase."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-02",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Fevereiro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Февраль",
+        "language": "ru",
+        "transliteration": "fevrál'",
+        "note": "Masc. Em fevereiro: в феврале."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-03",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Março",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Март",
+        "language": "ru",
+        "transliteration": "mart",
+        "note": "Masc. Em março: в марте. Cognato de 'Marte'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-04",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Abril",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Апрель",
+        "language": "ru",
+        "transliteration": "apriél'",
+        "note": "Masc. Em abril: в апреле."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-05",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Maio",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Май",
+        "language": "ru",
+        "transliteration": "mai",
+        "note": "Masc. Em maio: в мае. Curto e fácil — termina em Й (i curto)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-06",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Junho",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Июнь",
+        "language": "ru",
+        "transliteration": "iiún'",
+        "note": "Masc. Em junho: в июне. Tônica em -ю-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-07",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Julho",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Июль",
+        "language": "ru",
+        "transliteration": "iiúl'",
+        "note": "Masc. Em julho: в июле. Diferença com июнь: termina em Л."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-08",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Agosto",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Август",
+        "language": "ru",
+        "transliteration": "ávgust",
+        "note": "Masc. Em agosto: в августе. Tônica na PRIMEIRA sílaba (Áv-gust)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-09",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Setembro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Сентябрь",
+        "language": "ru",
+        "transliteration": "sintiábr'",
+        "note": "Masc. Em setembro: в сентябре. Tônica em -тя-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-10",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Outubro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Октябрь",
+        "language": "ru",
+        "transliteration": "oktiábr'",
+        "note": "Masc. Em outubro: в октябре. Tônica em -тя-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-11",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Novembro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ноябрь",
+        "language": "ru",
+        "transliteration": "noiábr'",
+        "note": "Masc. Em novembro: в ноябре. Tônica em -я-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "M-12",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "front": {
+        "text": "Dezembro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Декабрь",
+        "language": "ru",
+        "transliteration": "dikábr'",
+        "note": "Masc. Em dezembro: в декабре. Tônica em -ка-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "PRO-01",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "front": {
+        "text": "eu · tu · ele/ela · nós · vocês · eles/elas",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я · Ты · Он / Она · Мы · Вы · Они",
+        "language": "ru",
+        "transliteration": "ya · ty · on / aná · my · vy · aní",
+        "note": "Pronomes pessoais (nominativo). Ты = informal sg. · Вы = formal sg. OU plural (como 'vous' em francês). Gênero só no 3º sg.: он (m) / она (f) / оно (n). Мы (nós) e они (eles/elas) não distinguem gênero."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-01",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Rússia",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Россия",
+        "language": "ru",
+        "transliteration": "Rossíia",
+        "note": "Para 'sou da Rússia': Я из России (genitivo)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-02",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "França",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Франция",
+        "language": "ru",
+        "transliteration": "Frántsia",
+        "note": "Ц soa 'ts'. Tônica em Фра-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-03",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Itália",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Италия",
+        "language": "ru",
+        "transliteration": "Itáliia",
+        "note": "Tônica em -та-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-04",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Alemanha",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Германия",
+        "language": "ru",
+        "transliteration": "Guermániia",
+        "note": "Г é sempre G forte (como em 'gato')."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-05",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Espanha",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Испания",
+        "language": "ru",
+        "transliteration": "Ispániia",
+        "note": "Tônica em -па-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-06",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Brasil",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Бразилия",
+        "language": "ru",
+        "transliteration": "Brazíliia",
+        "note": "Genitivo: Бразилии (de/da Brasil) — usado em 'Я из Бразилии'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-07",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "EUA / América",
+        "language": "pt"
+      },
+      "back": {
+        "text": "США / Америка",
+        "language": "ru",
+        "transliteration": "Es-Sha-A / Amiérika",
+        "note": "США lê-se letra por letra: 'es-sha-a'. Coloquial: Америка."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-08",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Inglaterra",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Англия",
+        "language": "ru",
+        "transliteration": "Ángliia",
+        "note": "Para 'falo inglês': говорю по-английски (po-anglíiski)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-09",
+      "type": "phrase",
+      "category": "countries",
+      "reversible": true,
+      "front": {
+        "text": "Japão",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Япония",
+        "language": "ru",
+        "transliteration": "Yapóniia",
+        "note": "Я no início soa 'ya'. Tônica em -по-."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "C-10",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 1,
+      "front": {
+        "text": "'Sou do Brasil' ≠ 'Sou brasileiro'",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я из Бразилии · Я бразилец",
+        "language": "ru",
+        "transliteration": "Ya iz Brazílii · Ya brazíliets",
+        "note": "São coisas diferentes! 'Я из Бразилии' = de onde vim (из + genitivo: Бразилия → Бразилии). 'Я бразилец' = nacionalidade (substantivo, masc.; fem.: бразильянка). ⚠️ 'Я Бразилия' (sou Brasil) é ERRADO — país não é nacionalidade."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-16",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Sou da Rússia",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я из России",
+        "language": "ru",
+        "transliteration": "Ya iz Rossíi",
+        "note": "Из + genitivo (Россия → России). Espelho de F-04 ('Sou do Brasil')."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-17",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Sou brasileiro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я бразилец",
+        "language": "ru",
+        "transliteration": "Ya brazíliets",
+        "note": "Masculino. Feminino: бразильянка. Variante coloquial vista na aula: бразильянец."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-18",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Moro em Portugal",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я живу в Португалии",
+        "language": "ru",
+        "transliteration": "Ya jivú v Portugálii",
+        "note": "В + locativo (Португалия → Португалии). Estrutura idêntica para outros países."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-19",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Moro no Porto",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я живу в Порто",
+        "language": "ru",
+        "transliteration": "Ya jivú v Pórto",
+        "note": "Порто é estrangeirismo, geralmente indeclinável."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-20",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Aprendo português",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я учу португальский",
+        "language": "ru",
+        "transliteration": "Ya uchú portugálsky",
+        "note": "Учу + acusativo do adjetivo (subentende-se язык, idioma)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "F-21",
+      "type": "phrase",
+      "category": "family",
+      "reversible": true,
+      "front": {
+        "text": "Falo inglês",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я говорю по-английски",
+        "language": "ru",
+        "transliteration": "Ya govoriú po-anglíiski",
+        "note": "Estrutura 'по- + adjetivo de idioma -ски' = falar em [idioma]. Mesma forma para по-русски, по-португальски."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-01",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "ler (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "читать",
+        "language": "ru",
+        "transliteration": "chitát'",
+        "note": "Я читаю · Ты читаешь · Он/она читает. 1ª conjugação (-ать)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-02",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "olhar / assistir (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "смотреть",
+        "language": "ru",
+        "transliteration": "smotriét'",
+        "note": "Я смотрю · Ты смотришь · Он/она смотрит. 2ª conjugação (-еть com mutação)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-03",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "ouvir / escutar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "слушать",
+        "language": "ru",
+        "transliteration": "slúchat'",
+        "note": "Я слушаю · Ты слушаешь · Он/она слушает. 1ª conjugação."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-04",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "jogar / brincar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "играть",
+        "language": "ru",
+        "transliteration": "igrát'",
+        "note": "Я играю · Ты играешь · Он/она играет. Para jogos: играть в + acusativo (играть в футбол)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-05",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "trabalhar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "работать",
+        "language": "ru",
+        "transliteration": "rabótat'",
+        "note": "Я работаю · Ты работаешь · Он/она работает. 1ª conjugação."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-06",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "descansar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "отдыхать",
+        "language": "ru",
+        "transliteration": "otdykhát'",
+        "note": "Я отдыхаю · Ты отдыхаешь · Он/она отдыхает. 1ª conjugação."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-07",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "passear (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "гулять",
+        "language": "ru",
+        "transliteration": "guliát'",
+        "note": "Я гуляю · Ты гуляешь · Он/она гуляет. Caminhar sem destino fixo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-08",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "viajar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "путешествовать",
+        "language": "ru",
+        "transliteration": "putechiéstvovat'",
+        "note": "Я путешествую · Ты путешествуешь · Он/она путешествует. Conjugação -овать → -у- no presente."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-09",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "cozinhar / preparar (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "готовить",
+        "language": "ru",
+        "transliteration": "gotóvit'",
+        "note": "Я готовлю · Ты готовишь · Он/она готовит. Mutação в → вл na 1ª pessoa."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-10",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "praticar esporte (locução)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "заниматься спортом",
+        "language": "ru",
+        "transliteration": "zanimát'sia spórtom",
+        "note": "Я занимаюсь · Ты занимаешься · Он/она занимается. Verbo reflexivo (-ся). Pede instrumental: спортом."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VRB-11",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 4,
+      "front": {
+        "text": "amar / gostar de (infinitivo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "любить",
+        "language": "ru",
+        "transliteration": "liubít'",
+        "note": "Я люблю · Ты любишь · Он/она любит. Mutação б → бл na 1ª pessoa. Pede acusativo direto."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-01",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu leio **livros**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я читаю **книги**.",
+        "language": "ru",
+        "transliteration": "Ya chitáiu knígi.",
+        "note": "книга (f) — livro. Plural: книги. Aqui acusativo = nominativo (inanimado)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-02",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu assisto **filmes**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я смотрю **фильмы**.",
+        "language": "ru",
+        "transliteration": "Ya smotriú fíl'my.",
+        "note": "фильм (m) — filme. Plural: фильмы (-ы após consoante dura)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-03",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu adoro **música**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я люблю **музыку**.",
+        "language": "ru",
+        "transliteration": "Ya liubliú múzyku.",
+        "note": "музыка (f) — música. Aqui no acusativo: музыку (-а → -у)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-04",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu pratico **esporte**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я занимаюсь **спортом**.",
+        "language": "ru",
+        "transliteration": "Ya zanimáius' spórtom.",
+        "note": "спорт (m) — esporte. Aqui no instrumental: спортом (-ом)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-05",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu jogo **futebol**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я играю в **футбол**.",
+        "language": "ru",
+        "transliteration": "Ya igráiu v futból.",
+        "note": "футбол (m) — futebol. Após 'играть в' o substantivo vai para o acusativo (= nominativo aqui, inanimado)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-06",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu adoro **café**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я люблю **кофе**.",
+        "language": "ru",
+        "transliteration": "Ya liubliú kófie.",
+        "note": "кофе (m) — café. Indeclinável (estrangeirismo): mesma forma em todos os casos."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-07",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu bebo **chá**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я пью **чай**.",
+        "language": "ru",
+        "transliteration": "Ya p'iu chai.",
+        "note": "чай (m) — chá. Aqui no acusativo = nominativo (inanimado). Verbo пить (beber): я пью, ты пьёшь."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-08",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu passeio com **um amigo**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я гуляю с **другом**.",
+        "language": "ru",
+        "transliteration": "Ya guliáiu s drúgom.",
+        "note": "друг (m) — amigo. С + instrumental: другом. Fem.: подруга (instrumental: подругой). Pl.: друзья (irregular)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-09",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu moro na **cidade**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я живу в **городе**.",
+        "language": "ru",
+        "transliteration": "Ya jivú v górodie.",
+        "note": "город (m) — cidade. В + locativo: городе (-е). Pl.: города (tônica desloca)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-10",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Eu passeio no **parque**.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я гуляю в **парке**.",
+        "language": "ru",
+        "transliteration": "Ya guliáiu v párkie.",
+        "note": "парк (m) — parque. В + locativo: парке (-е)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-11",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Ele é **inteligente** / Ela é **inteligente**",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Он **умный** / Она **умная**",
+        "language": "ru",
+        "transliteration": "On úmny / Aná úmnaia",
+        "note": "Regra: adjetivo concorda em gênero. Masc. -ый/-ой · Fem. -ая · Neutro -ое · Plural -ые. Outros pares úteis: красивый/красивая (bonito/a), добрый/добрая (bondoso/a), новый/новая (novo/a)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "VC-12",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "**Meu amigo** é de Toulouse.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "**Мой друг** из Тулузы.",
+        "language": "ru",
+        "transliteration": "Moi drug iz Tulúzy.",
+        "note": "Possessivo masc.: мой (mói); fem.: моя; pl.: мои (мои друзья = meus amigos). Origem: из + genitivo. Тулуза → Тулузы (-а → -ы). Para fem.: моя подруга из Тулузы."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "NA-01",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 4,
+      "front": {
+        "text": "Italiano / Italiana",
+        "language": "pt"
+      },
+      "back": {
+        "text": "итальянец / итальянка",
+        "language": "ru",
+        "transliteration": "ital'iánets / ital'iánka",
+        "note": "Padrão -ец/-ка. País: Италия (Itália)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "NA-02",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 4,
+      "front": {
+        "text": "Espanhol / Espanhola",
+        "language": "pt"
+      },
+      "back": {
+        "text": "испанец / испанка",
+        "language": "ru",
+        "transliteration": "ispánets / ispánka",
+        "note": "Padrão -ец/-ка. País: Испания (Espanha)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "NA-03",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 4,
+      "front": {
+        "text": "Francês / Francesa",
+        "language": "pt"
+      },
+      "back": {
+        "text": "француз / француженка",
+        "language": "ru",
+        "transliteration": "frantsúz / frantsújenka",
+        "note": "Sem -ец. Fem. usa -енка. País: Франция (França)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "NA-04",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 4,
+      "front": {
+        "text": "Alemão / Alemã",
+        "language": "pt"
+      },
+      "back": {
+        "text": "немец / немка",
+        "language": "ru",
+        "transliteration": "niémets / niémka",
+        "note": "Padrão -ец/-ка mas com radical irregular (não vem de Германия)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "NA-05",
+      "type": "phrase",
+      "category": "countries",
+      "priority": 4,
+      "front": {
+        "text": "Russo / Russa",
+        "language": "pt"
+      },
+      "back": {
+        "text": "русский / русская",
+        "language": "ru",
+        "transliteration": "rússky / rússkaia",
+        "note": "Padrão -ский/-ская — declina como adjetivo. País: Россия."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-01",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {читаю} книги. Он {читает} книги.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu leio livros. Ele lê livros.",
+        "language": "pt",
+        "transliteration": "Ya chitáiu knígi. On chitáiet knígi.",
+        "note": "Verbo читать (1ª conj. -ать). Я-form: -аю. Он/она-form: -ает."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-02",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {смотрю} фильмы. Она {смотрит} фильмы.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu assisto filmes. Ela assiste filmes.",
+        "language": "pt",
+        "transliteration": "Ya smotriú fíl'my. Aná smótrit fíl'my.",
+        "note": "Verbo смотреть (2ª conj. -еть). Я-form: -ю. Он/она-form: -ит. Tônica desloca."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-03",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {слушаю} музыку. Он {слушает} музыку.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu escuto música. Ele escuta música.",
+        "language": "pt",
+        "transliteration": "Ya slúchaiu múzyku. On slúchaiet múzyku.",
+        "note": "Verbo слушать (1ª conj. -ать). Padrão regular -аю / -ает."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-04",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {играю} в футбол. Он {играет} в футбол.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu jogo futebol. Ele joga futebol.",
+        "language": "pt",
+        "transliteration": "Ya igráiu v futból. On igráiet v futból.",
+        "note": "Verbo играть. Para jogos: играть в + acusativo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-05",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {работаю}. Она {работает}.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu trabalho. Ela trabalha.",
+        "language": "pt",
+        "transliteration": "Ya rabótaiu. Aná rabótaiet.",
+        "note": "Verbo работать. 1ª conj. regular -аю / -ает."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-06",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {отдыхаю}. Он {отдыхает}.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu descanso. Ele descansa.",
+        "language": "pt",
+        "transliteration": "Ya otdykháiu. On otdykháiet.",
+        "note": "Verbo отдыхать. 1ª conj. regular."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-07",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {гуляю} в парке. Она {гуляет} в парке.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu passeio no parque. Ela passeia no parque.",
+        "language": "pt",
+        "transliteration": "Ya guliáiu v párkie. Aná guliáiet v párkie.",
+        "note": "Verbo гулять. В + locativo: в парке. Caminhar sem destino fixo."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-08",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {путешествую}. Он {путешествует}.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu viajo. Ele viaja.",
+        "language": "pt",
+        "transliteration": "Ya putechiéstvuiu. On putechiéstvuiet.",
+        "note": "Verbo путешествовать (-овать → -у- no presente)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-09",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {готовлю} обед. Она {готовит} обед.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu cozinho o almoço. Ela cozinha o almoço.",
+        "language": "pt",
+        "transliteration": "Ya gotóvliu obiéd. Aná gotóvit obiéd.",
+        "note": "Verbo готовить. Mutação в → вл somente na 1ª pessoa (готовлю), depois normal: готовишь, готовит."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZV-10",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "front": {
+        "text": "Я {занимаюсь} спортом. Он {занимается} спортом.",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Eu pratico esporte. Ele pratica esporte.",
+        "language": "pt",
+        "transliteration": "Ya zanimáius' spórtom. On zanimáietsia spórtom.",
+        "note": "Verbo reflexivo (-ся / -сь). Pede instrumental: спортом."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZN-01",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "{один}, {два}, {три}, {четыре}, {пять}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "1, 2, 3, 4, 5",
+        "language": "pt",
+        "transliteration": "odín, dva, tri, chetýre, piat'",
+        "note": "Sequência 1–5. Use para treinar 'o que vem antes/depois'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZN-02",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "{шесть}, {семь}, {восемь}, {девять}, {десять}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "6, 7, 8, 9, 10",
+        "language": "pt",
+        "transliteration": "chiest', siem', vósiem', diéviat', diésiat'",
+        "note": "Sequência 6–10. Todos terminam em sinal suave (-ь)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZN-03",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "{одиннадцать}, {двенадцать}, {тринадцать}, {четырнадцать}, {пятнадцать}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "11, 12, 13, 14, 15",
+        "language": "pt",
+        "transliteration": "adínnatsat', dvenátsat', trinátsat', chetýrnatsat', piatnátsat'",
+        "note": "Sequência 11–15. Padrão: base + надцать. Tônica em -на-. Em 11 dobra o Н; em 12 usa-se a forma feminina 'две'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CZN-04",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "front": {
+        "text": "{шестнадцать}, {семнадцать}, {восемнадцать}, {девятнадцать}, {двадцать}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "16, 17, 18, 19, 20",
+        "language": "pt",
+        "transliteration": "shesnátsat', semnátsat', vosemnátsat', deviatnátsat', dvátsat'",
+        "note": "Sequência 16–20. ⚠️ Mudança de padrão: até 19 a tônica está em -на-; em 20 (двадцать) volta para a primeira sílaba."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "G-01",
+      "type": "phrase",
+      "category": "survival",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Boa tarde",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Добрый день!",
+        "language": "ru",
+        "transliteration": "Dóbry dien'",
+        "note": "Saudação diurna (cerca de 12h até o entardecer). Literalmente 'bom dia [longo]'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "G-02",
+      "type": "phrase",
+      "category": "survival",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Boa noite (chegada)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Добрый вечер!",
+        "language": "ru",
+        "transliteration": "Dóbry viéchir",
+        "note": "Saudação noturna ao encontrar alguém. Literalmente 'boa tarde-noite'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "G-03",
+      "type": "phrase",
+      "category": "survival",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Boa noite (despedida)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Доброй ночи!",
+        "language": "ru",
+        "transliteration": "Dóbroi nóchi",
+        "note": "Genitivo de noite — usado ao se despedir já tarde da noite. Diferente de Спокойной ночи."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "G-04",
+      "type": "phrase",
+      "category": "survival",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Tenha uma noite tranquila",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Спокойной ночи",
+        "language": "ru",
+        "transliteration": "Spokóinoi nóchi",
+        "note": "Literalmente 'noite tranquila'. Usado ao ir dormir — desejar bom sono."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "D-01",
+      "type": "phrase",
+      "category": "family",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Qual é o seu nome? (informal)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Как тебя зовут?",
+        "language": "ru",
+        "transliteration": "Kak tibiá zovút?",
+        "note": "Literalmente 'como te chamam?'. Formal: 'Как Вас зовут?' (Kak vas zovút?)."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "D-02",
+      "type": "phrase",
+      "category": "family",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Bem (como vai? — resposta)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Хорошо",
+        "language": "ru",
+        "transliteration": "Khorochó",
+        "note": "Resposta padrão a 'Как дела?'. Tônica final, 'о' átono no início vira 'a'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "D-03",
+      "type": "phrase",
+      "category": "family",
+      "priority": 1,
+      "reversible": true,
+      "front": {
+        "text": "Super / Excelente",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Супер · Отлично",
+        "language": "ru",
+        "transliteration": "Súper · Otlíchno",
+        "note": "Resposta entusiasmada a 'Как дела?'. Супер é estrangeirismo informal; Отлично é mais 'culto'."
+      },
+      "createdBy": "seed"
+    },
+    {
+      "id": "CJ-01",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "work.svg",
+      "front": {
+        "text": "я работа{ю}\nты работа{ешь}\nон работа{ет}\nмы работа{ем}\nвы работа{ете}\nони работа{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "trabalhar (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-02",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "do.svg",
+      "front": {
+        "text": "я дела{ю}\nты дела{ешь}\nон дела{ет}\nмы дела{ем}\nвы дела{ете}\nони дела{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "fazer (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-03",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "read.svg",
+      "front": {
+        "text": "я чита{ю}\nты чита{ешь}\nон чита{ет}\nмы чита{ем}\nвы чита{ете}\nони чита{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "ler (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-04",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "eat.svg",
+      "front": {
+        "text": "я куша{ю}\nты куша{ешь}\nон куша{ет}\nмы куша{ем}\nвы куша{ете}\nони куша{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "comer (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj. Coloquial de есть."
+      }
+    },
+    {
+      "id": "CJ-05",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "swim.svg",
+      "front": {
+        "text": "я плава{ю}\nты плава{ешь}\nон плава{ет}\nмы плава{ем}\nвы плава{ете}\nони плава{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "nadar (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-06",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "know.svg",
+      "front": {
+        "text": "я зна{ю}\nты зна{ешь}\nон зна{ет}\nмы зна{ем}\nвы зна{ете}\nони зна{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "saber (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-07",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "clean.svg",
+      "front": {
+        "text": "я убира{ю}\nты убира{ешь}\nон убира{ет}\nмы убира{ем}\nвы убира{ете}\nони убира{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "arrumar (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-08",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "rest.svg",
+      "front": {
+        "text": "я отдыха{ю}\nты отдыха{ешь}\nон отдыха{ет}\nмы отдыха{ем}\nвы отдыха{ете}\nони отдыха{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "descansar (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-09",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "walk.svg",
+      "front": {
+        "text": "я гуля{ю}\nты гуля{ешь}\nон гуля{ет}\nмы гуля{ем}\nвы гуля{ете}\nони гуля{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "passear (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj. (-ять): -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-10",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "play.svg",
+      "front": {
+        "text": "я игра{ю}\nты игра{ешь}\nон игра{ет}\nмы игра{ем}\nвы игра{ете}\nони игра{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "jogar (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-11",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "listen.svg",
+      "front": {
+        "text": "я слуша{ю}\nты слуша{ешь}\nон слуша{ет}\nмы слуша{ем}\nвы слуша{ете}\nони слуша{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "ouvir (1ª conj.)",
+        "language": "pt",
+        "note": "1ª conj.: -ю -ешь -ет -ем -ете -ют"
+      }
+    },
+    {
+      "id": "CJ-12",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "drink.svg",
+      "front": {
+        "text": "я пь{ю}\nты пь{ёшь}\nон пь{ёт}\nмы пь{ём}\nвы пь{ёте}\nони пь{ют}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "beber (1ª conj.)",
+        "language": "pt",
+        "note": "Radical irreg. пь-: пью, пьёшь…"
+      }
+    },
+    {
+      "id": "CJ-13",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "speak.svg",
+      "front": {
+        "text": "я говор{ю}\nты говор{ишь}\nон говор{ит}\nмы говор{им}\nвы говор{ите}\nони говор{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "falar (2ª conj.)",
+        "language": "pt",
+        "note": "2ª conj.: -ю -ишь -ит -им -ите -ят"
+      }
+    },
+    {
+      "id": "CJ-14",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "love.svg",
+      "front": {
+        "text": "я лю{блю}\nты люб{ишь}\nон люб{ит}\nмы люб{им}\nвы люб{ите}\nони люб{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "amar (2ª conj.)",
+        "language": "pt",
+        "note": "2ª conj. Forma я: +Л → люблю."
+      }
+    },
+    {
+      "id": "CJ-15",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "cook.svg",
+      "front": {
+        "text": "я гото{влю}\nты готов{ишь}\nон готов{ит}\nмы готов{им}\nвы готов{ите}\nони готов{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "cozinhar (2ª conj.)",
+        "language": "pt",
+        "note": "2ª conj. Forma я: +Л → готовлю."
+      }
+    },
+    {
+      "id": "CJ-16",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "watch.svg",
+      "front": {
+        "text": "я смотр{ю}\nты смотр{ишь}\nон смотр{ит}\nмы смотр{им}\nвы смотр{ите}\nони смотр{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "assistir (2ª conj.)",
+        "language": "pt",
+        "note": "2ª conj. (apesar de -еть)."
+      }
+    },
+    {
+      "id": "CJ-17",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "sleep.svg",
+      "front": {
+        "text": "я с{плю}\nты сп{ишь}\nон сп{ит}\nмы сп{им}\nвы сп{ите}\nони сп{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "dormir (2ª conj.)",
+        "language": "pt",
+        "note": "2ª conj. Forma я: +Л → сплю."
+      }
+    },
+    {
+      "id": "CJ-18",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "verbs",
+      "priority": 1,
+      "image": "want.svg",
+      "front": {
+        "text": "я хоч{у}\nты хоч{ешь}\nон хоч{ет}\nмы хот{им}\nвы хот{ите}\nони хот{ят}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "querer (irreg. conj.)",
+        "language": "pt",
+        "note": "IRREGULAR: хочу, хочешь, хочет / хотим…"
+      }
+    },
+    {
+      "id": "VB-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "do.svg",
+      "front": {
+        "text": "fazer (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "делать",
+        "language": "ru",
+        "transliteration": "diélat'",
+        "note": "я делаю · они делают"
+      }
+    },
+    {
+      "id": "VB-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "want.svg",
+      "front": {
+        "text": "querer (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "хотеть",
+        "language": "ru",
+        "transliteration": "khatiét'",
+        "note": "я хочу · они хотят"
+      }
+    },
+    {
+      "id": "VB-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "swim.svg",
+      "front": {
+        "text": "nadar (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "плавать",
+        "language": "ru",
+        "transliteration": "plávat'",
+        "note": "я плаваю · они плавают"
+      }
+    },
+    {
+      "id": "VB-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "eat.svg",
+      "front": {
+        "text": "comer (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "кушать",
+        "language": "ru",
+        "transliteration": "kúchat'",
+        "note": "я кушаю · они кушают"
+      }
+    },
+    {
+      "id": "VB-05",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "clean.svg",
+      "front": {
+        "text": "arrumar (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "убирать",
+        "language": "ru",
+        "transliteration": "ubirát'",
+        "note": "я убираю · они убирают"
+      }
+    },
+    {
+      "id": "VB-06",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "sleep.svg",
+      "front": {
+        "text": "dormir (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "спать",
+        "language": "ru",
+        "transliteration": "spat'",
+        "note": "я сплю · они спят"
+      }
+    },
+    {
+      "id": "VB-07",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "drink.svg",
+      "front": {
+        "text": "beber (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "пить",
+        "language": "ru",
+        "transliteration": "pit'",
+        "note": "я пью · они пьют"
+      }
+    },
+    {
+      "id": "VB-08",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "verbs",
+      "priority": 2,
+      "reversible": true,
+      "image": "know.svg",
+      "front": {
+        "text": "saber (verbo)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "знать",
+        "language": "ru",
+        "transliteration": "znat'",
+        "note": "я знаю · они знают"
+      }
+    },
+    {
+      "id": "NN-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "house.svg",
+      "front": {
+        "text": "Casa",
+        "language": "pt"
+      },
+      "back": {
+        "text": "дом",
+        "language": "ru",
+        "transliteration": "dom",
+        "note": "pl. дома"
+      }
+    },
+    {
+      "id": "NN-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "room.svg",
+      "front": {
+        "text": "Quarto",
+        "language": "pt"
+      },
+      "back": {
+        "text": "комната",
+        "language": "ru",
+        "transliteration": "kómnata",
+        "note": "pl. комнаты"
+      }
+    },
+    {
+      "id": "NN-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "tv.svg",
+      "front": {
+        "text": "Televisão",
+        "language": "pt"
+      },
+      "back": {
+        "text": "телевизор",
+        "language": "ru",
+        "transliteration": "televízor",
+        "note": "pl. телевизоры"
+      }
+    },
+    {
+      "id": "NN-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "bed.svg",
+      "front": {
+        "text": "Cama",
+        "language": "pt"
+      },
+      "back": {
+        "text": "кровать",
+        "language": "ru",
+        "transliteration": "kravát'",
+        "note": "pl. кровати"
+      }
+    },
+    {
+      "id": "NN-05",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "water.svg",
+      "front": {
+        "text": "Água",
+        "language": "pt"
+      },
+      "back": {
+        "text": "вода",
+        "language": "ru",
+        "transliteration": "vadá",
+        "note": "incontável"
+      }
+    },
+    {
+      "id": "NN-06",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "food.svg",
+      "front": {
+        "text": "Comida",
+        "language": "pt"
+      },
+      "back": {
+        "text": "еда",
+        "language": "ru",
+        "transliteration": "yedá",
+        "note": "incontável"
+      }
+    },
+    {
+      "id": "NN-07",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "work.svg",
+      "front": {
+        "text": "Trabalho",
+        "language": "pt"
+      },
+      "back": {
+        "text": "работа",
+        "language": "ru",
+        "transliteration": "rabóta",
+        "note": "pl. работы"
+      }
+    },
+    {
+      "id": "NN-08",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "book.svg",
+      "front": {
+        "text": "Livro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "книга",
+        "language": "ru",
+        "transliteration": "kníga",
+        "note": "pl. книги"
+      }
+    },
+    {
+      "id": "NN-09",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "cake.svg",
+      "front": {
+        "text": "Bolo",
+        "language": "pt"
+      },
+      "back": {
+        "text": "торт",
+        "language": "ru",
+        "transliteration": "tort",
+        "note": "pl. торты"
+      }
+    },
+    {
+      "id": "NN-10",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "salad.svg",
+      "front": {
+        "text": "Salada",
+        "language": "pt"
+      },
+      "back": {
+        "text": "салат",
+        "language": "ru",
+        "transliteration": "salát",
+        "note": "pl. салаты"
+      }
+    },
+    {
+      "id": "NN-11",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "steak.svg",
+      "front": {
+        "text": "Bife",
+        "language": "pt"
+      },
+      "back": {
+        "text": "стейк",
+        "language": "ru",
+        "transliteration": "steik",
+        "note": "pl. стейки"
+      }
+    },
+    {
+      "id": "NN-12",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "dog.svg",
+      "front": {
+        "text": "Cachorro",
+        "language": "pt"
+      },
+      "back": {
+        "text": "собака",
+        "language": "ru",
+        "transliteration": "sobáka",
+        "note": "pl. собаки"
+      }
+    },
+    {
+      "id": "NN-13",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "cat.svg",
+      "front": {
+        "text": "Gato",
+        "language": "pt"
+      },
+      "back": {
+        "text": "кот",
+        "language": "ru",
+        "transliteration": "kot",
+        "note": "pl. коты"
+      }
+    },
+    {
+      "id": "NN-14",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "catf.svg",
+      "front": {
+        "text": "Gata",
+        "language": "pt"
+      },
+      "back": {
+        "text": "кошка",
+        "language": "ru",
+        "transliteration": "kóchka",
+        "note": "pl. кошки"
+      }
+    },
+    {
+      "id": "NN-15",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "brother.svg",
+      "front": {
+        "text": "Irmão",
+        "language": "pt"
+      },
+      "back": {
+        "text": "брат",
+        "language": "ru",
+        "transliteration": "brat",
+        "note": "pl. братья"
+      }
+    },
+    {
+      "id": "NN-16",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "sister.svg",
+      "front": {
+        "text": "Irmã",
+        "language": "pt"
+      },
+      "back": {
+        "text": "сестра",
+        "language": "ru",
+        "transliteration": "sistrá",
+        "note": "pl. сёстры"
+      }
+    },
+    {
+      "id": "NN-17",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "woman.svg",
+      "front": {
+        "text": "Amiga",
+        "language": "pt"
+      },
+      "back": {
+        "text": "подруга",
+        "language": "ru",
+        "transliteration": "padrúga",
+        "note": "pl. подруги"
+      }
+    },
+    {
+      "id": "NN-18",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "f",
+      "image": "family.svg",
+      "front": {
+        "text": "Família",
+        "language": "pt"
+      },
+      "back": {
+        "text": "семья",
+        "language": "ru",
+        "transliteration": "semyá",
+        "note": "pl. семьи"
+      }
+    },
+    {
+      "id": "NN-19",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "park.svg",
+      "front": {
+        "text": "Parque",
+        "language": "pt"
+      },
+      "back": {
+        "text": "парк",
+        "language": "ru",
+        "transliteration": "park",
+        "note": "pl. парки"
+      }
+    },
+    {
+      "id": "NN-20",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "office.svg",
+      "front": {
+        "text": "Escritório",
+        "language": "pt"
+      },
+      "back": {
+        "text": "офис",
+        "language": "ru",
+        "transliteration": "ófis",
+        "note": "pl. офисы"
+      }
+    },
+    {
+      "id": "NN-21",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "coffee.svg",
+      "front": {
+        "text": "Café",
+        "language": "pt"
+      },
+      "back": {
+        "text": "кофе",
+        "language": "ru",
+        "transliteration": "kófe",
+        "note": "indeclinável"
+      }
+    },
+    {
+      "id": "NN-22",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "vocab",
+      "priority": 2,
+      "reversible": true,
+      "gender": "m",
+      "image": "tea.svg",
+      "front": {
+        "text": "Chá",
+        "language": "pt"
+      },
+      "back": {
+        "text": "чай",
+        "language": "ru",
+        "transliteration": "chai",
+        "note": "incontável"
+      }
+    },
+    {
+      "id": "NU-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Onze (11)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "одиннадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Doze (12)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "двенадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Treze (13)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "тринадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Quatorze (14)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "четырнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-05",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Quinze (15)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "пятнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-06",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Dezesseis (16)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "шестнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-07",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Dezessete (17)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "семнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-08",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Dezoito (18)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "восемнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-09",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Dezenove (19)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "девятнадцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-10",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Trinta (30)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "тридцать",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-11",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Vinte e um (21)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "двадцать один",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-12",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Vinte e dois (22)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "двадцать два",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-13",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Vinte e cinco (25)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "двадцать пять",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-14",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Trinta e um (31)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "тридцать один",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-15",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Trinta e cinco (35)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "тридцать пять",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "NU-16",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "numbers",
+      "priority": 1,
+      "reversible": true,
+      "emoji": "🔢",
+      "front": {
+        "text": "Trinta e nove (39)",
+        "language": "pt"
+      },
+      "back": {
+        "text": "тридцать девять",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "ZN-01",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "emoji": "🔢",
+      "front": {
+        "text": "{двадцать один}, {двадцать два}, {двадцать пять}, {тридцать}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "21, 22, 25, 30",
+        "language": "pt",
+        "note": "21–29 = двадцать + unidade."
+      }
+    },
+    {
+      "id": "ZN-02",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "numbers",
+      "priority": 1,
+      "emoji": "🔢",
+      "front": {
+        "text": "{тридцать один}, {тридцать пять}, {тридцать девять}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "31, 35, 39",
+        "language": "pt",
+        "note": "31–39 = тридцать + unidade."
+      }
+    },
+    {
+      "id": "PP-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "👥",
+      "front": {
+        "text": "eu · tu · ele/ela · nós · vocês · eles",
+        "language": "pt"
+      },
+      "back": {
+        "text": "я · ты · он/она · мы · вы · они",
+        "language": "ru",
+        "transliteration": "ya·ty·on/oná·my·vy·oní"
+      }
+    },
+    {
+      "id": "PP-02",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🙋",
+      "front": {
+        "text": "{мой} дом · {моя} книга · {моё} окно · {мои} книги",
+        "language": "ru"
+      },
+      "back": {
+        "text": "meu/minha conforme o gênero",
+        "language": "pt",
+        "note": "мой(m) моя(f) моё(n) мои(pl). Concorda com o objeto."
+      }
+    },
+    {
+      "id": "PP-03",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🙋",
+      "front": {
+        "text": "{твой} дом · {твоя} книга · {твоё} окно · {твои} книги",
+        "language": "ru"
+      },
+      "back": {
+        "text": "teu/tua (ты)",
+        "language": "pt",
+        "note": "твой твоя твоё твои — igual a мой."
+      }
+    },
+    {
+      "id": "PP-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "👤",
+      "front": {
+        "text": "dele · dela · deles",
+        "language": "pt"
+      },
+      "back": {
+        "text": "его · её · их",
+        "language": "ru",
+        "transliteration": "yivó · yeyó · ikh",
+        "note": "Invariáveis: não mudam de gênero."
+      }
+    },
+    {
+      "id": "PP-05",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🔗",
+      "front": {
+        "text": "я→{мой} · ты→{твой} · мы→{наш} · вы→{ваш}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "sujeito → possessivo",
+        "language": "pt",
+        "note": "он→его, она→её, они→их."
+      }
+    },
+    {
+      "id": "GD-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🔵",
+      "front": {
+        "text": "Gênero MASCULINO — terminações?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "consoante · -й · -ь",
+        "language": "ru",
+        "note": "Plural: -ы/-и. Ex.: дом, словарь."
+      }
+    },
+    {
+      "id": "GD-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🔴",
+      "front": {
+        "text": "Gênero FEMININO — terminações?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "-а · -я · -ь",
+        "language": "ru",
+        "note": "Plural: -ы/-и. Ex.: книга, кровать."
+      }
+    },
+    {
+      "id": "GD-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "🟢",
+      "front": {
+        "text": "Gênero NEUTRO — terminações?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "-о · -е · -мя",
+        "language": "ru",
+        "note": "Plural: -а/-я. Ex.: окно, море."
+      }
+    },
+    {
+      "id": "GD-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "✍️",
+      "front": {
+        "text": "Terminação -ь: como saber o gênero?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "-ость/-есть → f · -тель/-арь → m",
+        "language": "ru",
+        "note": "жизнь(f), ночь(f) · словарь(m), гость(m)."
+      }
+    },
+    {
+      "id": "GD-05",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "✏️",
+      "front": {
+        "text": "книга→книг{и} · нож→нож{и} · врач→врач{и}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Regra ortográfica",
+        "language": "pt",
+        "note": "Depois de г к х ж ш ч щ: -и, nunca -ы."
+      }
+    },
+    {
+      "id": "GD-06",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "👨‍👩‍👧",
+      "front": {
+        "text": "дом→{дома} · брат→{братья} · друг→{друзья}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Plurais irregulares (1)",
+        "language": "pt",
+        "note": "Decorar: não seguem a regra."
+      }
+    },
+    {
+      "id": "GD-07",
+      "createdBy": "seed",
+      "type": "cloze",
+      "category": "grammar",
+      "priority": 1,
+      "emoji": "👨‍👩‍👧",
+      "front": {
+        "text": "стул→{стулья} · человек→{люди} · ребёнок→{дети}",
+        "language": "ru"
+      },
+      "back": {
+        "text": "Plurais irregulares (2)",
+        "language": "pt",
+        "note": "cadeira→cadeiras, pessoa→pessoas, criança→crianças."
+      }
+    },
+    {
+      "id": "FR-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🥛",
+      "front": {
+        "text": "Eu **bebo** muita água de manhã.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я **пью** много воды утром.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🚫",
+      "front": {
+        "text": "Eu **não quero** fazer nada.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я **ничего не хочу** делать.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "💼",
+      "front": {
+        "text": "Eu **trabalho** no escritório de manhã.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Я **работаю** в офисе утром.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🧹",
+      "front": {
+        "text": "Você **arruma** o quarto à noite.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты **убираешь** комнату вечером.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-05",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🗣️",
+      "front": {
+        "text": "Você **fala** russo muito bem.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты очень хорошо **говоришь** по-русски.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-06",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "📖",
+      "front": {
+        "text": "Você **lê** um livro à noite.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты **читаешь** книгу вечером.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-07",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🎂",
+      "front": {
+        "text": "Minha cachorra nunca **come** bolo.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Моя собака **никогда не кушает** торт.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-08",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "😴",
+      "front": {
+        "text": "Ele **dorme** muito na cama.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Он много **спит** на кровати.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-09",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "❤️",
+      "front": {
+        "text": "Ela **gosta** da família dela.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Она **любит** свою семью.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-10",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🥗",
+      "front": {
+        "text": "Nós **fazemos** uma salada à noite.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Мы **делаем** салат вечером.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-11",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🏠",
+      "front": {
+        "text": "Nós **moramos** em casa com o cachorro.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Мы **живём** дома с собакой.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-12",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🌳",
+      "front": {
+        "text": "Nós **passeamos** no parque de tarde.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Мы **гуляем** в парке днём.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-13",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "📺",
+      "front": {
+        "text": "Vocês **assistem** TV em casa à noite.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Вы **смотрите** телевизор дома вечером.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-14",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🍳",
+      "front": {
+        "text": "Vocês **cozinham** um bife geralmente.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Вы обычно **готовите** стейк.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-15",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🏊",
+      "front": {
+        "text": "Vocês **nadam** rápido e bem.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Вы **плаваете** быстро и хорошо.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-16",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🧹",
+      "front": {
+        "text": "Meus irmãos **arrumam** o quarto de manhã.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Мои братья **убирают** комнату утром.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-17",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🍽️",
+      "front": {
+        "text": "Eles **comem** comida, depois **arrumam** rápido.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Они **кушают** еду, потом быстро **убирают**.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "FR-18",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🎂",
+      "front": {
+        "text": "Eles **querem** comer bolo hoje.",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Они сегодня **хотят** кушать торт.",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-01",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "😴",
+      "front": {
+        "text": "Onde você dorme?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Где ты спишь?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-02",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "😌",
+      "front": {
+        "text": "Onde vocês descansam?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Где вы отдыхаете?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-03",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "📺",
+      "front": {
+        "text": "O que sua família assiste à noite?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Что твоя семья смотрит вечером?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-04",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "💼",
+      "front": {
+        "text": "Você trabalha amanhã?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты работаешь завтра?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-05",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🧹",
+      "front": {
+        "text": "Eles arrumam (a casa)?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Они убирают?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-06",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🏠",
+      "front": {
+        "text": "Quem quer trabalhar de casa?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Кто хочет работать из дома?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-07",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🛌",
+      "front": {
+        "text": "Quando você dorme?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Когда ты спишь?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-08",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🛋️",
+      "front": {
+        "text": "Como vocês descansam?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Как вы отдыхаете?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-09",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "📖",
+      "front": {
+        "text": "Quanto você lê?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Сколько ты читаешь?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-10",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🐕",
+      "front": {
+        "text": "Onde o cachorro dorme?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Где спит собака?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-11",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🥛",
+      "front": {
+        "text": "Você bebe água de manhã?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Ты пьёшь воду утром?",
+        "language": "ru"
+      }
+    },
+    {
+      "id": "QU-12",
+      "createdBy": "seed",
+      "type": "phrase",
+      "category": "sentences",
+      "priority": 3,
+      "reversible": true,
+      "emoji": "🍳",
+      "front": {
+        "text": "O que você cozinha hoje?",
+        "language": "pt"
+      },
+      "back": {
+        "text": "Что ты готовишь сегодня?",
+        "language": "ru"
+      }
+    }
   ]
 }
